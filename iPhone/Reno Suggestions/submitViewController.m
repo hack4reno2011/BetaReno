@@ -8,7 +8,11 @@
 
 #import "submitViewController.h"
 
+
 @implementation submitViewController
+@synthesize cancelButton;
+@synthesize cameraButton;
+@synthesize submitButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -17,6 +21,79 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)dealloc
+{
+    
+}
+
+-(IBAction) takeAPictureButtonPressed; {
+    
+    [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+    
+}
+
+#pragma mark - Pick or click a picture
+- (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType
+{
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType])
+    {
+        [self setupImagePicker:sourceType];
+    }
+}
+
+- (void)photoLibraryAction:(id)sender
+{   
+	[self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+
+- (void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType
+{
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    self->imagePicker.sourceType = sourceType;
+    
+    if (sourceType == UIImagePickerControllerSourceTypeCamera)
+    {
+        // user wants to use the camera interface
+        imagePicker.allowsEditing = YES;
+        mediaTypeCamera = YES;
+        imagePicker.showsCameraControls = YES;
+        [self presentModalViewController:imagePicker animated:YES];
+        [imagePicker release];
+    } else
+    {
+        //use the image library
+        imagePicker.allowsEditing = YES;
+        mediaTypeCamera = NO;
+        [self presentModalViewController:imagePicker animated:YES];
+        [imagePicker release];
+    }
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	[self dismissModalViewControllerAnimated:YES];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    [NSThread detachNewThreadSelector:@selector(useImage:) toTarget:self withObject:image];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+-(IBAction) cancelButtonPressed; {
+    
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+    
+}
+-(IBAction) submitButtonPressed; {
+    
 }
 
 - (void)didReceiveMemoryWarning
