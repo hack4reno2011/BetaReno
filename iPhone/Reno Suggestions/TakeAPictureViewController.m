@@ -120,7 +120,7 @@
 }
 
 - (void)useImage:(UIImage *)image {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    /*NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
     // Create a graphics image context
     CGSize newSize = CGSizeMake(320, 480);
@@ -135,12 +135,17 @@
     UIGraphicsEndImageContext();
     //save the image color to the state variable
     UIColor *newColor = [self getAverageImageColor:newImage];
+<<<<<<< HEAD
+=======
+   // [[State sharedState]setCurrentState:newColor forKey:@"currentColor"];
+>>>>>>> 90915c54c40ca85cf306d53395c76f77ff11e6c9
     
     //push this color onto the color stack
     //[State sharedState]insertColorIntoStack:newColor];
     colorView.backgroundColor = newColor;
     
     [pool release];
+     */
 }
 
 -(UIColor *) getAverageImageColor:(UIImage *)image {
