@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
 @interface RSViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     

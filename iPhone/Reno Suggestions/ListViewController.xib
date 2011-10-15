@@ -33,15 +33,15 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUIView" id="787608401">
+			<object class="IBUIView" id="64646565">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUITableView" id="692163713">
-						<reference key="NSNextResponder" ref="787608401"/>
+					<object class="IBUITableView" id="1032403000">
+						<reference key="NSNextResponder" ref="64646565"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 416}</string>
-						<reference key="NSSuperview" ref="787608401"/>
+						<reference key="NSSuperview" ref="64646565"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -56,49 +56,49 @@
 						<float key="IBUISectionHeaderHeight">22</float>
 						<float key="IBUISectionFooterHeight">22</float>
 					</object>
-					<object class="IBUIToolbar" id="329888931">
-						<reference key="NSNextResponder" ref="787608401"/>
+					<object class="IBUIToolbar" id="795338906">
+						<reference key="NSNextResponder" ref="64646565"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
-						<reference key="NSSuperview" ref="787608401"/>
+						<reference key="NSSuperview" ref="64646565"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<array class="NSMutableArray" key="IBUIItems">
-							<object class="IBUIBarButtonItem" id="953191646">
+							<object class="IBUIBarButtonItem" id="1067038623">
 								<string key="IBUITitle">Map</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="329888931"/>
+								<reference key="IBUIToolbar" ref="795338906"/>
 							</object>
-							<object class="IBUIBarButtonItem" id="772402078">
+							<object class="IBUIBarButtonItem" id="347583264">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIToolbar" ref="329888931"/>
+								<reference key="IBUIToolbar" ref="795338906"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="470299714">
+							<object class="IBUIBarButtonItem" id="577268235">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="329888931"/>
+								<reference key="IBUIToolbar" ref="795338906"/>
 								<int key="IBUISystemItemIdentifier">4</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="120020543">
+							<object class="IBUIBarButtonItem" id="129123727">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIToolbar" ref="329888931"/>
+								<reference key="IBUIToolbar" ref="795338906"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="1028155360">
+							<object class="IBUIBarButtonItem" id="140234197">
 								<string key="IBUITitle">List</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="329888931"/>
+								<reference key="IBUIToolbar" ref="795338906"/>
 							</object>
 						</array>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView" ref="692163713"/>
+				<reference key="NSNextKeyView" ref="1032403000"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MC43NQA</bytes>
@@ -112,7 +112,40 @@
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<array class="NSMutableArray" key="connectionRecords"/>
+			<array class="NSMutableArray" key="connectionRecords">
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="64646565"/>
+					</object>
+					<int key="connectionID">12</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">listButtonPressed:</string>
+						<reference key="source" ref="140234197"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">15</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">suggestionButtonPressed:</string>
+						<reference key="source" ref="577268235"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">14</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">mapButtonPressed:</string>
+						<reference key="source" ref="1067038623"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">13</int>
+				</object>
+			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
 					<object class="IBObjectRecord">
@@ -134,54 +167,54 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="787608401"/>
+						<reference key="object" ref="64646565"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="692163713"/>
-							<reference ref="329888931"/>
+							<reference ref="1032403000"/>
+							<reference ref="795338906"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
-						<reference key="object" ref="692163713"/>
-						<reference key="parent" ref="787608401"/>
+						<reference key="object" ref="1032403000"/>
+						<reference key="parent" ref="64646565"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">6</int>
-						<reference key="object" ref="329888931"/>
+						<reference key="object" ref="795338906"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="120020543"/>
-							<reference ref="1028155360"/>
-							<reference ref="470299714"/>
-							<reference ref="772402078"/>
-							<reference ref="953191646"/>
+							<reference ref="129123727"/>
+							<reference ref="140234197"/>
+							<reference ref="577268235"/>
+							<reference ref="347583264"/>
+							<reference ref="1067038623"/>
 						</array>
-						<reference key="parent" ref="787608401"/>
+						<reference key="parent" ref="64646565"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
-						<reference key="object" ref="120020543"/>
-						<reference key="parent" ref="329888931"/>
+						<reference key="object" ref="129123727"/>
+						<reference key="parent" ref="795338906"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
-						<reference key="object" ref="1028155360"/>
-						<reference key="parent" ref="329888931"/>
+						<reference key="object" ref="140234197"/>
+						<reference key="parent" ref="795338906"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
-						<reference key="object" ref="470299714"/>
-						<reference key="parent" ref="329888931"/>
+						<reference key="object" ref="577268235"/>
+						<reference key="parent" ref="795338906"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
-						<reference key="object" ref="772402078"/>
-						<reference key="parent" ref="329888931"/>
+						<reference key="object" ref="347583264"/>
+						<reference key="parent" ref="795338906"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="953191646"/>
-						<reference key="parent" ref="329888931"/>
+						<reference key="object" ref="1067038623"/>
+						<reference key="parent" ref="795338906"/>
 					</object>
 				</array>
 			</object>
@@ -203,7 +236,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">15</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

@@ -30,6 +30,10 @@
 }
 -(IBAction)locationButtonPressed:(id)sender;
 {
+    ListViewController *vc = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
+    UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    [self presentModalViewController:navController animated:YES];
+    
     return;
 }
 -(IBAction)suggestionButtonPressed:(id)sender;
