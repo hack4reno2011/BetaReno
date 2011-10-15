@@ -14,5 +14,12 @@
     <string name="submit_btn_picture">Select</string>
     <string name="submit_chk_planned">Is this planned?</string>
     
-    
+    <!--  Proposal Categories for the Spinner -->
+    <string-array name="submit_spin_categories">
+        <item>Government</item>
+        <item>Myself</item>
+        <item>Volunteers</item>
+        <item>Community Organization</item>
+        <item>Owner of Property</item>
+    </string-array>   
 </resources>

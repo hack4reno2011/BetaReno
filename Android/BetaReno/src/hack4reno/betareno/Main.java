@@ -1,6 +1,7 @@
 package hack4reno.betareno;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,25 +10,26 @@ import android.widget.Button;
 
 public class Main extends Activity 
 {
-	Button btnCreate;
-	Button btnUpdate;
-	Main main;
+	protected Button btnCreate;
+	protected Button btnUpdate;
+	protected Context context;
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        main = this;
+        context = this;
         
         btnCreate = (Button) findViewById(R.id.home_btn_create);
         btnCreate.setOnClickListener(new OnClickListener()
         {
 			public void onClick(View v) 
 			{
-				// Intent intent = new Intent(main, MyClassHere.class);
-				// intent.putExtra("MyExtraVariable", "Hello");
-				// main.startActivity(intent);			
+				Intent submit;
+				submit = new Intent(context, Submit.class);
+				context.startActivity(submit);			
 			}        	
         });
+        
     }
 }
