@@ -10,6 +10,12 @@
 
 @implementation ListViewController
 
+@synthesize mapButton;
+@synthesize listButton;
+@synthesize suggestionButton;
+@synthesize search;
+@synthesize suggestionsTable;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -18,6 +24,73 @@
     }
     return self;
 }
+
+-(void) dealloc
+{
+    
+}
+
+//actions
+
+-(IBAction)mapButtonPressed:(id)sender;
+{
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+    return;
+}
+-(IBAction)listButtonPressed:(id)sender;
+{
+    return;
+}
+-(IBAction)suggestionButtonPressed:(id)sender;
+{
+    submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
+    UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    [self presentModalViewController:navController animated:YES];
+    
+    [navController release];
+    [vc release];
+    
+    return;
+}
+
+//Table View Protocols
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+	return 15;
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Set up the cell...
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
+    cell.textLabel.text = [NSString  stringWithFormat:@"Cell Row #%d", [indexPath row]];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // open a alert with an OK and cancel button
+    NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
+#import "ListViewController.h"
+=======
 #import <MapKit/MapKit.h>
+>>>>>>> 3f1a99e41b7cd5f554e663d015605af1dbb44548
 
 
 @interface RSViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>{

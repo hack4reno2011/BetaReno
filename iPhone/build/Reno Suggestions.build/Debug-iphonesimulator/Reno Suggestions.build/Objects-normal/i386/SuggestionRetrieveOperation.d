@@ -2,6 +2,8 @@ dependencies: \
   /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/SuggestionRetrieveOperation.m \
   /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/SugggestionRetrieveOperation.h \
   /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/RSViewController.h \
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/ListViewController.h \
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/submitViewController.h \
   /Users/jack/dev/BetaReno/iPhone/SBJson.h \
   /Users/jack/dev/BetaReno/iPhone/SBJsonParser.h \
   /Users/jack/dev/BetaReno/iPhone/SBJsonWriter.h \

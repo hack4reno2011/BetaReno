@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "submitViewController.h"
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    
+    UITableView*            suggestionsTable;
+    UISearchBar*            search;
+    UIButton*               mapButton;
+    UIButton*               listButton;
+    UIButton*               suggestionButton;
+    
+}
+
+@property (nonatomic, retain)   IBOutlet UIButton*      mapButton;
+@property (nonatomic, retain)   IBOutlet UIButton*      listButton;
+@property (nonatomic, retain)   IBOutlet UIButton*      suggestionButton;
+@property (nonatomic, retain)   IBOutlet UISearchBar*   search;
+@property (nonatomic, retain)   IBOutlet UITableView*   suggestionsTable;
+
+
+-(IBAction)mapButtonPressed:(id)sender;
+-(IBAction)listButtonPressed:(id)sender;
+-(IBAction)suggestionButtonPressed:(id)sender;
+
 
 @end
