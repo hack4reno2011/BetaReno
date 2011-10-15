@@ -12,6 +12,9 @@
 		040F7C70144A1417005172D5 /* TakeAPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040F7C6E144A1417005172D5 /* TakeAPictureViewController.m */; };
 		040F7C74144A1546005172D5 /* submitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040F7C72144A1546005172D5 /* submitViewController.m */; };
 		040F7C75144A1546005172D5 /* submitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040F7C73144A1546005172D5 /* submitViewController.xib */; };
+		041A7DB7144A3420008AC130 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041A7DB6144A3420008AC130 /* MapKit.framework */; };
+		041A7DBC144A3553008AC130 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A7DBA144A3552008AC130 /* ListViewController.m */; };
+		041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A7DBB144A3552008AC130 /* ListViewController.xib */; };
 		0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */; };
 		0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9041448F27700EC00BF /* Reno_arch_57.png */; };
 		0481D90C1448F8E700EC00BF /* CameraViewController-iphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */; };
@@ -58,6 +61,10 @@
 		040F7C71144A1546005172D5 /* submitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = submitViewController.h; sourceTree = "<group>"; };
 		040F7C72144A1546005172D5 /* submitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = submitViewController.m; sourceTree = "<group>"; };
 		040F7C73144A1546005172D5 /* submitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = submitViewController.xib; sourceTree = "<group>"; };
+		041A7DB6144A3420008AC130 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		041A7DB9144A3552008AC130 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		041A7DBA144A3552008AC130 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		041A7DBB144A3552008AC130 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reno_arch_244x183.jpg; sourceTree = "<group>"; };
 		0481D9041448F27700EC00BF /* Reno_arch_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reno_arch_57.png; sourceTree = "<group>"; };
 		0481D9091448F8E700EC00BF /* CameraViewController-iphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CameraViewController-iphone.h"; sourceTree = "<group>"; };
@@ -125,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041A7DB7144A3420008AC130 /* MapKit.framework in Frameworks */,
 				04B0EE121448D40B00FDE76E /* SystemConfiguration.framework in Frameworks */,
 				04B0EE101448D40200FDE76E /* AudioToolbox.framework in Frameworks */,
 				04B0EDF01448D3E200FDE76E /* UIKit.framework in Frameworks */,
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				040F7C73144A1546005172D5 /* submitViewController.xib */,
+				041A7DBB144A3552008AC130 /* ListViewController.xib */,
 				04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */,
 				04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */,
 				0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */,
@@ -219,6 +228,7 @@
 		04B0EDEE1448D3E200FDE76E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				041A7DB6144A3420008AC130 /* MapKit.framework */,
 				04B0EE0F1448D40200FDE76E /* AudioToolbox.framework */,
 				04B0EE111448D40B00FDE76E /* SystemConfiguration.framework */,
 				04B0EDEF1448D3E200FDE76E /* UIKit.framework */,
@@ -231,6 +241,8 @@
 		04B0EDF51448D3E200FDE76E /* Reno Suggestions */ = {
 			isa = PBXGroup;
 			children = (
+				041A7DB9144A3552008AC130 /* ListViewController.h */,
+				041A7DBA144A3552008AC130 /* ListViewController.m */,
 				040F7C64144A0F7A005172D5 /* MapView.m */,
 				040F7C63144A0F7A005172D5 /* MapView.h */,
 				040F7C71144A1546005172D5 /* submitViewController.h */,
@@ -340,6 +352,7 @@
 				0481D91C1448F96B00EC00BF /* LocationViewController-iPad.xib in Resources */,
 				040F7C67144A0F7A005172D5 /* MapView.xib in Resources */,
 				040F7C75144A1546005172D5 /* submitViewController.xib in Resources */,
+				041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +387,7 @@
 				040F7C66144A0F7A005172D5 /* MapView.m in Sources */,
 				040F7C70144A1417005172D5 /* TakeAPictureViewController.m in Sources */,
 				040F7C74144A1546005172D5 /* submitViewController.m in Sources */,
+				041A7DBC144A3553008AC130 /* ListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
