@@ -9,6 +9,7 @@
 #import "RSAppDelegate.h"
 
 #import "RSViewController.h"
+#import "MapView.h"
 
 static RSAppDelegate *sharedInstance;
 @implementation RSAppDelegate
@@ -124,7 +125,7 @@ void PhoneCallInterruptionListener(void *inClientData, UInt32 inInterruptionStat
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[[RSViewController alloc] initWithNibName:@"RSViewController_iPhone" bundle:nil] autorelease];
+        self.viewController = [[[MapView alloc] initWithNibName:@"MapView" bundle:nil] autorelease];
     } else {
         self.viewController = [[[RSViewController alloc] initWithNibName:@"RSViewController_iPad" bundle:nil] autorelease];
     }

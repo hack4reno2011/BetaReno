@@ -150,8 +150,6 @@
 			children = (
 				040F7C73144A1546005172D5 /* submitViewController.xib */,
 				04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */,
-				040F7C63144A0F7A005172D5 /* MapView.h */,
-				040F7C64144A0F7A005172D5 /* MapView.m */,
 				04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */,
 				0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */,
 				0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */,
@@ -233,6 +231,8 @@
 		04B0EDF51448D3E200FDE76E /* Reno Suggestions */ = {
 			isa = PBXGroup;
 			children = (
+				040F7C64144A0F7A005172D5 /* MapView.m */,
+				040F7C63144A0F7A005172D5 /* MapView.h */,
 				040F7C71144A1546005172D5 /* submitViewController.h */,
 				040F7C72144A1546005172D5 /* submitViewController.m */,
 				04B0EDFE1448D3E200FDE76E /* RSAppDelegate.h */,
