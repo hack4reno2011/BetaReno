@@ -2,18 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/submit_txt_title" android:text="@string/submit_txt_title"></TextView>
-	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/submit_txt_what" android:text="@string/submit_txt_what"></TextView>
-	<EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/editWhat">
-		<requestFocus></requestFocus>
-	</EditText>
-	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/submit_txt_where" android:text="@string/submit_txt_where"></TextView>
-	<EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:inputType="textPostalAddress" android:id="@+id/editWhere"></EditText>
-	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/submit_txt_who" android:text="@string/submit_txt_who"></TextView>
-	<Spinner android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/spinWho"></Spinner>
-	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/submit_txt_picture" android:text="@string/submit_txt_picture"></TextView>
-	<Button android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/btnPic" android:text="@string/submit_btn_picture"></Button>
-	<CheckBox android:text="@string/submit_chk_planned" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/chkPlan"></CheckBox>
-	<DatePicker android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/datePlan"></DatePicker>
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/scrollView1">
+        <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_title" android:id="@+id/submit_txt_title" android:layout_height="wrap_content"></TextView>
+            <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_what" android:id="@+id/submit_txt_what" android:layout_height="wrap_content"></TextView>
+            <EditText android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editWhat"></EditText>
+            <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_where" android:id="@+id/submit_txt_where" android:layout_height="wrap_content"></TextView>
+            <EditText android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editWhere" android:inputType="textPostalAddress"></EditText>
+            <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_who" android:id="@+id/submit_txt_who" android:layout_height="wrap_content"></TextView>
+            <Spinner android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/spinWho"></Spinner>
+            <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_picture" android:id="@+id/submit_txt_picture" android:layout_height="wrap_content"></TextView>
+            <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/submit_btn_picture" android:id="@+id/btnPic"></Button>
+            <CheckBox android:layout_width="wrap_content" android:id="@+id/chkPlan" android:text="@string/submit_chk_planned" android:layout_height="wrap_content"></CheckBox>
+            <DatePicker android:id="@+id/datePlan" android:layout_width="match_parent" android:layout_height="wrap_content"></DatePicker>
+            <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/btnSubmit" android:text="@string/submit_btn_submit"></Button>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

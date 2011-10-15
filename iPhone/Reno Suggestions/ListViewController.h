@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "submitViewController.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
