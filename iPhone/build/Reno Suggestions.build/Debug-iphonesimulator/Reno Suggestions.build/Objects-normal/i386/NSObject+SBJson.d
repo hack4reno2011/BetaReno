@@ -1,4 +1,4 @@
-dependencies: /Users/jack/dev/BetaReno/Reno\ Suggestions/NSObject+SBJson.m \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/NSObject+SBJson.h \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonWriter.h \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonParser.h
+dependencies: /Users/jack/dev/BetaReno/iPhone/NSObject+SBJson.m \
+  /Users/jack/dev/BetaReno/iPhone/NSObject+SBJson.h \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonWriter.h \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonParser.h

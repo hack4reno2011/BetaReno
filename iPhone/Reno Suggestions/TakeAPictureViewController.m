@@ -135,7 +135,6 @@
     UIGraphicsEndImageContext();
     //save the image color to the state variable
     UIColor *newColor = [self getAverageImageColor:newImage];
-    [[State sharedState]setCurrentState:newColor forKey:@"currentColor"];
     
     //push this color onto the color stack
     //[State sharedState]insertColorIntoStack:newColor];

@@ -150,8 +150,6 @@
 			children = (
 				040F7C73144A1546005172D5 /* submitViewController.xib */,
 				04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */,
-				040F7C63144A0F7A005172D5 /* MapView.h */,
-				040F7C64144A0F7A005172D5 /* MapView.m */,
 				04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */,
 				0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */,
 				0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */,
@@ -201,9 +199,9 @@
 				04B0EE171448D4F500FDE76E /* CommonDefinitions.h */,
 				0481D8FC1448F09400EC00BF /* Art */,
 				04B0EDF51448D3E200FDE76E /* Reno Suggestions */,
+				04B0EE131448D4A500FDE76E /* Connectivity */,
 				0481D91D1448F9B200EC00BF /* XIBs */,
 				0481D91E1448FA0200EC00BF /* JSON */,
-				04B0EE131448D4A500FDE76E /* Connectivity */,
 				04B0EDF61448D3E200FDE76E /* Supporting Files */,
 				04B0EDEE1448D3E200FDE76E /* Frameworks */,
 				04B0EDEC1448D3E200FDE76E /* Products */,
@@ -249,6 +247,8 @@
 				0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */,
 				040F7C6E144A1417005172D5 /* TakeAPictureViewController.m */,
 				040F7C6F144A1417005172D5 /* TakeAPictureViewController.h */,
+				040F7C63144A0F7A005172D5 /* MapView.h */,
+				040F7C64144A0F7A005172D5 /* MapView.m */,
 			);
 			path = "Reno Suggestions";
 			sourceTree = "<group>";
