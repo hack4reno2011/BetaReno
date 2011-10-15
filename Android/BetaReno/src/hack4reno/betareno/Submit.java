@@ -1,6 +1,7 @@
 package hack4reno.betareno;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import hack4reno.betareno.CustomMultipartEntity.ProgressListener;
 
@@ -13,9 +14,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
+
+import com.google.android.maps.GeoPoint;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -30,6 +35,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -51,6 +57,9 @@ public class Submit extends Activity
 	
 	// The reference to the image the user selected
 	protected String m_userSelectedImagePath = "";
+	
+	// Geolocation stuff
+	protected GeoPoint addressLocation = null;
 	
 
     @Override
@@ -103,19 +112,38 @@ public class Submit extends Activity
 				if (editWhat.getText().toString().equals(""))				
 					HelperFunctions.say(submit, getString(R.string.submit_error_what));
 				else if (editWhere.getText().toString().equals(""))				
-					HelperFunctions.say(submit, getString(R.string.submit_error_where));				
+					HelperFunctions.say(submit, getString(R.string.submit_error_where));			
 				// Begin upload
 				else
 				{
+					// Get geolocation of address.  This function will launch a listview that the user selects and picks an address
+					addressLocation = getLocation(editWhere.getText().toString());
 					
+					System.out.println("Hello world");
 				}
 				
 				
 				
 			}			
-		});
-		
-		
+		});		
+    }
+    
+    private GeoPoint getLocation(String address)
+    {
+    	// This function is going to launch a listview dialog box which will allow the user to select an google approved address
+    	// given the address that they entered.  
+    	
+    	// Used to store and sort possible start locations of the user
+    	ArrayAdapter<String> startAddressListAdapter;
+    	ArrayList<String> startAddressList;
+    	ArrayList<SuggestionPoint> dataStartAddressList;
+    	Dialog dialogStartAddressSuggestions = new Dialog(this);
+    	ListView lstStartSuggestions;
+    	
+    	
+    	
+    	
+		return null;    	
     }
     
     // After the user selects a picture from the gallery, this function fires
@@ -143,6 +171,11 @@ public class Submit extends Activity
 		}
 	}
     
+    /**
+     * Given valid member objects, this function will post to the server
+     * @author john
+     *
+     */
     private class HttpMultipartPost extends AsyncTask<HttpResponse, Integer, Idea>
 	{
 		ProgressDialog pd;
@@ -186,7 +219,11 @@ public class Submit extends Activity
 				// We use FileBody to transfer an image
 				// multipartContent.addPart("data", new FileBody(new File
 				// (m_userSelectedImagePath)));
-				multipartContent.addPart("ID", new StringBody("some id"));
+				multipartContent.addPart("what", new StringBody(editWhat.getText().toString()));
+				multipartContent.addPart("who", new StringBody(spinWho.getSelectedItem().toString()));
+				multipartContent.addPart("latitude", new StringBody(editWhat.getText().toString()));
+				multipartContent.addPart("what", new StringBody(editWhat.getText().toString()));
+				multipartContent.addPart("what", new StringBody(editWhat.getText().toString()));
 				multipartContent.addPart("uploaded_file", new FileBody(new File(m_userSelectedImagePath)));
 				totalSize = multipartContent.getContentLength();
 
@@ -195,9 +232,9 @@ public class Submit extends Activity
 				HttpResponse response = httpClient.execute(httpPost, httpContext);
 				String serverResponse = EntityUtils.toString(response.getEntity());
 
-				// JSON Stuff parsing here
-				
-				return new Idea();
+				// JSON Stuff parsing here - will return the idea listing after post						
+				JSONObject jsonObject = new JSONObject(serverResponse);
+				return new Idea(jsonObject);
 			}
 
 			catch (Exception e)
@@ -216,7 +253,8 @@ public class Submit extends Activity
 		@Override
 		protected void onPostExecute(Idea idea)
 		{
-			if (idea == null)
+			// If the parsing failed for whatever reason, try and resubmit the request again.
+			if (idea.getID().equals(""))
 			{
 				setProgressBarIndeterminateVisibility(false);
 				new AlertDialog.Builder(submit)

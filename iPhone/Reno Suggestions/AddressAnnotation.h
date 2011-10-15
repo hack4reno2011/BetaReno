@@ -16,4 +16,7 @@
 	NSString *mTitle;
 	NSString *mSubTitle;
 }
+
+-(id)initWithCoordinate:(CLLocationCoordinate2D) c;
+
 @end

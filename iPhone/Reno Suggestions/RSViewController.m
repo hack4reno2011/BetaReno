@@ -8,6 +8,7 @@
 
 #import "RSViewController.h"
 #import "AddressAnnotation.h"
+#import "submitViewController.h"
 
 @implementation RSViewController
 
@@ -37,6 +38,16 @@
     return annView;
 }
 
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+		  fromLocation:(CLLocation *)oldLocation
+{
+	if (startingPoint == nil)
+		self.startingPoint = newLocation;
+	latitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.latitude];
+	longitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.longitude];
+}
+
 -(void) showAddress {
     
 	MKCoordinateRegion region;
@@ -45,10 +56,10 @@
 	span.longitudeDelta = 0.2;
 	
 	CLLocationCoordinate2D cord;
-	//cord.longitude = -119.813803;
-	//cord.latitude = 39.529633; 
-	cord.longitude = [longitude doubleValue];
-	cord.latitude = [latitude doubleValue];
+	cord.longitude = -119.813803;
+	cord.latitude = 39.529633; 
+	//cord.longitude = [longitude doubleValue];
+	//cord.latitude = [latitude doubleValue];
 	region.span = span;
 	region.center = cord;
 	AddressAnnotation *addAnnotation = nil;
@@ -65,11 +76,11 @@
 	
 }
 
--(IBAction)cameraButtonPressed:(id)sender;
+-(IBAction)cameraButtonPressed:(id)sender
 {
-    return;
+    [self showAddress];
 }
--(IBAction)locationButtonPressed:(id)sender;
+-(IBAction)locationButtonPressed:(id)sender
 {
     ListViewController *vc = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
@@ -77,8 +88,14 @@
     
     return;
 }
--(IBAction)suggestionButtonPressed:(id)sender;
+-(IBAction)suggestionButtonPressed:(id)sender
 {
+    submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
+    UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    [self presentModalViewController:navController animated:YES];
+    
+   
+    
     return;
 }
 
@@ -93,16 +110,23 @@
 - (void)viewDidLoad
 {
     
-    [super viewDidLoad];
-	[self showAddress];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    // get the most current emailed suggestions
+    self.locationManager = [[CLLocationManager alloc] init];
+	locationManager.delegate = self;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	[locationManager startUpdatingLocation]; 
+//     get the most current emailed suggestions
+	
+    [super viewDidLoad];
+    [self showAddress];
+
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [locationManager release];
+
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
