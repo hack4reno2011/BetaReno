@@ -13,6 +13,17 @@
     <string name="submit_txt_picture">Before picture</string>
     <string name="submit_btn_picture">Select</string>
     <string name="submit_chk_planned">Is this planned?</string>
+    <string name="submit_btn_submit">Submit Idea!</string>
+    <string name="submit_error_what">What should be done cant be blank</string>
+    <string name="submit_error_where">The location cant be blank</string>
     
     
+    <!--  Proposal Categories for the Spinner -->
+    <string-array name="submit_spin_categories">
+        <item>Government</item>
+        <item>Myself</item>
+        <item>Volunteers</item>
+        <item>Community Organization</item>
+        <item>Owner of Property</item>
+    </string-array>   
 </resources>
