@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */; };
+		0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9041448F27700EC00BF /* Reno_arch_57.png */; };
+		0481D90C1448F8E700EC00BF /* CameraViewController-iphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */; };
+		0481D90D1448F8E700EC00BF /* CameraViewController-iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */; };
+		0481D9111448F90300EC00BF /* CmaeraViewController-iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D90F1448F90300EC00BF /* CmaeraViewController-iPad.m */; };
+		0481D9121448F90300EC00BF /* CmaeraViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */; };
+		0481D9161448F93C00EC00BF /* LocationViewController-iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9141448F93C00EC00BF /* LocationViewController-iPhone.m */; };
+		0481D9171448F93C00EC00BF /* LocationViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9151448F93C00EC00BF /* LocationViewController-iPhone.xib */; };
+		0481D91B1448F96B00EC00BF /* LocationViewController-iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */; };
+		0481D91C1448F96B00EC00BF /* LocationViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D91A1448F96B00EC00BF /* LocationViewController-iPad.xib */; };
+		0481D9381448FAF600EC00BF /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9201448FAF600EC00BF /* NSObject+SBJson.m */; };
+		0481D9391448FAF600EC00BF /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9231448FAF600EC00BF /* SBJsonParser.m */; };
+		0481D93A1448FAF600EC00BF /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9251448FAF600EC00BF /* SBJsonStreamParser.m */; };
+		0481D93B1448FAF600EC00BF /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9271448FAF600EC00BF /* SBJsonStreamParserAccumulator.m */; };
+		0481D93C1448FAF600EC00BF /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9291448FAF600EC00BF /* SBJsonStreamParserAdapter.m */; };
+		0481D93D1448FAF600EC00BF /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D92B1448FAF600EC00BF /* SBJsonStreamParserState.m */; };
+		0481D93E1448FAF600EC00BF /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D92D1448FAF600EC00BF /* SBJsonStreamWriter.m */; };
+		0481D93F1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D92F1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.m */; };
+		0481D9401448FAF600EC00BF /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9311448FAF600EC00BF /* SBJsonStreamWriterState.m */; };
+		0481D9411448FAF600EC00BF /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9331448FAF600EC00BF /* SBJsonTokeniser.m */; };
+		0481D9421448FAF600EC00BF /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9351448FAF600EC00BF /* SBJsonUTF8Stream.m */; };
+		0481D9431448FAF600EC00BF /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9371448FAF600EC00BF /* SBJsonWriter.m */; };
+		0481D95E1449087600EC00BF /* SuggestionRetrieveOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D95C1449087600EC00BF /* SuggestionRetrieveOperation.m */; };
+		04B0EDF01448D3E200FDE76E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EDEF1448D3E200FDE76E /* UIKit.framework */; };
+		04B0EDF21448D3E200FDE76E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EDF11448D3E200FDE76E /* Foundation.framework */; };
+		04B0EDF41448D3E200FDE76E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EDF31448D3E200FDE76E /* CoreGraphics.framework */; };
+		04B0EDFA1448D3E200FDE76E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B0EDF81448D3E200FDE76E /* InfoPlist.strings */; };
+		04B0EDFC1448D3E200FDE76E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0EDFB1448D3E200FDE76E /* main.m */; };
+		04B0EE001448D3E200FDE76E /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0EDFF1448D3E200FDE76E /* RSAppDelegate.m */; };
+		04B0EE031448D3E300FDE76E /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0EE021448D3E300FDE76E /* RSViewController.m */; };
+		04B0EE061448D3E300FDE76E /* RSViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */; };
+		04B0EE091448D3E300FDE76E /* RSViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */; };
+		04B0EE101448D40200FDE76E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EE0F1448D40200FDE76E /* AudioToolbox.framework */; };
+		04B0EE121448D40B00FDE76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EE111448D40B00FDE76E /* SystemConfiguration.framework */; };
+		04B0EE161448D4C800FDE76E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0EE151448D4C800FDE76E /* Reachability.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reno_arch_244x183.jpg; sourceTree = "<group>"; };
+		0481D9041448F27700EC00BF /* Reno_arch_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reno_arch_57.png; sourceTree = "<group>"; };
+		0481D9091448F8E700EC00BF /* CameraViewController-iphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CameraViewController-iphone.h"; sourceTree = "<group>"; };
+		0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CameraViewController-iphone.m"; sourceTree = "<group>"; };
+		0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CameraViewController-iphone.xib"; sourceTree = "<group>"; };
+		0481D90E1448F90300EC00BF /* CmaeraViewController-iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CmaeraViewController-iPad.h"; sourceTree = "<group>"; };
+		0481D90F1448F90300EC00BF /* CmaeraViewController-iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CmaeraViewController-iPad.m"; sourceTree = "<group>"; };
+		0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CmaeraViewController-iPad.xib"; sourceTree = "<group>"; };
+		0481D9131448F93C00EC00BF /* LocationViewController-iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocationViewController-iPhone.h"; sourceTree = "<group>"; };
+		0481D9141448F93C00EC00BF /* LocationViewController-iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocationViewController-iPhone.m"; sourceTree = "<group>"; };
+		0481D9151448F93C00EC00BF /* LocationViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LocationViewController-iPhone.xib"; sourceTree = "<group>"; };
+		0481D9181448F96B00EC00BF /* LocationViewController-iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocationViewController-iPad.h"; sourceTree = "<group>"; };
+		0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocationViewController-iPad.m"; sourceTree = "<group>"; };
+		0481D91A1448F96B00EC00BF /* LocationViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LocationViewController-iPad.xib"; sourceTree = "<group>"; };
+		0481D91F1448FAF600EC00BF /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		0481D9201448FAF600EC00BF /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		0481D9211448FAF600EC00BF /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		0481D9221448FAF600EC00BF /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		0481D9231448FAF600EC00BF /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		0481D9241448FAF600EC00BF /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		0481D9251448FAF600EC00BF /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		0481D9261448FAF600EC00BF /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		0481D9271448FAF600EC00BF /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		0481D9281448FAF600EC00BF /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		0481D9291448FAF600EC00BF /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		0481D92A1448FAF600EC00BF /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		0481D92B1448FAF600EC00BF /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		0481D92C1448FAF600EC00BF /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		0481D92D1448FAF600EC00BF /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		0481D92E1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		0481D92F1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		0481D9301448FAF600EC00BF /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		0481D9311448FAF600EC00BF /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		0481D9321448FAF600EC00BF /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		0481D9331448FAF600EC00BF /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		0481D9341448FAF600EC00BF /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		0481D9351448FAF600EC00BF /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		0481D9361448FAF600EC00BF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		0481D9371448FAF600EC00BF /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		0481D95C1449087600EC00BF /* SuggestionRetrieveOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuggestionRetrieveOperation.m; path = "Reno Suggestions/SuggestionRetrieveOperation.m"; sourceTree = "<group>"; };
+		0481D95D1449087600EC00BF /* SugggestionRetrieveOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SugggestionRetrieveOperation.h; path = "Reno Suggestions/SugggestionRetrieveOperation.h"; sourceTree = "<group>"; };
+		04B0EDEB1448D3E200FDE76E /* Reno Suggestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reno Suggestions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B0EDEF1448D3E200FDE76E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		04B0EDF11448D3E200FDE76E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04B0EDF31448D3E200FDE76E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		04B0EDF71448D3E200FDE76E /* Reno Suggestions-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reno Suggestions-Info.plist"; sourceTree = "<group>"; };
+		04B0EDF91448D3E200FDE76E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04B0EDFB1448D3E200FDE76E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04B0EDFD1448D3E200FDE76E /* Reno Suggestions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reno Suggestions-Prefix.pch"; sourceTree = "<group>"; };
+		04B0EDFE1448D3E200FDE76E /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
+		04B0EDFF1448D3E200FDE76E /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
+		04B0EE011448D3E300FDE76E /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
+		04B0EE021448D3E300FDE76E /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
+		04B0EE051448D3E300FDE76E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RSViewController_iPhone.xib; sourceTree = "<group>"; };
+		04B0EE081448D3E300FDE76E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RSViewController_iPad.xib; sourceTree = "<group>"; };
+		04B0EE0F1448D40200FDE76E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		04B0EE111448D40B00FDE76E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		04B0EE141448D4C800FDE76E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04B0EE151448D4C800FDE76E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		04B0EE171448D4F500FDE76E /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDefinitions.h; path = "Reno Suggestions/CommonDefinitions.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04B0EDE81448D3E200FDE76E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B0EE121448D40B00FDE76E /* SystemConfiguration.framework in Frameworks */,
+				04B0EE101448D40200FDE76E /* AudioToolbox.framework in Frameworks */,
+				04B0EDF01448D3E200FDE76E /* UIKit.framework in Frameworks */,
+				04B0EDF21448D3E200FDE76E /* Foundation.framework in Frameworks */,
+				04B0EDF41448D3E200FDE76E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0481D8FC1448F09400EC00BF /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */,
+				0481D9041448F27700EC00BF /* Reno_arch_57.png */,
+			);
+			name = Art;
+			sourceTree = "<group>";
+		};
+		0481D91D1448F9B200EC00BF /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */,
+				04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */,
+				0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */,
+				0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */,
+				0481D9151448F93C00EC00BF /* LocationViewController-iPhone.xib */,
+				0481D91A1448F96B00EC00BF /* LocationViewController-iPad.xib */,
+			);
+			name = XIBs;
+			path = "Reno Suggestions";
+			sourceTree = "<group>";
+		};
+		0481D91E1448FA0200EC00BF /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0481D91F1448FAF600EC00BF /* NSObject+SBJson.h */,
+				0481D9201448FAF600EC00BF /* NSObject+SBJson.m */,
+				0481D9211448FAF600EC00BF /* SBJson.h */,
+				0481D9221448FAF600EC00BF /* SBJsonParser.h */,
+				0481D9231448FAF600EC00BF /* SBJsonParser.m */,
+				0481D9241448FAF600EC00BF /* SBJsonStreamParser.h */,
+				0481D9251448FAF600EC00BF /* SBJsonStreamParser.m */,
+				0481D9261448FAF600EC00BF /* SBJsonStreamParserAccumulator.h */,
+				0481D9271448FAF600EC00BF /* SBJsonStreamParserAccumulator.m */,
+				0481D9281448FAF600EC00BF /* SBJsonStreamParserAdapter.h */,
+				0481D9291448FAF600EC00BF /* SBJsonStreamParserAdapter.m */,
+				0481D92A1448FAF600EC00BF /* SBJsonStreamParserState.h */,
+				0481D92B1448FAF600EC00BF /* SBJsonStreamParserState.m */,
+				0481D92C1448FAF600EC00BF /* SBJsonStreamWriter.h */,
+				0481D92D1448FAF600EC00BF /* SBJsonStreamWriter.m */,
+				0481D92E1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.h */,
+				0481D92F1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.m */,
+				0481D9301448FAF600EC00BF /* SBJsonStreamWriterState.h */,
+				0481D9311448FAF600EC00BF /* SBJsonStreamWriterState.m */,
+				0481D9321448FAF600EC00BF /* SBJsonTokeniser.h */,
+				0481D9331448FAF600EC00BF /* SBJsonTokeniser.m */,
+				0481D9341448FAF600EC00BF /* SBJsonUTF8Stream.h */,
+				0481D9351448FAF600EC00BF /* SBJsonUTF8Stream.m */,
+				0481D9361448FAF600EC00BF /* SBJsonWriter.h */,
+				0481D9371448FAF600EC00BF /* SBJsonWriter.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		04B0EDE01448D3E200FDE76E = {
+			isa = PBXGroup;
+			children = (
+				04B0EE171448D4F500FDE76E /* CommonDefinitions.h */,
+				0481D8FC1448F09400EC00BF /* Art */,
+				04B0EDF51448D3E200FDE76E /* Reno Suggestions */,
+				0481D91D1448F9B200EC00BF /* XIBs */,
+				0481D91E1448FA0200EC00BF /* JSON */,
+				04B0EE131448D4A500FDE76E /* Connectivity */,
+				04B0EDF61448D3E200FDE76E /* Supporting Files */,
+				04B0EDEE1448D3E200FDE76E /* Frameworks */,
+				04B0EDEC1448D3E200FDE76E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04B0EDEC1448D3E200FDE76E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04B0EDEB1448D3E200FDE76E /* Reno Suggestions.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04B0EDEE1448D3E200FDE76E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04B0EE0F1448D40200FDE76E /* AudioToolbox.framework */,
+				04B0EE111448D40B00FDE76E /* SystemConfiguration.framework */,
+				04B0EDEF1448D3E200FDE76E /* UIKit.framework */,
+				04B0EDF11448D3E200FDE76E /* Foundation.framework */,
+				04B0EDF31448D3E200FDE76E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04B0EDF51448D3E200FDE76E /* Reno Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				04B0EDFE1448D3E200FDE76E /* RSAppDelegate.h */,
+				04B0EDFF1448D3E200FDE76E /* RSAppDelegate.m */,
+				04B0EE011448D3E300FDE76E /* RSViewController.h */,
+				04B0EE021448D3E300FDE76E /* RSViewController.m */,
+				0481D9091448F8E700EC00BF /* CameraViewController-iphone.h */,
+				0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */,
+				0481D90E1448F90300EC00BF /* CmaeraViewController-iPad.h */,
+				0481D90F1448F90300EC00BF /* CmaeraViewController-iPad.m */,
+				0481D9131448F93C00EC00BF /* LocationViewController-iPhone.h */,
+				0481D9141448F93C00EC00BF /* LocationViewController-iPhone.m */,
+				0481D9181448F96B00EC00BF /* LocationViewController-iPad.h */,
+				0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */,
+			);
+			path = "Reno Suggestions";
+			sourceTree = "<group>";
+		};
+		04B0EDF61448D3E200FDE76E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04B0EDF71448D3E200FDE76E /* Reno Suggestions-Info.plist */,
+				04B0EDF81448D3E200FDE76E /* InfoPlist.strings */,
+				04B0EDFB1448D3E200FDE76E /* main.m */,
+				04B0EDFD1448D3E200FDE76E /* Reno Suggestions-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = "Reno Suggestions";
+			sourceTree = "<group>";
+		};
+		04B0EE131448D4A500FDE76E /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				04B0EE141448D4C800FDE76E /* Reachability.h */,
+				04B0EE151448D4C800FDE76E /* Reachability.m */,
+				0481D95C1449087600EC00BF /* SuggestionRetrieveOperation.m */,
+				0481D95D1449087600EC00BF /* SugggestionRetrieveOperation.h */,
+			);
+			name = Connectivity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04B0EDEA1448D3E200FDE76E /* Reno Suggestions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B0EE0C1448D3E300FDE76E /* Build configuration list for PBXNativeTarget "Reno Suggestions" */;
+			buildPhases = (
+				04B0EDE71448D3E200FDE76E /* Sources */,
+				04B0EDE81448D3E200FDE76E /* Frameworks */,
+				04B0EDE91448D3E200FDE76E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reno Suggestions";
+			productName = "Reno Suggestions";
+			productReference = 04B0EDEB1448D3E200FDE76E /* Reno Suggestions.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04B0EDE21448D3E200FDE76E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Apps42, Ltd.";
+			};
+			buildConfigurationList = 04B0EDE51448D3E200FDE76E /* Build configuration list for PBXProject "Reno Suggestions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04B0EDE01448D3E200FDE76E;
+			productRefGroup = 04B0EDEC1448D3E200FDE76E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04B0EDEA1448D3E200FDE76E /* Reno Suggestions */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04B0EDE91448D3E200FDE76E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B0EDFA1448D3E200FDE76E /* InfoPlist.strings in Resources */,
+				04B0EE061448D3E300FDE76E /* RSViewController_iPhone.xib in Resources */,
+				04B0EE091448D3E300FDE76E /* RSViewController_iPad.xib in Resources */,
+				0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */,
+				0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */,
+				0481D90D1448F8E700EC00BF /* CameraViewController-iphone.xib in Resources */,
+				0481D9121448F90300EC00BF /* CmaeraViewController-iPad.xib in Resources */,
+				0481D9171448F93C00EC00BF /* LocationViewController-iPhone.xib in Resources */,
+				0481D91C1448F96B00EC00BF /* LocationViewController-iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04B0EDE71448D3E200FDE76E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B0EDFC1448D3E200FDE76E /* main.m in Sources */,
+				04B0EE001448D3E200FDE76E /* RSAppDelegate.m in Sources */,
+				04B0EE031448D3E300FDE76E /* RSViewController.m in Sources */,
+				04B0EE161448D4C800FDE76E /* Reachability.m in Sources */,
+				0481D90C1448F8E700EC00BF /* CameraViewController-iphone.m in Sources */,
+				0481D9111448F90300EC00BF /* CmaeraViewController-iPad.m in Sources */,
+				0481D9161448F93C00EC00BF /* LocationViewController-iPhone.m in Sources */,
+				0481D91B1448F96B00EC00BF /* LocationViewController-iPad.m in Sources */,
+				0481D9381448FAF600EC00BF /* NSObject+SBJson.m in Sources */,
+				0481D9391448FAF600EC00BF /* SBJsonParser.m in Sources */,
+				0481D93A1448FAF600EC00BF /* SBJsonStreamParser.m in Sources */,
+				0481D93B1448FAF600EC00BF /* SBJsonStreamParserAccumulator.m in Sources */,
+				0481D93C1448FAF600EC00BF /* SBJsonStreamParserAdapter.m in Sources */,
+				0481D93D1448FAF600EC00BF /* SBJsonStreamParserState.m in Sources */,
+				0481D93E1448FAF600EC00BF /* SBJsonStreamWriter.m in Sources */,
+				0481D93F1448FAF600EC00BF /* SBJsonStreamWriterAccumulator.m in Sources */,
+				0481D9401448FAF600EC00BF /* SBJsonStreamWriterState.m in Sources */,
+				0481D9411448FAF600EC00BF /* SBJsonTokeniser.m in Sources */,
+				0481D9421448FAF600EC00BF /* SBJsonUTF8Stream.m in Sources */,
+				0481D9431448FAF600EC00BF /* SBJsonWriter.m in Sources */,
+				0481D95E1449087600EC00BF /* SuggestionRetrieveOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04B0EDF81448D3E200FDE76E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B0EDF91448D3E200FDE76E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B0EE051448D3E300FDE76E /* en */,
+			);
+			name = RSViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B0EE081448D3E300FDE76E /* en */,
+			);
+			name = RSViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04B0EE0A1448D3E300FDE76E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04B0EE0B1448D3E300FDE76E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Apps42 Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Apps42 Ltd.";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "504E48D2-676A-493E-A68E-F6050312613E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "504E48D2-676A-493E-A68E-F6050312613E";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04B0EE0D1448D3E300FDE76E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Reno Suggestions/Reno Suggestions-Prefix.pch";
+				INFOPLIST_FILE = "Reno Suggestions/Reno Suggestions-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04B0EE0E1448D3E300FDE76E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Apps42 Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Apps42 Ltd.";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Reno Suggestions/Reno Suggestions-Prefix.pch";
+				INFOPLIST_FILE = "Reno Suggestions/Reno Suggestions-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "504E48D2-676A-493E-A68E-F6050312613E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "504E48D2-676A-493E-A68E-F6050312613E";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04B0EDE51448D3E200FDE76E /* Build configuration list for PBXProject "Reno Suggestions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B0EE0A1448D3E300FDE76E /* Debug */,
+				04B0EE0B1448D3E300FDE76E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04B0EE0C1448D3E300FDE76E /* Build configuration list for PBXNativeTarget "Reno Suggestions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B0EE0D1448D3E300FDE76E /* Debug */,
+				04B0EE0E1448D3E300FDE76E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04B0EDE21448D3E200FDE76E /* Project object */;
+}
