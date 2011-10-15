@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, BetaRenoActivity!</string>
+    <string name="app_name">BetaReno</string>
+    
+    <string name="home_btn_create">Create</string>
+    <string name="home_btn_update">Update</string>
+    
+    <string name="submit_txt_title">Submit an Idea!</string>
+    <string name="submit_txt_what">What should be done?</string>
+    <string name="submit_txt_where">Where is this at?</string>
+    <string name="submit_txt_who">Who should work on it?</string>
+    <string name="submit_txt_picture">Before picture</string>
+    <string name="submit_btn_picture">Select</string>
+    <string name="submit_chk_planned">Is this planned?</string>
+    
+    
+</resources>
