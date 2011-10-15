@@ -12,6 +12,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 @class RSViewController;
+@class MapView;
 
 @interface RSAppDelegate : UIResponder <UIApplicationDelegate> {
     
@@ -24,7 +25,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) RSViewController *viewController;
+@property (strong, nonatomic) MapView *viewController;
 
 //class methods
 +(RSAppDelegate *)sharedAppController;
