@@ -7,14 +7,18 @@
 //
 
 #import "RSViewController.h"
+#import "AddressAnnotation.h"
 
 @implementation RSViewController
 
 @synthesize cameraButton;
 @synthesize locationButton;
 @synthesize suggestionButton;
-@synthesize search;
-@synthesize suggestionsTable;
+@synthesize mapView;
+@synthesize longitude;
+@synthesize latitude;
+@synthesize locationManager;
+@synthesize startingPoint;
 
 - (void)didReceiveMemoryWarning
 {
@@ -23,6 +27,43 @@
 }
 
 //actions
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation{
+    MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
+    annView.pinColor = MKPinAnnotationColorGreen;
+    annView.animatesDrop=TRUE;
+    annView.canShowCallout = YES;
+    annView.calloutOffset = CGPointMake(-5, 5);
+    return annView;
+}
+
+-(void) showAddress {
+    
+	MKCoordinateRegion region;
+	MKCoordinateSpan span;
+	span.latitudeDelta = 0.2;
+	span.longitudeDelta = 0.2;
+	
+	CLLocationCoordinate2D cord;
+	//cord.longitude = -119.813803;
+	//cord.latitude = 39.529633; 
+	cord.longitude = [longitude doubleValue];
+	cord.latitude = [latitude doubleValue];
+	region.span = span;
+	region.center = cord;
+	AddressAnnotation *addAnnotation = nil;
+    
+	if(addAnnotation != nil) {
+		[mapView removeAnnotation:addAnnotation];
+		[addAnnotation release];
+		addAnnotation = nil;
+	}
+	addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:cord];
+	[mapView addAnnotation:addAnnotation];
+	[mapView setRegion:region animated:TRUE];
+	[mapView regionThatFits:region];
+	
+}
 
 -(IBAction)cameraButtonPressed:(id)sender;
 {
@@ -39,49 +80,18 @@
 
 //Table View Protocols
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
-}
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-	return 15;
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    static NSString *CellIdentifier = @"Cell";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
- 
-    // Set up the cell...
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    cell.textLabel.text = [NSString  stringWithFormat:@"Cell Row #%d", [indexPath row]];
-
-    return cell;
-}
-	 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // open a alert with an OK and cancel button
-    NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-}
 
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[self showAddress];
+    // Do any additional setup after loading the view, typically from a nib.
     
     // get the most current emailed suggestions
 }

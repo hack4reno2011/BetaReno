@@ -7,23 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface RSViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+
+@interface RSViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>{
     
-    UITableView*            suggestionsTable;
-    UISearchBar*            search;
+    
     UIButton*               cameraButton;
     UIButton*               locationButton;
     UIButton*               suggestionButton;
+    MKMapView*              mapView; 
+    NSNumber*               longitude;
+	NSNumber*               latitude;
+    CLLocationManager*      locationManager;
+	CLLocation*             startingPoint;
+    
     
 }
 
 @property (nonatomic, retain)   IBOutlet UIButton*      cameraButton;
 @property (nonatomic, retain)   IBOutlet UIButton*      locationButton;
 @property (nonatomic, retain)   IBOutlet UIButton*      suggestionButton;
-@property (nonatomic, retain)   IBOutlet UISearchBar*   search;
-@property (nonatomic, retain)   IBOutlet UITableView*   suggestionsTable;
-
+@property (nonatomic, retain)   IBOutlet MKMapView*     mapView;
+@property (nonatomic, retain) NSNumber *longitude;
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) CLLocation *startingPoint;
 
 -(IBAction)cameraButtonPressed:(id)sender;
 -(IBAction)locationButtonPressed:(id)sender;
