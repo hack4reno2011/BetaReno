@@ -123,7 +123,7 @@ class BetaReno {
 				$idea['who'] = $actor_terms[0]->name;
 			}
 
-			$when = get_post_meta( $idea_location->object_id, 'when', true );
+			$idea['when'] = get_post_meta( $idea_location->object_id, 'when', true );
 
 			// TODO: votes
 
@@ -139,7 +139,7 @@ class BetaReno {
 				list( $idea['before_photo_url'], $width, $height ) = wp_get_attachment_image_src( $before_photo_attachments[0]->ID );
 			}
 
-			$after_photo_url = '';
+			$idea['after_photo_url'] = '';
 			$after_photo_attachments = get_children( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
