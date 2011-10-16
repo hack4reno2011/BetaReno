@@ -51,6 +51,7 @@
 		04B0EE101448D40200FDE76E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EE0F1448D40200FDE76E /* AudioToolbox.framework */; };
 		04B0EE121448D40B00FDE76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EE111448D40B00FDE76E /* SystemConfiguration.framework */; };
 		04B0EE161448D4C800FDE76E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0EE151448D4C800FDE76E /* Reachability.m */; };
+		04E1A554144A6FDE008F9344 /* AllIdeas.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1A553144A6FDE008F9344 /* AllIdeas.m */; };
 		62997E4C144A427F006E65BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62997E4B144A427F006E65BF /* CoreLocation.framework */; };
 		62B9628D144A3BCE00CFE95A /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,8 @@
 		04B0EE141448D4C800FDE76E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		04B0EE151448D4C800FDE76E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		04B0EE171448D4F500FDE76E /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDefinitions.h; path = "Reno Suggestions/CommonDefinitions.h"; sourceTree = "<group>"; };
+		04E1A552144A6FDE008F9344 /* AllIdeas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIdeas.h; sourceTree = "<group>"; };
+		04E1A553144A6FDE008F9344 /* AllIdeas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIdeas.m; sourceTree = "<group>"; };
 		62997E4B144A427F006E65BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62B9628B144A3BCE00CFE95A /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
 		62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */,
 				0440D43A144A6391007014E6 /* Idea.h */,
 				0440D43B144A6392007014E6 /* Idea.m */,
+				04E1A552144A6FDE008F9344 /* AllIdeas.h */,
+				04E1A553144A6FDE008F9344 /* AllIdeas.m */,
 			);
 			path = "Reno Suggestions";
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				041A7DBC144A3553008AC130 /* ListViewController.m in Sources */,
 				62B9628D144A3BCE00CFE95A /* AddressAnnotation.m in Sources */,
 				0440D43C144A6392007014E6 /* Idea.m in Sources */,
+				04E1A554144A6FDE008F9344 /* AllIdeas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
