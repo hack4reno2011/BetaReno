@@ -14,6 +14,9 @@
 {
     [super init];
     if (self) {
+        idea = [[NSDictionary alloc]init];
+        
+        /*
         [what setString:@""];
         [who setString:@""];
         [when setString:@""];
@@ -23,6 +26,8 @@
         [afterPictureURL setString:@""];
         beforePicture = nil;
         afterPicture = nil;
+         
+         */
         return self;
     }
     return nil;

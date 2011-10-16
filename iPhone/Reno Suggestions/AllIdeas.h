@@ -22,11 +22,13 @@
 -(id) copyWithZone:(NSZone *)zone;
 -(oneway void) release;
 
--(id) initIdeas:(NSString *)longitude 
+-(id) initIdeas;
+
+/*:(NSString *)longitude 
     withLat:(NSString *)lat 
         andRadius:(NSString *)radius;
 
-
+*/
  
 -(NSMutableArray *) getListOfIdeas:(NSString *)longitude 
                            withLat:(NSString *)lat 

@@ -50,7 +50,7 @@ static AllIdeas *sharedIdeas;
 {
 
     [super init];
-    ideasArray = [self getListOfIdeas:longitude withLat:lat andRadius:radius];
+    //ideasArray = [self getListOfIdeas:longitude withLat:lat andRadius:radius];
     return self;
 }
 
