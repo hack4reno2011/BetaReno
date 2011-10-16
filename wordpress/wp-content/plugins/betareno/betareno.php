@@ -56,7 +56,7 @@ class BetaReno {
 				'singular_name' => 'Idea',
 				'add_new' => 'Add New',
 				'add_new_item' => 'Add New Idea',
-				'edit_item' => 'Edit Post',
+				'edit_item' => 'Edit Idea',
 				'new_item' => 'New Idea',
 				'view_item' => 'View Idea',
 				'search_items' => 'Search Ideas',
