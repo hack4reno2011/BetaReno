@@ -38,6 +38,7 @@ after_photo=(multipart encoded binary or empty)
     NSData*                 afterPicture;
     */
 }
+@property (nonatomic, retain) NSDictionary* idea;
 
 -(id)initIdea;
 

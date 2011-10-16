@@ -9,6 +9,8 @@
 #import "RSViewController.h"
 #import "AddressAnnotation.h"
 #import "submitViewController.h"
+#import "AllIdeas.h"
+#import "Idea.h"
 
 @implementation RSViewController
 
@@ -50,16 +52,18 @@
 
 -(void) showAddress {
     
+    
+    
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
 	span.latitudeDelta = 0.2;
 	span.longitudeDelta = 0.2;
 	
 	CLLocationCoordinate2D cord;
-	//cord.longitude = -119.813803;
-	//cord.latitude = 39.529633; 
-	cord.longitude = [longitude doubleValue];
-	cord.latitude = [latitude doubleValue];
+	cord.longitude = -119.813803;
+	cord.latitude = 39.529633; 
+	//cord.longitude = [longitude doubleValue];
+	//cord.latitude = [latitude doubleValue];
     NSLog(@"Latitude:%f",cord.latitude);
 	region.span = span;
 	region.center = cord;
@@ -70,6 +74,24 @@
 		[addAnnotation release];
 		addAnnotation = nil;
 	}
+    
+    AllIdeas *allIdeas = [[AllIdeas alloc] initIdeas];
+    
+    
+    
+    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", cord.longitude] withLat:[NSString stringWithFormat:@"%lf", cord.latitude] andRadius:@"5"];
+    
+    for(int i = 0; i < [arrayIdeas count]; ++i)
+    {
+        NSDictionary *dictIdea = [arrayIdeas objectAtIndex:i];
+   //     cord.longitude = [dictIdea objectForKey:@"longitude"];
+     //   cord.latitude = [latitude 
+
+        NSLog([dictIdea objectForKey:@"who"]);
+        
+    }
+    
+    
     
 	addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:cord];
 	addAnnotation.mTitle = @"TEST123";

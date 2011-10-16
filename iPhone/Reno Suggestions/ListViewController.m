@@ -73,9 +73,10 @@
     }
     
     // Set up the cell...
-    Idea *thisIdea = [ideasList objectAtIndex:indexPath.row];
+    Idea* thisIdea = [ideasList objectAtIndex:indexPath.row];
+    NSDictionary* ideaDict = thisIdea.idea;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    cell.textLabel.text = [thisIdea->idea objectForKey:@"what"];
+    cell.textLabel.text = [ideaDict objectForKey:@"what"];
     
     return cell;
 }
@@ -104,7 +105,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     ideasList = [[AllIdeas sharedIdeas]getListOfIdeas:currentLongitude withLat:currentLatitude andRadius:kRadius];
-
+    NSLog(@"JJA debug ideasList = %@",ideasList);
 
 }
 
