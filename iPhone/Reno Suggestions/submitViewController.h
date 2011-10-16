@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "SBJson.h"
+#import "Idea.h"
 
 @interface submitViewController : UIViewController 
-<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, 
+    UITextFieldDelegate, UITextViewDelegate>
 
 {
+    Idea*   myNewIdea;
     
+    IBOutlet    UITextView*     whatToDo;
+    IBOutlet    UITextField*    whenToDoIt;
+    IBOutlet    UITextField*    whoShouldDoIt;
+    IBOutlet    UITextView*     whereToDoIt;
     
     UIButton*                   cancelButton;
     UIButton*                   cameraButton;
@@ -27,6 +34,11 @@
 @property (nonatomic, retain) IBOutlet UIButton* cancelButton;
 @property (nonatomic, retain) IBOutlet UIButton* cameraButton;
 @property (nonatomic, retain) IBOutlet UIButton* submitButton;
+@property (nonatomic, retain) UITextView*   whatToDo;
+@property (nonatomic, retain) UITextField*  whenToDoIt;
+@property (nonatomic, retain) UITextField*  whoShouldDoIt;
+@property (nonatomic, retain) UITextView*   whereToDoIt;
+@property (nonatomic, retain) Idea*         myNewIdea;
 
 -(IBAction) takeAPictureButtonPressed;
 -(IBAction) cancelButtonPressed;

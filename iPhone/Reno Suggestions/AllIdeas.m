@@ -19,7 +19,7 @@ static AllIdeas *sharedIdeas;
 +(AllIdeas *) sharedIdeas
 {
     if (!sharedIdeas) {
-        sharedIdeas  = [[AllIdeas alloc]init];
+        sharedIdeas  = [[[AllIdeas alloc]init]retain];
     }
     return sharedIdeas;
 }
@@ -48,7 +48,6 @@ static AllIdeas *sharedIdeas;
 {
 
     [super init];
-    //ideasArray = [self getListOfIdeas:longitude withLat:lat andRadius:radius];
     return self;
 }
 
@@ -59,8 +58,8 @@ static AllIdeas *sharedIdeas;
     
     [ideasArray removeAllObjects];
     // - get all data from betareno.cyberhobo.net 
-    longitude = @"-119.813803";
-	lat = @"39.529633";
+    //longitude = @"-119.813803";
+	//lat = @"39.529633";
     
      NSURL*	url	= [NSURL URLWithString:[NSString stringWithFormat:@"%@lat=%@&lng=%@&r=%@", 
                                         kSuggestionsURL,lat, longitude, radius]];
@@ -75,7 +74,7 @@ static AllIdeas *sharedIdeas;
          NSString*	respString   = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
          NSDictionary* doc = [respString JSONValue];
          NSLog(@"JJA debug resp doc: %@",doc);
-         ideasArray = [doc objectForKey:@"ideas"];
+         ideasArray = [[doc objectForKey:@"ideas"]retain];
          NSLog(@"JJA debug ideas array: %@",ideasArray);
 
          //debug code

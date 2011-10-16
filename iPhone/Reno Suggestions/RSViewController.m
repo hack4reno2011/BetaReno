@@ -50,7 +50,6 @@
 		self.startingPoint = newLocation;
 	latitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.latitude];
 	longitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.longitude];
-
 }
 
 -(void) showAddress {
@@ -79,7 +78,7 @@
 	region.center = cord;
 	
     
-    AllIdeas *allIdeas = [[AllIdeas alloc] initIdeas];
+    AllIdeas *allIdeas = [[[AllIdeas alloc] initIdeas]retain];
     
     
     
@@ -122,8 +121,8 @@
 {
     ListViewController *vc = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
 
-    vc.currentLongitude = [NSString stringWithFormat:@"%lf", longitude];
-    vc.currentLatitude = [NSString stringWithFormat:@"%lf", latitude];
+    vc.currentLongitude = [NSString stringWithFormat:@"%lf", [longitude doubleValue]];
+    vc.currentLatitude = [NSString stringWithFormat:@"%lf", [latitude doubleValue]];
 
     
     

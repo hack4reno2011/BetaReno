@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "submitViewController.h"
+#import "ShowIdeaViewController.h"
 #import "AllIdeas.h"
 #import "Idea.h"
 
