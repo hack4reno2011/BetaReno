@@ -17,7 +17,7 @@ class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
 
 	public interface OnBalloonTapListener
 	{
-		public void onBalloonTap(int index);
+		public void onBalloonTap(int index, OverlayItem item);
 	}
 
 	public CustomBalloonDrawer(Drawable defaultMarker, MapView mapView)
@@ -60,21 +60,10 @@ class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
 		boundCenterBottom(marker);
 	}
 	
-	//TODO - I dont know about this
-	/*
 	@Override
 	protected boolean onBalloonTap(int index, OverlayItem item) 
 	{
 		mListener.onBalloonTap(index, item);
-		return true;
-	}
-	*/
-	
-	//TODO - I dont know about this
-	@Override
-	protected boolean onBalloonTap(int index) 
-	{
-		mListener.onBalloonTap(index);
 		return true;
 	}
 }

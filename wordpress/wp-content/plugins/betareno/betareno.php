@@ -31,6 +31,7 @@ add_action( 'init', array( 'BetaReno', 'action_init' ) );
 class BetaReno {
 
 	static public function action_init() {
+
 		self::register_types();
 
 		// Web service handlers
@@ -129,24 +130,26 @@ class BetaReno {
 
 			// Photos
 			$idea['before_photo_url'] = '';
-			$before_photo_attachments = get_children( array(
+			$before_photo_attachments = get_posts( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
 				'post_parent' => $idea_location->object_id,
-				'post_title' => 'Before'
+				'meta_key' => 'photo_type',
+				'meta_value' => 'before'
 			) );
-			if ( $before_photo_attachments ) {
+			if ( !empty( $before_photo_attachments ) ) {
 				list( $idea['before_photo_url'], $width, $height ) = wp_get_attachment_image_src( $before_photo_attachments[0]->ID );
 			}
 
 			$idea['after_photo_url'] = '';
-			$after_photo_attachments = get_children( array(
+			$after_photo_attachments = get_posts( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
 				'post_parent' => $idea_location->object_id,
-				'post_title' => 'After'
+				'meta_key' => 'photo_type',
+				'meta_value' => 'after'
 			) );
-			if ( $after_photo_attachments ) {
+			if ( !empty( $after_photo_attachments ) )  {
 				list( $idea['after_photo_url'], $width, $height ) = wp_get_attachment_image_src( $after_photo_attachments[0]->ID );
 			}
 
@@ -221,7 +224,12 @@ class BetaReno {
 		if ( isset( $_POST['when'] ) ) {
 			$time = strtotime( $_POST['when'] );
 			if ( $time ) {
-				$when = date( 'Y-m-d h:i:00 e', $time );
+				// Use Reno's timezone
+				$dtzone = new DateTimeZone( 'America/Los Angeles' );
+				$date = date( 'r', $time );
+				$dtime = new DateTime( $date );
+				$dtime->setTimezone( $dtzone );
+				$when = $dtime->format( 'Y-m-d h:i:00 e' );
 				update_post_meta( $post_id, 'when', $when );
 			}
 		}
@@ -231,6 +239,7 @@ class BetaReno {
 		if ( isset( $_FILES['before_photo'] ) ) {
 			$before_photo_id = media_handle_upload( 'before_photo',  $post_id, array( 'post_title' => 'Before' ) );
 			if ( !is_wp_error( $before_photo_id ) ) {
+				update_post_meta( $before_photo_id, 'photo_type', 'before' );
 				list( $before_photo_url, $width, $height ) = wp_get_attachment_image_src( $before_photo_id );
 			}
 		}
@@ -238,6 +247,7 @@ class BetaReno {
 		if ( isset( $_FILES['after_photo'] ) ) {
 			$after_photo_id = media_handle_upload( 'after_photo',  $post_id, array( 'post_title' => 'After' ) );
 			if ( !is_wp_error( $after_photo_id ) ) {
+				update_post_meta( $after_photo_id, 'photo_type', 'after' );
 				list( $after_photo_url, $width, $height ) = wp_get_attachment_image_src( $after_photo_id );
 			}
 		}
