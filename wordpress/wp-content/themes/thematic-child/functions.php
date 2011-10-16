@@ -35,4 +35,30 @@ function childtheme_override_blogdescription() {
 function childtheme_override_access() {
 	// No nav menu
 }
-?>
+
+function childtheme_override_single_post() { ?>
+
+	<?php $actors = wp_get_object_terms( get_the_ID(), 'actor' ); ?>
+
+		<h1><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+		<p><strong>Who:</strong> <?php echo empty( $actors ) ? '' : $actors[0]->name; ?></p>
+	<?php $when = get_post_meta( get_the_ID(), 'when', true ); ?>
+	<?php if ( $when ) : ?>
+		<p><strong>When:</strong> <?php echo $when; ?></p>
+	<?php endif; ?>
+
+	<?php
+		$before_photo_attachments = get_posts( array(
+			'post_type' => 'attachment',
+			'post_mime_type' => 'image',
+			'post_parent' => get_the_ID(),
+			'meta_key' => 'photo_type',
+			'meta_value' => 'before'
+		) );
+		if ( !empty( $before_photo_attachments ) ) { ?>
+		<p><strong>Before Photo:</strong>
+			<?php echo wp_get_attachment_image( $before_photo_attachments[0]->ID, 'large' ); ?>
+		</p>
+	<?php } ?>
+
+<?php }
