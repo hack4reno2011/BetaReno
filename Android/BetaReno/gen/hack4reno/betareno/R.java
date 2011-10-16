@@ -68,26 +68,35 @@ public final class R {
         public static final int icon=0x7f020004;
     }
     public static final class id {
-        public static final int btnPic=0x7f09000c;
-        public static final int btnSubmit=0x7f09000f;
-        public static final int chkPlan=0x7f09000d;
-        public static final int datePlan=0x7f09000e;
-        public static final int editWhat=0x7f090006;
-        public static final int editWhere=0x7f090008;
-        public static final int home_btn_create=0x7f090000;
-        public static final int home_btn_update=0x7f090001;
-        public static final int linearLayout1=0x7f090003;
-        public static final int scrollView1=0x7f090002;
-        public static final int spinWho=0x7f09000a;
-        public static final int submit_txt_picture=0x7f09000b;
-        public static final int submit_txt_title=0x7f090004;
-        public static final int submit_txt_what=0x7f090005;
-        public static final int submit_txt_where=0x7f090007;
-        public static final int submit_txt_who=0x7f090009;
+        public static final int LinearLayout01=0x7f090005;
+        public static final int RelativeLayout01=0x7f090000;
+        public static final int boxEndPoint=0x7f090002;
+        public static final int boxSeats=0x7f090003;
+        public static final int boxStartPoint=0x7f090001;
+        public static final int btnPic=0x7f090013;
+        public static final int btnSubmit=0x7f090016;
+        public static final int btnVerify=0x7f090004;
+        public static final int chkPlan=0x7f090014;
+        public static final int datePlan=0x7f090015;
+        public static final int editWhat=0x7f09000d;
+        public static final int editWhere=0x7f09000f;
+        public static final int home_btn_create=0x7f090007;
+        public static final int home_btn_update=0x7f090008;
+        public static final int linearLayout1=0x7f09000a;
+        public static final int lstSuggestion=0x7f090006;
+        public static final int scrollView1=0x7f090009;
+        public static final int spinWho=0x7f090011;
+        public static final int submit_txt_picture=0x7f090012;
+        public static final int submit_txt_title=0x7f09000b;
+        public static final int submit_txt_what=0x7f09000c;
+        public static final int submit_txt_where=0x7f09000e;
+        public static final int submit_txt_who=0x7f090010;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int submit=0x7f030001;
+        public static final int createpassengerproposaldialog=0x7f030000;
+        public static final int dialogsuggestion=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int submit=0x7f030003;
     }
     public static final class string {
         public static final int app_name=0x7f060001;

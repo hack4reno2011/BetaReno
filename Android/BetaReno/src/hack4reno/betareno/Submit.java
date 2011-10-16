@@ -1,7 +1,14 @@
 package hack4reno.betareno;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import hack4reno.betareno.CustomMultipartEntity.ProgressListener;
 
@@ -15,6 +22,9 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import com.google.android.maps.GeoPoint;
 
@@ -22,20 +32,25 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -60,6 +75,9 @@ public class Submit extends Activity
 	
 	// Geolocation stuff
 	protected GeoPoint addressLocation = null;
+	
+	// TODO - This crap needs to be a local variable in getLocation() ...guhhhh
+	protected GeoPoint approximateLocationPoint, exactLocationPoint = null;
 	
 
     @Override
@@ -115,15 +133,11 @@ public class Submit extends Activity
 					HelperFunctions.say(submit, getString(R.string.submit_error_where));			
 				// Begin upload
 				else
-				{
-					// Get geolocation of address.  This function will launch a listview that the user selects and picks an address
-					addressLocation = getLocation(editWhere.getText().toString());
+				{	// Get geolocation of address.  This function will launch a listview that the user selects and picks an address
+					addressLocation = getLocation(editWhere.getText().toString());		
+					System.out.println("Hello world!");
 					
-					System.out.println("Hello world");
-				}
-				
-				
-				
+				}			
 			}			
 		});		
     }
@@ -134,17 +148,321 @@ public class Submit extends Activity
     	// given the address that they entered.  
     	
     	// Used to store and sort possible start locations of the user
-    	ArrayAdapter<String> startAddressListAdapter;
-    	ArrayList<String> startAddressList;
-    	ArrayList<SuggestionPoint> dataStartAddressList;
-    	Dialog dialogStartAddressSuggestions = new Dialog(this);
-    	ListView lstStartSuggestions;
+    	final ArrayList<String> startAddressList = new ArrayList<String>();
+    	final ArrayAdapter<String> startAddressListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, startAddressList);
+    	final ArrayList<SuggestionPoint> dataStartAddressList = new ArrayList<SuggestionPoint>();
+    	final Dialog dialogStartAddressSuggestions = new Dialog(submit);
+    	dialogStartAddressSuggestions.setContentView(R.layout.dialogsuggestion);
+    	final ListView lstStartSuggestions = (ListView) dialogStartAddressSuggestions.findViewById(R.id.lstSuggestion);
+    	
+    	final Dialog inputDialog;
+    	LocationManager locationManager;   	
     	
     	
+    	// Create the dialog box
+    	inputDialog = new Dialog(submit);
+		inputDialog.setContentView(R.layout.dialogsuggestion);
+		inputDialog.setTitle("Possible Location Addresses");
+		inputDialog.show();
     	
+		try
+		{
+			// We are going to try and get a fix really fast using last known location.  This helps the service find a relevant result given an address
+			locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+			Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+			approximateLocationPoint = new GeoPoint((int) (lastKnownLocation.getLatitude() * 1000000), (int) (lastKnownLocation.getLongitude() * 1000000));
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
     	
-		return null;    	
+    	// This may return null given if the phone was able to get a location point at some point
+    	if (approximateLocationPoint != null)
+			new GetSuggestions(editWhere.getText().toString(), approximateLocationPoint, dialogStartAddressSuggestions, dataStartAddressList, startAddressList, startAddressListAdapter).execute();
+		else
+			new GetSuggestions(editWhere.getText().toString(), dialogStartAddressSuggestions, dataStartAddressList, startAddressList, startAddressListAdapter).execute();
+
+    	
+		lstStartSuggestions.setAdapter(startAddressListAdapter);    	
+    	lstStartSuggestions.setOnItemClickListener(new OnItemClickListener()
+		{
+			public void onItemClick(AdapterView<?> a, View v, int pos, long id)
+			{
+				editWhere.setText(lstStartSuggestions.getItemAtPosition(pos).toString());
+				// Set the GeoPoints to place on the map!				
+				dialogStartAddressSuggestions.dismiss();
+				exactLocationPoint = dataStartAddressList.get(pos).getPoint();
+				inputDialog.dismiss();
+				
+			}
+		});
+    	
+    	// TODO - MAKE THIS VARIABLE LOCAL MOTHERFUCKER
+    	return exactLocationPoint;		   	
     }
+    
+    // This function pulls possible locations from google maps
+ 	private class GetSuggestions extends AsyncTask<String, Integer, String>
+ 	{
+ 		GeoPoint currentLoc;
+ 		String userInput;
+ 		Dialog dialogStartAddressSuggestions;
+ 		ArrayList<SuggestionPoint> dataStartAddressList;
+ 		ArrayList<String> startAddressList;
+ 		ArrayAdapter<String> startAddressListAdapter;
+
+ 		private static final String ELEMENT_NAME = "name";
+ 		private static final String ELEMENT_ADDRESS = "address";
+ 		private static final String ELEMENT_PLACEMARK = "Placemark";
+ 		private static final String ELEMENT_POINT = "Point";
+ 		private static final String ELEMENT_COORDINATES = "coordinates";
+
+ 		ProgressDialog pd;
+
+ 		/**
+ 		 * Used when the user location is unknown
+ 		 * 
+ 		 * 
+ 		 */
+ 		public GetSuggestions(String input, Dialog dialogStartAddressSuggestions, ArrayList<SuggestionPoint> dataStartAddressList, ArrayList<String> startAddressList, ArrayAdapter<String> startAddressListAdapter)
+ 		{
+ 			this.userInput = input;
+ 			this.dialogStartAddressSuggestions = dialogStartAddressSuggestions;
+ 			this.dataStartAddressList = dataStartAddressList;
+ 			this.startAddressList = startAddressList;
+ 			this.startAddressListAdapter = startAddressListAdapter; 			
+ 		}
+
+ 		/**
+ 		 * Used when the user location is known
+ 		 * 
+ 		 * 
+ 		 */
+ 		public GetSuggestions(String input, GeoPoint p, Dialog dialogStartAddressSuggestions, ArrayList<SuggestionPoint> dataStartAddressList, ArrayList<String> startAddressList, ArrayAdapter<String> startAddressListAdapter)
+ 		{
+ 			this.userInput = input;
+ 			this.currentLoc = p;
+ 			this.dialogStartAddressSuggestions = dialogStartAddressSuggestions;
+ 			this.dataStartAddressList = dataStartAddressList;
+ 			this.startAddressList = startAddressList;
+ 			this.startAddressListAdapter = startAddressListAdapter;
+ 		}
+
+ 		@Override
+ 		protected void onPreExecute()
+ 		{
+ 			pd = ProgressDialog.show(submit, "", "Finding Your Address...");
+ 			pd.show(); 			
+ 		}
+
+ 		@Override
+ 		protected String doInBackground(String... input)
+ 		{
+ 			// TODO - OnRotate, the currenLoc is not being persisted.
+ 			String threadStatus = "success";
+ 			StringBuilder urlString = new StringBuilder();
+ 			urlString.append("http://maps.google.com/maps?hl=en");
+ 			// Get a more specific location result based upon the user's current
+ 			// location from the network pull
+ 			if (currentLoc != null)
+ 			{
+ 				// Latitude,longitude of map centre - Note the order. Only
+ 				// decimal format is accepted.
+ 				urlString.append("&sll=" + currentLoc.getLatitudeE6() / 1E6 + "," + currentLoc.getLongitudeE6() / 1E6);
+ 				// Localizes results to a certain radius. Requires sll or
+ 				// similar center point to work. Units are in miles, but it may
+ 				// be in km for metric countries. Useful in preventing Google
+ 				// from branching out across a city for results, and keeps it
+ 				// confined into the area.
+ 				urlString.append("&radius=50");
+ 				// Query - anything passed in this parameter is treated as if it
+ 				// had been typed into the query box on the maps.google.com
+ 				// page. In particular:
+ 				urlString.append("&q=" + java.net.URLEncoder.encode(userInput));
+ 				// Display, at most, this number of matches. The valid range is
+ 				// 0 to 20 (but 0 is a bit pointless).
+ 				urlString.append("&num=20");
+ 				// Outputs a KML file containing information representing the
+ 				// current map. (works with Normal Searches, Directions and
+ 				// MyMaps)
+ 				urlString.append("&ie=UTF8&0&om=0&output=kml");
+ 			}
+
+ 			// Gets a more generalized location result
+ 			else
+ 			{
+ 				// Query - anything passed in this parameter is treated as if it
+ 				// had been typed into the query box on the maps.google.com
+ 				// page. In particular:
+ 				urlString.append("&q=" + java.net.URLEncoder.encode(userInput));
+ 				// Display, at most, this number of matches. The valid range is
+ 				// 0 to 20 (but 0 is a bit pointless).
+ 				urlString.append("&num=20");
+ 				// Outputs a KML file containing information representing the
+ 				// current map. (works with Normal Searches, Directions and
+ 				// MyMaps)
+ 				urlString.append("&ie=UTF8&0&om=0&output=kml");
+ 			}
+
+ 			try
+ 			{
+ 				URL url = new URL(urlString.toString());
+ 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+ 				connection.setRequestMethod("GET");
+ 				connection.setDoOutput(true);
+ 				connection.setDoInput(true);
+ 				connection.connect();
+ 				parseResponse(connection.getInputStream());
+ 			}
+
+ 			catch (IOException e)
+ 			{
+ 				threadStatus = "internetError";
+ 			}
+
+ 			catch (Exception e)
+ 			{
+				threadStatus = "error";
+ 			}
+ 			return threadStatus;
+ 		}
+
+ 		@Override
+ 		protected void onProgressUpdate(Integer... progress)
+ 		{
+ 		}
+
+ 		@Override
+ 		protected void onPostExecute(String result)
+ 		{
+ 			pd.dismiss();
+
+ 			if (result.toString().equals("success"))
+ 			{
+				dialogStartAddressSuggestions.setTitle("Select a Starting Point");
+ 					dialogStartAddressSuggestions.show();
+ 			} 
+
+ 			
+ 			else if (result.toString().equals("error"))
+ 			{
+ 				new AlertDialog.Builder(submit).setMessage(
+ 							"Unable to find the provided address.  Please include a more specific adress or location.").setTitle(
+ 							"Address Lookup Error");
+ 			}
+ 
+ 			else if (result.toString().equals("internetError"))
+ 			{
+ 				new AlertDialog.Builder(submit)
+ 						.setMessage("A network error has occured.  Would you like to try again?")
+ 						.setTitle("Network Error").setPositiveButton("Retry", new DialogInterface.OnClickListener()
+ 						{
+
+ 							public void onClick(DialogInterface dialog, int which)
+ 							{
+ 								if (currentLoc != null)
+ 									new GetSuggestions(editWhere.getText().toString(), currentLoc, dialogStartAddressSuggestions, dataStartAddressList, startAddressList, startAddressListAdapter).execute();
+ 								else
+ 									new GetSuggestions(editWhere.getText().toString(), dialogStartAddressSuggestions, dataStartAddressList, startAddressList, startAddressListAdapter).execute();
+ 							}
+ 						}
+
+ 						).setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+ 						{
+ 							public void onClick(DialogInterface dialog, int which)
+ 							{
+ 								// TODO
+ 								// What happens when the user decides to
+ 								// not refresh??
+ 							}
+ 						}).show();
+ 			}
+ 		}
+
+ 		// This function takes in a pased xml kml list by placemark tags from
+ 		// google maps, returns a suggestionPoint object
+ 		// which includes the name, address, and geopoint of the location
+ 		// and adds it to the arraylists and notifies the adapter. User will
+ 		// then pick a point.
+ 		private void parseResponse(InputStream in)
+ 		{
+ 			if (dataStartAddressList != null)
+ 				dataStartAddressList.clear();
+ 			if (startAddressList != null)
+ 				startAddressList.clear();
+
+ 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+ 			DocumentBuilder builder;
+ 			try
+ 			{
+ 				builder = factory.newDocumentBuilder();
+ 				Document document = builder.parse(in);
+ 				// Get the names and locations
+ 				NodeList placemarkList = document.getElementsByTagName(ELEMENT_PLACEMARK);
+
+ 				for (int i = 0; i < placemarkList.getLength(); i++)
+ 				{
+ 					String name = null;
+ 					String address = null;
+ 					String GPS = null;
+ 					NodeList childPlacemarkList = placemarkList.item(i).getChildNodes();
+ 					for (int j = 0; j < childPlacemarkList.getLength(); j++)
+ 					{
+ 						Node node = childPlacemarkList.item(j);
+ 						if (node.getNodeName().equals(ELEMENT_NAME))
+ 							name = node.getFirstChild().getNodeValue();
+ 						else if (node.getNodeName().equals(ELEMENT_ADDRESS))
+ 							address = node.getFirstChild().getNodeValue();
+ 						else if (node.getNodeName().equals(ELEMENT_POINT))
+ 						{
+ 							NodeList childChildPlacemarkList = node.getChildNodes();
+ 							for (int k = 0; k < childChildPlacemarkList.getLength(); k++)
+ 							{
+ 								Node childNode = childChildPlacemarkList.item(k);
+ 								if (childNode.getNodeName().equals(ELEMENT_COORDINATES))
+ 									GPS = childNode.getFirstChild().getNodeValue();
+ 							}
+ 						}
+
+ 						if (name != null && address != null && GPS != null)
+ 						{
+ 							SuggestionPoint point = new SuggestionPoint();
+ 							String arr[] = GPS.split(",");
+
+ 							// sometmies the name and the address are the same
+ 							if (name.equals(address))
+ 							{
+ 								point.setName(name);
+ 								point.setPoint(new GeoPoint((int) (Double.valueOf(arr[1].trim()) * 1E6), (int) (Double.valueOf(arr[0].trim()) * 1E6)));
+								dataStartAddressList.add(point);
+								startAddressList.add(point.getFullName());
+							} 
+ 							
+ 							else
+ 							{
+ 								point.setName(name);
+ 								point.setAddress(address);
+ 								point.setPoint(new GeoPoint((int) (Double.valueOf(arr[1].trim()) * 1E6), (int) (Double.valueOf(arr[0].trim()) * 1E6)));
+								dataStartAddressList.add(point);
+ 								startAddressList.add(point.getFullName());
+ 							}
+ 							
+ 							break;
+ 						}
+ 					}
+					startAddressListAdapter.notifyDataSetChanged();
+ 				}
+ 			} 
+ 			
+ 			catch (Exception e)
+ 			{
+ 				e.printStackTrace();
+ 			}
+
+ 		}
+ 	}
     
     // After the user selects a picture from the gallery, this function fires
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent)
