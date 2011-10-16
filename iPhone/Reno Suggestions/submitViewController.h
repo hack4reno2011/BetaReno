@@ -30,6 +30,7 @@
     IBOutlet    UITextField*    whoShouldDoIt;
     IBOutlet    UITextView*     whereToDoIt;
     IBOutlet    UIImageView*    beforeImageView;
+    IBOutlet    UIActivityIndicatorView *aSpinner;	
     
     UIButton*                   cancelButton;
     UIButton*                   cameraButton;

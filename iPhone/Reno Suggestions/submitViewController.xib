@@ -47,6 +47,7 @@
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:371</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -166,7 +167,7 @@
 								<string key="NSFrame">{{34, 266}, {190, 21}}</string>
 								<reference key="NSSuperview" ref="451351829"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="684561680"/>
+								<reference key="NSNextKeyView" ref="280353677"/>
 								<string key="NSReuseIdentifierKey">_NS:328</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -217,7 +218,7 @@
 								<string key="NSFrame">{{29, 192}, {267, 66}}</string>
 								<reference key="NSSuperview" ref="451351829"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="846299748"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:639</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -241,6 +242,7 @@
 								<string key="NSFrame">{{34, 303}, {257, 31}}</string>
 								<reference key="NSSuperview" ref="451351829"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="753043583"/>
 								<string key="NSReuseIdentifierKey">_NS:304</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -274,6 +276,7 @@
 								<string key="NSFrame">{{34, 365}, {82, 21}}</string>
 								<reference key="NSSuperview" ref="451351829"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1028178241"/>
 								<string key="NSReuseIdentifierKey">_NS:328</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -294,6 +297,7 @@
 								<string key="NSFrame">{{127, 345}, {76, 64}}</string>
 								<reference key="NSSuperview" ref="451351829"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="684561680"/>
 								<string key="NSReuseIdentifierKey">_NS:567</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -302,6 +306,7 @@
 						<string key="NSFrameSize">{320, 416}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1001754338"/>
 						<string key="NSReuseIdentifierKey">_NS:190</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -311,7 +316,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="1001754338"/>
+				<reference key="NSNextKeyView" ref="451351829"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -567,7 +572,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">31</int>
+			<int key="maxID">33</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -594,6 +599,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="aSpinner">UIActivityIndicatorView</string>
 						<string key="beforeImageView">UIImageView</string>
 						<string key="cameraButton">UIButton</string>
 						<string key="cancelButton">UIButton</string>
@@ -604,6 +610,10 @@
 						<string key="whoShouldDoIt">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="aSpinner">
+							<string key="name">aSpinner</string>
+							<string key="candidateClassName">UIActivityIndicatorView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="beforeImageView">
 							<string key="name">beforeImageView</string>
 							<string key="candidateClassName">UIImageView</string>
