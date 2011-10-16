@@ -15,6 +15,7 @@
 		041A7DB7144A3420008AC130 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041A7DB6144A3420008AC130 /* MapKit.framework */; };
 		041A7DBC144A3553008AC130 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A7DBA144A3552008AC130 /* ListViewController.m */; };
 		041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A7DBB144A3552008AC130 /* ListViewController.xib */; };
+		0440D43C144A6392007014E6 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440D43B144A6392007014E6 /* Idea.m */; };
 		0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */; };
 		0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9041448F27700EC00BF /* Reno_arch_57.png */; };
 		0481D90C1448F8E700EC00BF /* CameraViewController-iphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */; };
@@ -67,6 +68,8 @@
 		041A7DB9144A3552008AC130 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		041A7DBA144A3552008AC130 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		041A7DBB144A3552008AC130 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		0440D43A144A6391007014E6 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Idea.h; sourceTree = "<group>"; };
+		0440D43B144A6392007014E6 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
 		0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reno_arch_244x183.jpg; sourceTree = "<group>"; };
 		0481D9041448F27700EC00BF /* Reno_arch_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reno_arch_57.png; sourceTree = "<group>"; };
 		0481D9091448F8E700EC00BF /* CameraViewController-iphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CameraViewController-iphone.h"; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				040F7C64144A0F7A005172D5 /* MapView.m */,
 				62B9628B144A3BCE00CFE95A /* AddressAnnotation.h */,
 				62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */,
+				0440D43A144A6391007014E6 /* Idea.h */,
+				0440D43B144A6392007014E6 /* Idea.m */,
 			);
 			path = "Reno Suggestions";
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				040F7C74144A1546005172D5 /* submitViewController.m in Sources */,
 				041A7DBC144A3553008AC130 /* ListViewController.m in Sources */,
 				62B9628D144A3BCE00CFE95A /* AddressAnnotation.m in Sources */,
+				0440D43C144A6392007014E6 /* Idea.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

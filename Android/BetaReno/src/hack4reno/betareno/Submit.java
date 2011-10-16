@@ -55,6 +55,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 
 public class Submit extends Activity 
 {
@@ -66,6 +67,7 @@ public class Submit extends Activity
 	protected Button btnPic, btnSubmit;	
 	protected CheckBox chkPlan;
 	protected DatePicker datePlan;
+	protected TimePicker timePlan;
 	
 	// Index for case statement when listening for photo picture intent to resolve
 	protected static final int REQ_CODE_PICK_IMAGE = 1;
@@ -77,7 +79,7 @@ public class Submit extends Activity
 	protected GeoPoint addressLocation = null;
 	
 	// TODO - This crap needs to be a local variable in getLocation() ...guhhhh
-	protected GeoPoint approximateLocationPoint, exactLocationPoint = null;
+	public GeoPoint approximateLocationPoint, exactLocationPoint;
 	
 
     @Override
@@ -94,6 +96,7 @@ public class Submit extends Activity
         btnPic = (Button) findViewById(R.id.btnPic);
         chkPlan = (CheckBox) findViewById(R.id.chkPlan);
         datePlan = (DatePicker) findViewById(R.id.datePlan);
+        timePlan = (TimePicker) findViewById(R.id.timePlan);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
         
         // Populate spinner         
@@ -133,16 +136,16 @@ public class Submit extends Activity
 					HelperFunctions.say(submit, getString(R.string.submit_error_where));			
 				// Begin upload
 				else
-				{	// Get geolocation of address.  This function will launch a listview that the user selects and picks an address
-					addressLocation = getLocation(editWhere.getText().toString());		
-					System.out.println("Hello world!");
-					
+				{	
+					// Get geolocation of address.  This function will launch a listview that the user selects and picks an address, it will then set "exactLocationPoint"
+					// This does not stop as it is threaded.  It then 
+					setLocationAndUpload(editWhere.getText().toString());							
 				}			
 			}			
 		});		
     }
     
-    private GeoPoint getLocation(String address)
+    private void setLocationAndUpload(String address)
     {
     	// This function is going to launch a listview dialog box which will allow the user to select an google approved address
     	// given the address that they entered.  
@@ -193,14 +196,23 @@ public class Submit extends Activity
 				editWhere.setText(lstStartSuggestions.getItemAtPosition(pos).toString());
 				// Set the GeoPoints to place on the map!				
 				dialogStartAddressSuggestions.dismiss();
-				exactLocationPoint = dataStartAddressList.get(pos).getPoint();
+				exactLocationPoint = new GeoPoint(dataStartAddressList.get(pos).getPoint().getLatitudeE6(), dataStartAddressList.get(pos).getPoint().getLongitudeE6());
 				inputDialog.dismiss();
 				
+				// Upload TODO
+				Idea idea = new Idea();
+				idea.setWhat(editWhat.getText().toString());
+				idea.setWho(spinWho.getSelectedItem().toString());
+				idea.setLatitude(String.valueOf(Double.parseDouble(String.valueOf(exactLocationPoint.getLatitudeE6())) / 1E6));
+				idea.setLongitude(String.valueOf(Double.parseDouble(String.valueOf(exactLocationPoint.getLongitudeE6())) / 1E6));
+				if (chkPlan.isChecked())
+					idea.setWhen(datePlan, timePlan);
+				
+				
+				new UploadIdea(idea).execute();
+				
 			}
-		});
-    	
-    	// TODO - MAKE THIS VARIABLE LOCAL MOTHERFUCKER
-    	return exactLocationPoint;		   	
+		});	   	
     }
     
     // This function pulls possible locations from google maps
@@ -494,15 +506,18 @@ public class Submit extends Activity
      * @author john
      *
      */
-    private class HttpMultipartPost extends AsyncTask<HttpResponse, Integer, Idea>
+    private class UploadIdea extends AsyncTask<HttpResponse, Integer, Idea>
 	{
+    	Idea idea;
 		ProgressDialog pd;
 		long totalSize;
 		
-		HttpMultipartPost()
+		UploadIdea(Idea idea)
 		{
-			
+			this.idea = idea;			
 		}
+		
+		
 
 		@Override
 		protected void onPreExecute()
@@ -519,7 +534,7 @@ public class Submit extends Activity
 		{
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpContext httpContext = new BasicHttpContext();
-			HttpPost httpPost = new HttpPost("http://blahblhablha.php");
+			HttpPost httpPost = new HttpPost("http://betareno.cyberhobo.net/?action=betareno-add-idea");
 
 			try
 			{
@@ -537,12 +552,13 @@ public class Submit extends Activity
 				// We use FileBody to transfer an image
 				// multipartContent.addPart("data", new FileBody(new File
 				// (m_userSelectedImagePath)));
-				multipartContent.addPart("what", new StringBody(editWhat.getText().toString()));
-				multipartContent.addPart("who", new StringBody(spinWho.getSelectedItem().toString()));
-				multipartContent.addPart("latitude", new StringBody(editWhat.getText().toString()));
-				multipartContent.addPart("what", new StringBody(editWhat.getText().toString()));
-				multipartContent.addPart("what", new StringBody(editWhat.getText().toString()));
-				multipartContent.addPart("uploaded_file", new FileBody(new File(m_userSelectedImagePath)));
+				multipartContent.addPart("api_key", new StringBody("BetaReno4hack4reno"));
+				multipartContent.addPart("what", new StringBody(idea.getWhat()));
+				multipartContent.addPart("who", new StringBody(idea.getWho()));
+				multipartContent.addPart("latitude", new StringBody(idea.getLatitude()));
+				multipartContent.addPart("longitude", new StringBody(idea.getLongitude()));
+				multipartContent.addPart("when", new StringBody(idea.getWhen()));
+				multipartContent.addPart("before_photo", new FileBody(new File(m_userSelectedImagePath)));
 				totalSize = multipartContent.getContentLength();
 
 				// Send the bitch
@@ -569,7 +585,7 @@ public class Submit extends Activity
 		}
 
 		@Override
-		protected void onPostExecute(Idea idea)
+		protected void onPostExecute(final Idea idea)
 		{
 			// If the parsing failed for whatever reason, try and resubmit the request again.
 			if (idea.getID().equals(""))
@@ -582,7 +598,7 @@ public class Submit extends Activity
 							public void onClick(DialogInterface dialog, int which)
 							{
 								pd.dismiss();
-								new HttpMultipartPost().execute();
+								new UploadIdea(idea).execute();
 							}
 						}
 

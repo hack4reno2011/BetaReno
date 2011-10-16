@@ -74,7 +74,7 @@ public final class R {
         public static final int boxSeats=0x7f090003;
         public static final int boxStartPoint=0x7f090001;
         public static final int btnPic=0x7f090013;
-        public static final int btnSubmit=0x7f090016;
+        public static final int btnSubmit=0x7f090017;
         public static final int btnVerify=0x7f090004;
         public static final int chkPlan=0x7f090014;
         public static final int datePlan=0x7f090015;
@@ -91,6 +91,7 @@ public final class R {
         public static final int submit_txt_what=0x7f09000c;
         public static final int submit_txt_where=0x7f09000e;
         public static final int submit_txt_who=0x7f090010;
+        public static final int timePlan=0x7f090016;
     }
     public static final class layout {
         public static final int createpassengerproposaldialog=0x7f030000;

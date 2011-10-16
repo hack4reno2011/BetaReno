@@ -110,6 +110,35 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 -(IBAction) submitButtonPressed; {
     
+    /*
+    
+    NSString*				json		= [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\"}", receipt64];
+	NSURL*					url			= [NSURL URLWithString:@"https://buy.itunes.apple.com/verifyReceipt"];
+	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
+	
+	[request setHTTPMethod:@"POST"];
+	[request setHTTPBody:[NSData dataWithBytes:[json UTF8String] length:[json length]]];
+	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%d", [json length]] forHTTPHeaderField:@"Content-Length"];
+	
+	NSError*				err			= nil;
+	NSData*					response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
+	
+	if (response)
+	{
+		NSString*		resStr	= [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+		NSDictionary*	resJSON	= [resStr JSONValue];		
+		int				status	= [[resJSON objectForKey:@"status"] intValue];
+		self.receiptIsValid		= status == 0;
+		self.transaction		= resStr;
+		//NSLog(@"receipt check response : %@", resStr);
+	}
+     
+     */
+    
+    /* - get all data from cyberhobo.net - move this to a singelton?
+    
     NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"%@", kSuggestionsURL]];
     //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
 	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
@@ -133,6 +162,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
         NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
     }
+     
+     */
 
 }
 
