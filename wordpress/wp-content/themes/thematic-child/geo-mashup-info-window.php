@@ -14,18 +14,19 @@
 		<p><strong>When:</strong> <?php echo $when; ?></p>
 	<?php endif; ?>
 
-<?php
-	$before_photo_attachments = get_posts( array(
-		'post_type' => 'attachment',
-		'post_mime_type' => 'image',
-		'post_parent' => $idea_location->object_id,
-		'meta_key' => 'photo_type',
-		'meta_value' => 'before'
-	) );
-	if ( !empty( $before_photo_attachments ) ) {
-		echo wp_get_attachment_image( $before_photo_attachments[0]->ID );
-	}
-?>
+	<?php
+		$before_photo_attachments = get_posts( array(
+			'post_type' => 'attachment',
+			'post_mime_type' => 'image',
+			'post_parent' => get_the_ID(),
+			'meta_key' => 'photo_type',
+			'meta_value' => 'before'
+		) );
+		if ( !empty( $before_photo_attachments ) ) : ?>
+		<p><strong>Before Photo:</strong>
+			<?php echo wp_get_attachment_image( $before_photo_attachments[0]->ID ); ?>
+		</p>
+		<?php endif; ?>
 	<?php endwhile; ?>
 
 <?php else : ?>
