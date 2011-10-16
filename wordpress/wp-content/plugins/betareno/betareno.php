@@ -125,7 +125,7 @@ class BetaReno {
 
 			$idea['when'] = get_post_meta( $idea_location->object_id, 'when', true );
 
-			// TODO: votes
+			$idea['votes'] = 1;
 
 			// Photos
 			$idea['before_photo_url'] = '';
@@ -229,14 +229,14 @@ class BetaReno {
 		// Handle photos
 		$before_photo_url = '';
 		if ( isset( $_FILES['before_photo'] ) ) {
-			$before_photo_id = media_handle_upload( 'before_photo',  $post_id, array( 'title' => 'Before' ) );
+			$before_photo_id = media_handle_upload( 'before_photo',  $post_id, array( 'post_title' => 'Before' ) );
 			if ( !is_wp_error( $before_photo_id ) ) {
 				list( $before_photo_url, $width, $height ) = wp_get_attachment_image_src( $before_photo_id );
 			}
 		}
 		$after_photo_url = '';
 		if ( isset( $_FILES['after_photo'] ) ) {
-			$after_photo_id = media_handle_upload( 'after_photo',  $post_id, array( 'title' => 'After' ) );
+			$after_photo_id = media_handle_upload( 'after_photo',  $post_id, array( 'post_title' => 'After' ) );
 			if ( !is_wp_error( $after_photo_id ) ) {
 				list( $after_photo_url, $width, $height ) = wp_get_attachment_image_src( $after_photo_id );
 			}
@@ -250,7 +250,7 @@ class BetaReno {
 			'when' => $when,
 			'latitude' => $location->lat,
 			'longitude' => $location->lng,
-			'votes' => -3,
+			'votes' => 1,
 			'before_photo_url' => $before_photo_url,
 			'after_photo_url' => $after_photo_url
 		);
