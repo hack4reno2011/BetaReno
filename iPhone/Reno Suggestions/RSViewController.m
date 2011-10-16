@@ -71,16 +71,16 @@
 	span.longitudeDelta = 0.2;
 	
 	CLLocationCoordinate2D cord;
-	//cord.longitude = -119.813803;
-	//cord.latitude = 39.529633; 
-	AddressAnnotation *addAnnotation = nil;
+		AddressAnnotation *addAnnotation = nil;
     
 	if(addAnnotation != nil) {
 		[mapView removeAnnotation:addAnnotation];
 		[addAnnotation release];
 		addAnnotation = nil;
 	}
-    
+   // cord.longitude = -119.813803;
+	//cord.latitude = 39.529633; 
+
     cord.longitude = [longitude doubleValue];
 	cord.latitude = [latitude doubleValue];
     NSLog(@"Latitude:%f",cord.latitude);
@@ -92,7 +92,7 @@
     
     
     
-    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", cord.longitude] withLat:[NSString stringWithFormat:@"%lf", cord.latitude] andRadius:@"5"];
+    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", cord.longitude] withLat:[NSString stringWithFormat:@"%lf", cord.latitude] andRadius:@"50"];
     
     for(int i = 0; i < [arrayIdeas count]; ++i)
     {
