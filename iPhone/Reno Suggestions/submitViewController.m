@@ -137,34 +137,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
      
      */
     
-    /* - get all data from cyberhobo.net - move this to a singelton?
     
-    NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"%@", kSuggestionsURL]];
-    //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
-	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
-	NSError*				err			= nil;
-	NSData*					response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
-    
-	
-	if (err == nil)
-	{
-		NSString*		respString          = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-        NSArray*        suggestionsArray	= [respString JSONValue];
-        
-		for (int i = 0; i < [suggestionsArray count]; i++)
-		{
-			//pull data into view controller array.  
-            NSLog(@"JJA response from cyberhobo = %@",respString);
-            NSLog(@"JJA jason parsed as = %@",suggestionsArray);
-		}
-	}
-    else
-    {
-        NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
-    }
-     
-     */
-
 }
 
 - (void)didReceiveMemoryWarning

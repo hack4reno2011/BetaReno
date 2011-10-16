@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		040F7C66144A0F7A005172D5 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040F7C64144A0F7A005172D5 /* MapView.m */; };
 		040F7C67144A0F7A005172D5 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040F7C65144A0F7A005172D5 /* MapView.xib */; };
-		040F7C70144A1417005172D5 /* TakeAPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040F7C6E144A1417005172D5 /* TakeAPictureViewController.m */; };
 		040F7C74144A1546005172D5 /* submitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040F7C72144A1546005172D5 /* submitViewController.m */; };
 		040F7C75144A1546005172D5 /* submitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040F7C73144A1546005172D5 /* submitViewController.xib */; };
 		041A7DB7144A3420008AC130 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041A7DB6144A3420008AC130 /* MapKit.framework */; };
@@ -18,14 +17,6 @@
 		0440D43C144A6392007014E6 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440D43B144A6392007014E6 /* Idea.m */; };
 		0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */; };
 		0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9041448F27700EC00BF /* Reno_arch_57.png */; };
-		0481D90C1448F8E700EC00BF /* CameraViewController-iphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */; };
-		0481D90D1448F8E700EC00BF /* CameraViewController-iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */; };
-		0481D9111448F90300EC00BF /* CmaeraViewController-iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D90F1448F90300EC00BF /* CmaeraViewController-iPad.m */; };
-		0481D9121448F90300EC00BF /* CmaeraViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */; };
-		0481D9161448F93C00EC00BF /* LocationViewController-iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9141448F93C00EC00BF /* LocationViewController-iPhone.m */; };
-		0481D9171448F93C00EC00BF /* LocationViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9151448F93C00EC00BF /* LocationViewController-iPhone.xib */; };
-		0481D91B1448F96B00EC00BF /* LocationViewController-iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */; };
-		0481D91C1448F96B00EC00BF /* LocationViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0481D91A1448F96B00EC00BF /* LocationViewController-iPad.xib */; };
 		0481D9381448FAF600EC00BF /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9201448FAF600EC00BF /* NSObject+SBJson.m */; };
 		0481D9391448FAF600EC00BF /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9231448FAF600EC00BF /* SBJsonParser.m */; };
 		0481D93A1448FAF600EC00BF /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9251448FAF600EC00BF /* SBJsonStreamParser.m */; };
@@ -60,8 +51,6 @@
 		040F7C63144A0F7A005172D5 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		040F7C64144A0F7A005172D5 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		040F7C65144A0F7A005172D5 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
-		040F7C6E144A1417005172D5 /* TakeAPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeAPictureViewController.m; sourceTree = "<group>"; };
-		040F7C6F144A1417005172D5 /* TakeAPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeAPictureViewController.h; sourceTree = "<group>"; };
 		040F7C71144A1546005172D5 /* submitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = submitViewController.h; sourceTree = "<group>"; };
 		040F7C72144A1546005172D5 /* submitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = submitViewController.m; sourceTree = "<group>"; };
 		040F7C73144A1546005172D5 /* submitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = submitViewController.xib; sourceTree = "<group>"; };
@@ -73,18 +62,6 @@
 		0440D43B144A6392007014E6 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
 		0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reno_arch_244x183.jpg; sourceTree = "<group>"; };
 		0481D9041448F27700EC00BF /* Reno_arch_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reno_arch_57.png; sourceTree = "<group>"; };
-		0481D9091448F8E700EC00BF /* CameraViewController-iphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CameraViewController-iphone.h"; sourceTree = "<group>"; };
-		0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CameraViewController-iphone.m"; sourceTree = "<group>"; };
-		0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CameraViewController-iphone.xib"; sourceTree = "<group>"; };
-		0481D90E1448F90300EC00BF /* CmaeraViewController-iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CmaeraViewController-iPad.h"; sourceTree = "<group>"; };
-		0481D90F1448F90300EC00BF /* CmaeraViewController-iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CmaeraViewController-iPad.m"; sourceTree = "<group>"; };
-		0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CmaeraViewController-iPad.xib"; sourceTree = "<group>"; };
-		0481D9131448F93C00EC00BF /* LocationViewController-iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocationViewController-iPhone.h"; sourceTree = "<group>"; };
-		0481D9141448F93C00EC00BF /* LocationViewController-iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocationViewController-iPhone.m"; sourceTree = "<group>"; };
-		0481D9151448F93C00EC00BF /* LocationViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LocationViewController-iPhone.xib"; sourceTree = "<group>"; };
-		0481D9181448F96B00EC00BF /* LocationViewController-iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocationViewController-iPad.h"; sourceTree = "<group>"; };
-		0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocationViewController-iPad.m"; sourceTree = "<group>"; };
-		0481D91A1448F96B00EC00BF /* LocationViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LocationViewController-iPad.xib"; sourceTree = "<group>"; };
 		0481D91F1448FAF600EC00BF /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		0481D9201448FAF600EC00BF /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		0481D9211448FAF600EC00BF /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -172,10 +149,6 @@
 				041A7DBB144A3552008AC130 /* ListViewController.xib */,
 				04B0EE041448D3E300FDE76E /* RSViewController_iPhone.xib */,
 				04B0EE071448D3E300FDE76E /* RSViewController_iPad.xib */,
-				0481D90B1448F8E700EC00BF /* CameraViewController-iphone.xib */,
-				0481D9101448F90300EC00BF /* CmaeraViewController-iPad.xib */,
-				0481D9151448F93C00EC00BF /* LocationViewController-iPhone.xib */,
-				0481D91A1448F96B00EC00BF /* LocationViewController-iPad.xib */,
 				040F7C65144A0F7A005172D5 /* MapView.xib */,
 			);
 			name = XIBs;
@@ -264,16 +237,6 @@
 				04B0EDFF1448D3E200FDE76E /* RSAppDelegate.m */,
 				04B0EE011448D3E300FDE76E /* RSViewController.h */,
 				04B0EE021448D3E300FDE76E /* RSViewController.m */,
-				0481D9091448F8E700EC00BF /* CameraViewController-iphone.h */,
-				0481D90A1448F8E700EC00BF /* CameraViewController-iphone.m */,
-				0481D90E1448F90300EC00BF /* CmaeraViewController-iPad.h */,
-				0481D90F1448F90300EC00BF /* CmaeraViewController-iPad.m */,
-				0481D9131448F93C00EC00BF /* LocationViewController-iPhone.h */,
-				0481D9141448F93C00EC00BF /* LocationViewController-iPhone.m */,
-				0481D9181448F96B00EC00BF /* LocationViewController-iPad.h */,
-				0481D9191448F96B00EC00BF /* LocationViewController-iPad.m */,
-				040F7C6E144A1417005172D5 /* TakeAPictureViewController.m */,
-				040F7C6F144A1417005172D5 /* TakeAPictureViewController.h */,
 				040F7C63144A0F7A005172D5 /* MapView.h */,
 				040F7C64144A0F7A005172D5 /* MapView.m */,
 				62B9628B144A3BCE00CFE95A /* AddressAnnotation.h */,
@@ -365,10 +328,6 @@
 				04B0EE091448D3E300FDE76E /* RSViewController_iPad.xib in Resources */,
 				0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */,
 				0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */,
-				0481D90D1448F8E700EC00BF /* CameraViewController-iphone.xib in Resources */,
-				0481D9121448F90300EC00BF /* CmaeraViewController-iPad.xib in Resources */,
-				0481D9171448F93C00EC00BF /* LocationViewController-iPhone.xib in Resources */,
-				0481D91C1448F96B00EC00BF /* LocationViewController-iPad.xib in Resources */,
 				040F7C67144A0F7A005172D5 /* MapView.xib in Resources */,
 				040F7C75144A1546005172D5 /* submitViewController.xib in Resources */,
 				041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */,
@@ -386,10 +345,6 @@
 				04B0EE001448D3E200FDE76E /* RSAppDelegate.m in Sources */,
 				04B0EE031448D3E300FDE76E /* RSViewController.m in Sources */,
 				04B0EE161448D4C800FDE76E /* Reachability.m in Sources */,
-				0481D90C1448F8E700EC00BF /* CameraViewController-iphone.m in Sources */,
-				0481D9111448F90300EC00BF /* CmaeraViewController-iPad.m in Sources */,
-				0481D9161448F93C00EC00BF /* LocationViewController-iPhone.m in Sources */,
-				0481D91B1448F96B00EC00BF /* LocationViewController-iPad.m in Sources */,
 				0481D9381448FAF600EC00BF /* NSObject+SBJson.m in Sources */,
 				0481D9391448FAF600EC00BF /* SBJsonParser.m in Sources */,
 				0481D93A1448FAF600EC00BF /* SBJsonStreamParser.m in Sources */,
@@ -404,7 +359,6 @@
 				0481D9431448FAF600EC00BF /* SBJsonWriter.m in Sources */,
 				0481D95E1449087600EC00BF /* SuggestionRetrieveOperation.m in Sources */,
 				040F7C66144A0F7A005172D5 /* MapView.m in Sources */,
-				040F7C70144A1417005172D5 /* TakeAPictureViewController.m in Sources */,
 				040F7C74144A1546005172D5 /* submitViewController.m in Sources */,
 				041A7DBC144A3553008AC130 /* ListViewController.m in Sources */,
 				62B9628D144A3BCE00CFE95A /* AddressAnnotation.m in Sources */,

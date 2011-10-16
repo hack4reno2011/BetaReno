@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Idea.h"
+#import "SBJson.h"
 
 @interface AllIdeas : NSObject
 {
@@ -17,4 +19,17 @@
 
 +(AllIdeas *) Ideas;
 
+-(id) initIdeas:(NSString *)longitude 
+    withLat:(NSString *)lat 
+        andRadius:(NSString *)radius;
+
+
+ 
+-(NSMutableArray *) getListOfIdeas:(NSString *)longitude 
+                           withLat:(NSString *)lat 
+                         andRadius:(NSString *)radius;
+
+-(void) addIdeaToList;
+
+-(Idea *)removeItemFromList;
 @end
