@@ -14,6 +14,7 @@
 		041A7DB7144A3420008AC130 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041A7DB6144A3420008AC130 /* MapKit.framework */; };
 		041A7DBC144A3553008AC130 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A7DBA144A3552008AC130 /* ListViewController.m */; };
 		041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A7DBB144A3552008AC130 /* ListViewController.xib */; };
+		042B50A0144B4E76004D6128 /* BRicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B509F144B4E76004D6128 /* BRicon.png */; };
 		0440D43C144A6392007014E6 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440D43B144A6392007014E6 /* Idea.m */; };
 		046AE405144ADBDB00196F52 /* ShowIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AE403144ADBDB00196F52 /* ShowIdeaViewController.m */; };
 		046AE406144ADBDB00196F52 /* ShowIdeaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046AE404144ADBDB00196F52 /* ShowIdeaViewController.xib */; };
@@ -73,6 +74,7 @@
 		041A7DB9144A3552008AC130 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		041A7DBA144A3552008AC130 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		041A7DBB144A3552008AC130 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		042B509F144B4E76004D6128 /* BRicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BRicon.png; sourceTree = "<group>"; };
 		0440D43A144A6391007014E6 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Idea.h; sourceTree = "<group>"; };
 		0440D43B144A6392007014E6 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Idea.m; sourceTree = "<group>"; };
 		046AE402144ADBDB00196F52 /* ShowIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowIdeaViewController.h; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		04B0EDE01448D3E200FDE76E = {
 			isa = PBXGroup;
 			children = (
+				042B509F144B4E76004D6128 /* BRicon.png */,
 				04787A67144B450E00F91EB4 /* Default.png */,
 				04B0EE171448D4F500FDE76E /* CommonDefinitions.h */,
 				0481D8FC1448F09400EC00BF /* Art */,
@@ -419,6 +422,7 @@
 				04787A68144B450E00F91EB4 /* Default.png in Resources */,
 				624ED065144B4617004B5471 /* Default.png in Resources */,
 				624ED066144B4617004B5471 /* Default.psd in Resources */,
+				042B50A0144B4E76004D6128 /* BRicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
