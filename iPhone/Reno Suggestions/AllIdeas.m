@@ -13,6 +13,9 @@ static AllIdeas *sharedIdeas;
 @implementation AllIdeas
 
 @synthesize ideasArray;
+
+
+
 +(AllIdeas *) sharedIdeas
 {
     if (!sharedIdeas) {
@@ -58,8 +61,11 @@ static AllIdeas *sharedIdeas;
     
     [ideasArray removeAllObjects];
     // - get all data from betareno.cyberhobo.net 
-     
-     NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"%@", kSuggestionsURL]];
+    
+    
+     NSURL*	url	= [NSURL URLWithString:[NSString stringWithFormat:@"%@lat=%@&lng=%@&r=%@", 
+                                        kSuggestionsURL,longitude,lat,radius]];
+
      //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
      NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
      NSError*	err	= nil;
@@ -68,18 +74,29 @@ static AllIdeas *sharedIdeas;
      if (err == nil)
      {
          NSString*	respString   = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-        ideasArray = [respString JSONValue];
-
+         NSDictionary* doc = [respString JSONValue];
+         NSString* code = [doc objectForKey:@"code"];
+         if ([code isEqualToString:@"200"])
+         {
+             ideasArray = [doc objectForKey:@"ideas"];
+         }
+         else
+         {
+             NSLog(@"JJA error returned from cyberhobo: %@",[doc objectForKey:@"message"]);
+         }
+                                                  
+         //debug code
          for (int i = 0; i < [ideasArray count]; i++)
          {
          //pull data into view controller array.  
          NSLog(@"JJA response from cyberhobo = %@",respString);
          NSLog(@"JJA jason parsed as = %@",ideasArray);
          }
+         //
      }
      else
      {
-     NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
+     NSLog(@"JJA HTTP header error from cyberhobo = %@",[err localizedDescription]);
      }
 
     return ideasArray;

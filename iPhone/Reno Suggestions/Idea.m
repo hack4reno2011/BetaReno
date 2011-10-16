@@ -19,6 +19,8 @@
         [when setString:@""];
         [longitude setString:@""];
         [latitude setString:@""];
+        [beforePictureURL setString:@""];
+        [afterPictureURL setString:@""];
         beforePicture = nil;
         afterPicture = nil;
         return self;

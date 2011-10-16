@@ -59,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	return 15;
+	return [ideasList count];
 }
 
 // Customize the appearance of table view cells.
@@ -73,8 +73,9 @@
     }
     
     // Set up the cell...
+    Idea *thisIdea = [ideasList objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    cell.textLabel.text = [NSString  stringWithFormat:@"Cell Row #%d", [indexPath row]];
+    cell.textLabel.text = [thisIdea what];
     
     return cell;
 }
@@ -102,6 +103,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    ideasList = [[AllIdeas sharedIdeas]getListOfIdeas:currentLongitude withLat:currentLatitude andRadius:kRadius];
+
+
 }
 
 - (void)viewDidUnload
