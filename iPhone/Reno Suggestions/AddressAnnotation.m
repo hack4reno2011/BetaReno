@@ -12,13 +12,16 @@
 @implementation AddressAnnotation
 
 @synthesize coordinate;
+@synthesize mTitle;
+@synthesize mSubTitle;
 
 - (NSString *)subtitle{
-	return @"Sub Title";
+	return mSubTitle;
 }
 
 - (NSString *)title{
-	return @"Title";
+
+    return mTitle;
 }
 
 -(id)initWithCoordinate:(CLLocationCoordinate2D) c{
