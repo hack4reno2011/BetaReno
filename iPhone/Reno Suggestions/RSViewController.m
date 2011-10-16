@@ -149,7 +149,6 @@
     
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
-    
    
     
     return;
@@ -188,6 +187,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+     [self showAddress];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

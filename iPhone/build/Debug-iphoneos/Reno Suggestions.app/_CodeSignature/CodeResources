@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>BRicon.png</key>
+		<data>
+		hozt9fd9venT3QtnfjGzEQN97jg=
+		</data>
 		<key>CameraViewController-iphone.nib</key>
 		<data>
 		pnkHsp9/LxVzQXZDBdM4zkRcxRo=
@@ -11,6 +15,14 @@
 		<key>CmaeraViewController-iPad.nib</key>
 		<data>
 		/rHqCMVyqr3Jb+5bRWtQJc3J1hY=
+		</data>
+		<key>Default.png</key>
+		<data>
+		0YVZSd2ud/WTyzkDvfWzuOhWcgQ=
+		</data>
+		<key>Default.psd</key>
+		<data>
+		1uhIADMp2kPmVOuEX5IQCdp2Vw0=
 		</data>
 		<key>ListViewController.nib</key>
 		<data>
@@ -62,7 +74,7 @@
 		</data>
 		<key>submitViewController.nib</key>
 		<data>
-		eIQynyh2HnxkaXhyJ99rhiSScM8=
+		3/oZYcPjjzrjzlurnh0TXqSnKiY=
 		</data>
 	</dict>
 	<key>rules</key>

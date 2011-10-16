@@ -179,7 +179,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
      UIGraphicsEndImageContext();
     
     beforeImageView.image = newImage;
-    NSData* newImageData = UIImagePNGRepresentation(newImage);
+    NSData* newImageData = UIImageJPEGRepresentation(newImage, 0.7);
 
     [myNewIdea saveIdeaField:newImageData withKey:@"beforeImage"];
     [pool release];
@@ -201,22 +201,25 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [request setPostValue:[myNewIdea.idea objectForKey:@"what"] forKey:@"what"];
     [request setPostValue:[myNewIdea.idea objectForKey:@"who"] forKey:@"who"];
     [request setPostValue:lastLatitude forKey:@"latitude"];
-    [request setPostValue:lastLongitude forKey:@"longiude"];
-    //[request setPostValue:@"39.529633" forKey:@"latitude"];
-    //[request setPostValue:@"-119.813803" forKey:@"longiude"];
+    [request setPostValue:lastLongitude forKey:@"longitude"];
     [request setPostValue:@"" forKey:@"when"];
     [request setData:[myNewIdea.idea objectForKey:@"before_photo"] withFileName:@"beforephoto.jpg" andContentType:@"image/jpeg" forKey:@"before_photo"];
     [request setPostValue:@"" forKey:@"after_photo"];
 	[request setRequestMethod:@"POST"];
-    /*
-	[request setHTTPBody:[NSData dataWithBytes:[newIdeaJSONString UTF8String] length:[newIdeaJSONString length]]];
-	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[NSString stringWithFormat:@"%d", [newIdeaJSONString length]] forHTTPHeaderField:@"Content-Length"];
-     */
+
     [request startSynchronous];
     NSString *statusMessage = [request responseStatusMessage];
-    NSLog(@"JJA POST check response : %@", statusMessage);
+    NSString *response = [request responseString];
+    UIAlertView *newAlert = 
+	[[UIAlertView alloc] initWithTitle:@"BetaRno"
+							   message:@"Thank you for your submission" 
+							  delegate:nil 
+					 cancelButtonTitle:@"OK"
+					 otherButtonTitles:nil];
+	[newAlert show];
+	[newAlert release];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+
 
 }
 
