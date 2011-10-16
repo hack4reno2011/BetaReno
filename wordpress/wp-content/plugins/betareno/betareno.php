@@ -116,7 +116,7 @@ class BetaReno {
 
 			// Who
 			$actor_terms = wp_get_object_terms( $idea_location->object_id, 'actor' );
-			if ( wp_is_error( $actor_terms ) ) {
+			if ( is_wp_error( $actor_terms ) ) {
 				$idea['who'] = '';
 			} else {
 				$idea['who'] = $actor_terms[0]->name;
