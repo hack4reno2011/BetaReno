@@ -9,6 +9,8 @@
 #import "RSViewController.h"
 #import "AddressAnnotation.h"
 #import "submitViewController.h"
+#import "AllIdeas.h"
+#import "Idea.h"
 
 @implementation RSViewController
 
@@ -49,6 +51,18 @@
 }
 
 -(void) showAddress {
+    
+    AllIdeas *allIdeas = [[AllIdeas alloc] initIdeas];
+    
+                         
+   
+    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", longitude] withLat:[NSString stringWithFormat:@"%lf", latitude] andRadius:@"5"];
+    
+    for(int i = 0; i < [arrayIdeas count]; ++i)
+    {
+        NSDictionary *dictIdea = [arrayIdeas objectAtIndex:i];
+        NSLog([dictIdea objectForKey:@"who"]);
+    }
     
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
