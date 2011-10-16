@@ -47,6 +47,7 @@
     [beforeImageView release];
     [lastLongitude release];
     [lastLatitude release];
+
 }
 
 //capture the text input
@@ -181,7 +182,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     beforeImageView.image = newImage;
     NSData* newImageData = UIImageJPEGRepresentation(newImage, 0.7);
 
-    [myNewIdea saveIdeaField:newImageData withKey:@"beforeImage"];
+    [myNewIdea saveIdeaField:newImageData withKey:@"beforePicture"];
     [pool release];
     return newImage;
 }
@@ -195,7 +196,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 -(IBAction) submitButtonPressed; {
     
 
-    NSLog(@"JJA debug L & L %@, %@",lastLongitude,lastLatitude);
+    //throw up spinner from submit btn we created
+    aSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                UIActivityIndicatorViewStyleWhiteLarge];
+    
+    [self.view addSubview:aSpinner]; 
+    [aSpinner release]; 
+    [aSpinner startAnimating]; 
+    
+   
+    //NSLog(@"JJA debug L & L %@, %@",lastLongitude,lastLatitude);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-add-idea"]];
     [request setPostValue:@"BetaReno4hack4reno" forKey:@"api_key"];
     [request setPostValue:[myNewIdea.idea objectForKey:@"what"] forKey:@"what"];
@@ -203,17 +213,33 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [request setPostValue:lastLatitude forKey:@"latitude"];
     [request setPostValue:lastLongitude forKey:@"longitude"];
     [request setPostValue:@"" forKey:@"when"];
-    [request setData:[myNewIdea.idea objectForKey:@"before_photo"] withFileName:@"beforephoto.jpg" andContentType:@"image/jpeg" forKey:@"before_photo"];
+    [request setData:[myNewIdea.idea objectForKey:@"beforePicture"] withFileName:@"beforephoto.jpg" andContentType:@"image/jpeg" forKey:@"before_photo"];
     [request setPostValue:@"" forKey:@"after_photo"];
 	[request setRequestMethod:@"POST"];
 
     [request startSynchronous];
     NSString *statusMessage = [request responseStatusMessage];
     NSString *response = [request responseString];
-    NSLog ( @"JJA Response: %@", response );
-    NSLog(@"JJA POST check response : %@", statusMessage);
+    UIAlertView *newAlert = 
+	[[UIAlertView alloc] initWithTitle:@"BetaRno"
+							   message:@"Thank you for your submission" 
+							  delegate:nil 
+					 cancelButtonTitle:@"OK"
+					 otherButtonTitles:nil];
+	[newAlert show];
+	[newAlert release];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+
 
 }
+
+//get rid of spinner when finished delegate is fired
+- (void)requestFinished:(ASIHTTPRequest *)request 
+{ 
+    NSLog(@"REQUEST FINISHED"); 
+    [aSpinner stopAnimating]; 
+    //[aSpinner release]; 
+} 
 
 - (void)didReceiveMemoryWarning
 {

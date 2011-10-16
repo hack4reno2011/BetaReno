@@ -67,8 +67,8 @@
     
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
-	span.latitudeDelta = 0.1;
-	span.longitudeDelta = 0.1;
+	span.latitudeDelta = 0.01;
+	span.longitudeDelta = 0.01;
 	
 	CLLocationCoordinate2D cord;
 		AddressAnnotation *addAnnotation = nil;
@@ -149,7 +149,6 @@
     
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
-    
    
     
     return;
@@ -168,7 +167,6 @@
     
     [super viewDidLoad];
      [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showAddress) userInfo:nil repeats:NO];
-//s[self showAddress];
 }
 
 - (void)viewDidUnload
@@ -188,6 +186,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+     [self showAddress];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
