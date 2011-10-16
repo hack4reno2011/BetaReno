@@ -68,10 +68,27 @@
 			add_marker.openBubble();
 			// openBubble has no working callback - go proprietary
 			google.maps.event.addListener( add_marker.proprietary_infowindow, 'domready', function() {
-				$where_input = $( '#where_input' ).select();
+				$where_input = $( '#where_input' );
 				$what_input = $( '#what_input' );
 				$who_select = $( '#who_select' );
-				$submit_button = $( '#submit_button' );
+				$submit_button = $( '#submit_button' ).click( function() {
+					$.ajax( {
+						url: properties.ajaxurl + '?action=betareno-add-idea',
+						dataType: 'json',
+						type: 'POST',
+						data: {
+							'api_key': 'BetaReno4hack4reno',
+							'what': $what_input.val(),
+							'who': $who_select.val(),
+							'latitude': add_marker.location.lat,
+							'longitude': add_marker.location.lon
+						},
+						success: function( data, status ) {
+							// Out of time!
+							parent.location.reload();
+						}
+					})
+				});
 				autocomplete = new google.maps.places.Autocomplete( $where_input.get(0), { bounds: googlemap.getBounds() } );
 				autocomplete.bindTo( 'bounds', googlemap );
 				google.maps.event.addListener( autocomplete, 'place_changed', function() {
@@ -88,7 +105,7 @@
 
 				geocoder.geocode( { location: add_marker.proprietary_marker.getPosition() }, function( results, status ) {
 					if ( status == google.maps.GeocoderStatus.OK ) {
-						$where_input.val( results[0].formatted_address );
+						$where_input.val( results[0].formatted_address ).select();
 					}
 				} );
 			} );
