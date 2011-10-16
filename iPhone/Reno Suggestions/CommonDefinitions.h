@@ -6,5 +6,5 @@
 //  Copyright (c) 2011 Apps42, Ltd. All rights reserved.
 //
 
-#define kSuggestionsURL      @"http://www.google.com"
+#define kSuggestionsURL      @"http://betareno.cyberhobo.net"
 #define kDateFormat          @"yyyyMMdd'T'hh:mm:ssZ"

@@ -30,30 +30,25 @@
 
 -(IBAction) takeAPictureButtonPressed; {
     
-    [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
-    
-}
-
-#pragma mark - Pick or click a picture
-- (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType
-{
-    if ([UIImagePickerController isSourceTypeAvailable:sourceType])
+    //sourceType = UIImagePickerControllerSourceTypeCamera;
+    if  ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) 
     {
-        [self setupImagePicker:sourceType];
+        [self setupImagePicker:UIImagePickerControllerSourceTypeCamera]; 
+        //[self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+       
+    } else
+    {
+        [self setupImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+        //[self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
     }
+   
 }
-
-- (void)photoLibraryAction:(id)sender
-{   
-	[self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
-}
-
 
 - (void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType
 {
     imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.delegate = self;
-    self->imagePicker.sourceType = sourceType;
+    imagePicker.sourceType = sourceType;
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
     {
@@ -87,6 +82,27 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self.navigationController popViewControllerAnimated:NO];
 }
 
+-(UIImage*)useImage:(UIImage *)image;{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+     
+     // Create a graphics image context
+     CGSize newSize = CGSizeMake(500, 500);
+     UIGraphicsBeginImageContext(newSize);
+    
+     // Tell the old image to draw in this new context, with the desired
+     // new size
+     [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+     
+     // Get the new image from the context
+     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+     // End the context
+     UIGraphicsEndImageContext();
+    
+     [pool release];
+    return newImage;
+}
+
+
 -(IBAction) cancelButtonPressed; {
     
     [self.navigationController dismissModalViewControllerAnimated:YES];
@@ -94,6 +110,30 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 -(IBAction) submitButtonPressed; {
     
+    NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"%@", kSuggestionsURL]];
+    //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
+	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
+	NSError*				err			= nil;
+	NSData*					response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
+    
+	
+	if (err == nil)
+	{
+		NSString*		respString          = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+        NSArray*        suggestionsArray	= [respString JSONValue];
+        
+		for (int i = 0; i < [suggestionsArray count]; i++)
+		{
+			//pull data into view controller array.  
+            NSLog(@"JJA response from cyberhobo = %@",respString);
+            NSLog(@"JJA jason parsed as = %@",suggestionsArray);
+		}
+	}
+    else
+    {
+        NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,4 +1,3 @@
-dependencies: \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonStreamWriterState.m \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonStreamWriterState.h \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonStreamWriter.h
+dependencies: /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriterState.m \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriterState.h \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriter.h
