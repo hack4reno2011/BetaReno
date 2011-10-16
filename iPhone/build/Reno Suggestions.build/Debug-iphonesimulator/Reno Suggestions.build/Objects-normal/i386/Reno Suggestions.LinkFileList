@@ -2,10 +2,6 @@
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/RSAppDelegate.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/RSViewController.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/Reachability.o
-/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/CameraViewController-iphone.o
-/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/CmaeraViewController-iPad.o
-/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/LocationViewController-iPhone.o
-/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/LocationViewController-iPad.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/NSObject+SBJson.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/SBJsonParser.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/SBJsonStreamParser.o
@@ -20,7 +16,8 @@
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/SBJsonWriter.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/SuggestionRetrieveOperation.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/MapView.o
-/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/TakeAPictureViewController.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/submitViewController.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/ListViewController.o
 /Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/AddressAnnotation.o
+/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/Idea.o
+/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphonesimulator/Reno Suggestions.build/Objects-normal/i386/AllIdeas.o

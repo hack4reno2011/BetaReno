@@ -63,7 +63,8 @@ class BetaReno {
 				'not_found_in_trash' => 'No ideas found in Trash.',
 				'all_items' => 'All Ideas'
 			),
-			'show_in_nav_menus' => true
+			'show_in_nav_menus' => true,
+			'supports' => array( 'title', 'thumbnail', 'custom-fields' )
 		) );
 
 		register_taxonomy( 'actor', 'idea', array(
@@ -116,13 +117,13 @@ class BetaReno {
 
 			// Who
 			$actor_terms = wp_get_object_terms( $idea_location->object_id, 'actor' );
-			if ( wp_is_error( $actor_terms ) ) {
+			if ( is_wp_error( $actor_terms ) ) {
 				$idea['who'] = '';
 			} else {
 				$idea['who'] = $actor_terms[0]->name;
 			}
 
-			$when = get_post_meta( $idea_location->object_id, 'when', true );
+			$idea['when'] = get_post_meta( $idea_location->object_id, 'when', true );
 
 			// TODO: votes
 
@@ -138,7 +139,7 @@ class BetaReno {
 				list( $idea['before_photo_url'], $width, $height ) = wp_get_attachment_image_src( $before_photo_attachments[0]->ID );
 			}
 
-			$after_photo_url = '';
+			$idea['after_photo_url'] = '';
 			$after_photo_attachments = get_children( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
@@ -203,12 +204,12 @@ class BetaReno {
 
 		// Set the location
 		$location_id = GeoMashupDB::set_object_location( 'post', $post_id, array(
-			'latitude' => $_POST['latitude'],
-			'longitude' => $_POST['longitude']
+			'lat' => $_POST['latitude'],
+			'lng' => $_POST['longitude']
 		) );
 		if ( is_wp_error( $location_id ) ) {
 			$response['code'] = 500;
-			$response['message'] = $post_id->get_error_message();
+			$response['message'] = $location_id->get_error_message();
 			echo json_encode( $response );
 			exit();
 		}
