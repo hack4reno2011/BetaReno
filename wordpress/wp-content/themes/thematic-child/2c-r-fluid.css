@@ -1,0 +1,78 @@
+/*
+LAYOUT: One-Column (Right) Fluid 
+DESCRIPTION: Two-column fluid layout, one sidebar fixed size, main blog variable width
+*/
+
+body {
+    min-width:960px;
+}
+#header {
+    position:relative;
+}
+#branding {
+    width:100%;
+    margin:0 auto;
+}
+#blog-title, #blog-description {
+    margin-left: 20px;
+}
+#access {
+    position:relative;
+    overflow:hidden;
+}
+#access .sf-menu {
+    margin-left: 20px;
+}
+.menu {
+    width:100%;
+    margin:0 auto;
+}
+#main {
+    width:100%;
+    margin:0 auto;
+    padding: 20px;
+    overflow:hidden;
+    position:relative;
+}
+#container {
+    width:100%;
+    float:left;
+    margin-right: -330px;
+}
+#content {
+    margin-right: 330px;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    overflow:hidden;
+}
+.main-aside {
+    width:300px;
+    float:right;
+    position:relative;
+    right:10px;
+}
+#secondary {
+    clear:right;
+}
+#footer {    
+    clear:both;
+}
+#subsidiary {
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+}
+#subsidiary .aside {
+    width:300px;
+    float:left;
+    margin:0 20px 0 0;
+}
+#subsidiary #third {
+    margin:0;
+}
+#siteinfo {
+    clear:both;
+    width:100%;
+    margin:0 auto;
+}
