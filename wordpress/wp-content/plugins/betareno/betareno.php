@@ -63,7 +63,8 @@ class BetaReno {
 				'not_found_in_trash' => 'No ideas found in Trash.',
 				'all_items' => 'All Ideas'
 			),
-			'show_in_nav_menus' => true
+			'show_in_nav_menus' => true,
+			'supports' => array( 'title', 'thumbnail', 'custom-fields' )
 		) );
 
 		register_taxonomy( 'actor', 'idea', array(
