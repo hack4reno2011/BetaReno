@@ -31,6 +31,8 @@
 
 //actions
 
+
+
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation{
     MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
     annView.pinColor = MKPinAnnotationColorGreen;
@@ -48,6 +50,7 @@
 		self.startingPoint = newLocation;
 	latitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.latitude];
 	longitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.longitude];
+
 }
 
 -(void) showAddress {
@@ -60,13 +63,8 @@
 	span.longitudeDelta = 0.2;
 	
 	CLLocationCoordinate2D cord;
-	cord.longitude = -119.813803;
-	cord.latitude = 39.529633; 
-	//cord.longitude = [longitude doubleValue];
-	//cord.latitude = [latitude doubleValue];
-    NSLog(@"Latitude:%f",cord.latitude);
-	region.span = span;
-	region.center = cord;
+	//cord.longitude = -119.813803;
+	//cord.latitude = 39.529633; 
 	AddressAnnotation *addAnnotation = nil;
     
 	if(addAnnotation != nil) {
@@ -74,6 +72,13 @@
 		[addAnnotation release];
 		addAnnotation = nil;
 	}
+    
+    cord.longitude = [longitude doubleValue];
+	cord.latitude = [latitude doubleValue];
+    NSLog(@"Latitude:%f",cord.latitude);
+	region.span = span;
+	region.center = cord;
+	
     
     AllIdeas *allIdeas = [[AllIdeas alloc] initIdeas];
     
@@ -117,7 +122,8 @@
 -(IBAction)locationButtonPressed:(id)sender
 {
     ListViewController *vc = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
-    
+ //   vc.currentLongitude= [NSString stringWithFormat:@"%lf", longitude];
+  //  vc.currentLatitude= [NSString stringWithFormat:@"%lf", latitude];
     
     
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
@@ -128,8 +134,7 @@
 -(IBAction)suggestionButtonPressed:(id)sender
 {
     submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
-   // vc.currentLongitude= [NSString stringWithFormat:@"%lf", longitude];
-    //vc.currentLatitude= [NSString stringWithFormat:@"%lf", latitude];
+    
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
     
@@ -149,16 +154,14 @@
 - (void)viewDidLoad
 {
     
-    // Do any additional setup after loading the view, typically from a nib.
     self.locationManager = [[CLLocationManager alloc] init];
-	locationManager.delegate = self;
-	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-	[locationManager startUpdatingLocation]; 
-//     get the most current emailed suggestions
-	
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation]; 
+    
     [super viewDidLoad];
-    [self showAddress];
-
+     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showAddress) userInfo:nil repeats:NO];
+//s[self showAddress];
 }
 
 - (void)viewDidUnload
@@ -189,6 +192,8 @@
 {
 	[super viewDidDisappear:animated];
 }
+
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
