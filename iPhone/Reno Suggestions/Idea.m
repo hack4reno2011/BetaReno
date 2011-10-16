@@ -9,6 +9,7 @@
 #import "Idea.h"
 
 @implementation Idea
+@synthesize idea;
 
 -(id)initIdea;
 {
@@ -35,6 +36,8 @@
 
 -(void) dealloc;
 {
+    [idea release];
+    /*
     [what release];
     [who  release];
     [when release];
@@ -42,6 +45,7 @@
     [latitude release];
     [beforePicture  release];
     [afterPicture   release];
+     */
 
 }
 

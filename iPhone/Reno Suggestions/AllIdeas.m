@@ -44,9 +44,7 @@ static AllIdeas *sharedIdeas;
     //do nothing
 }
 
--(id) initIdeas:(NSString *)longitude 
-        withLat:(NSString *)lat 
-      andRadius:(NSString *)radius;
+-(id) initIdeas;
 {
 
     [super init];
