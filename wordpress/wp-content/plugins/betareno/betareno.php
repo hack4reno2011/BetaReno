@@ -31,7 +31,11 @@ add_action( 'init', array( 'BetaReno', 'action_init' ) );
 class BetaReno {
 
 	static public function action_init() {
+
 		self::register_types();
+
+		// Use Reno's time zone
+		date_default_timezone_set( 'America/Los_Angeles' );
 
 		// Web service handlers
 		add_action( 'wp_ajax_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
