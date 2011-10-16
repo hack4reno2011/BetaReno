@@ -31,6 +31,7 @@ add_action( 'init', array( 'BetaReno', 'action_init' ) );
 class BetaReno {
 
 	static public function action_init() {
+		self::register_types();
 
 		// Web service handlers
 		add_action( 'wp_ajax_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
@@ -38,7 +39,7 @@ class BetaReno {
 	}
 
 	static public function register_types() {
-		register_post_type( 'idea', array(
+		$idea_type = register_post_type( 'idea', array(
 			'description' => 'An idea for an activity at a location',
 			'public' => true,
 			'show_ui' => true,
@@ -47,9 +48,18 @@ class BetaReno {
 			'menu_icon' => null,
 			'capability_type' => 'post',
 			'taxonomies' => array( 'actor', 'post_category' ),
-			'lables' => array(
+			'labels' => array(
 				'name' => 'Ideas',
-				'singular_name' => 'Idea'
+				'singular_name' => 'Idea',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New Idea',
+				'edit_item' => 'Edit Post',
+				'new_item' => 'New Idea',
+				'view_item' => 'View Idea',
+				'search_items' => 'Search Ideas',
+				'not_found' => 'No ideas found.',
+				'not_found_in_trash' => 'No ideas found in Trash.',
+				'all_items' => 'All Ideas'
 			),
 			'show_in_nav_menus' => true
 		) );
