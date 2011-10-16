@@ -1,6 +1,6 @@
-dependencies: \
-  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/submitViewController.m \
-  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/submitViewController.h \
+dependencies: /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/AllIdeas.m \
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/AllIdeas.h \
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/Idea.h \
   /Users/jack/dev/BetaReno/iPhone/SBJson.h \
   /Users/jack/dev/BetaReno/iPhone/SBJsonParser.h \
   /Users/jack/dev/BetaReno/iPhone/SBJsonWriter.h \

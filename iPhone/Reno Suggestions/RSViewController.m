@@ -56,7 +56,7 @@
     
                          
    
-    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", longitude] withLat:[NSString stringWithFormat:@"%lf", latitude] andRadius:@"5"];
+    NSArray *arrayIdeas =[[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", longitude] withLat:[NSString stringWithFormat:@"%lf", latitude] andRadius:@"5"]retain];
     
     for(int i = 0; i < [arrayIdeas count]; ++i)
     {
@@ -109,7 +109,8 @@
 -(IBAction)locationButtonPressed:(id)sender
 {
     ListViewController *vc = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
-    
+    vc.currentLongitude = [NSString stringWithFormat:@"%lf", longitude];
+    vc.currentLatitude = [NSString stringWithFormat:@"%lf", latitude];
     
     
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
@@ -120,8 +121,7 @@
 -(IBAction)suggestionButtonPressed:(id)sender
 {
     submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
-   // vc.currentLongitude= [NSString stringWithFormat:@"%lf", longitude];
-    //vc.currentLatitude= [NSString stringWithFormat:@"%lf", latitude];
+    
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
     

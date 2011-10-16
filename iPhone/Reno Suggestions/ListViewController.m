@@ -14,7 +14,9 @@
 @synthesize listButton;
 @synthesize suggestionButton;
 @synthesize search;
-@synthesize suggestionsTable;
+@synthesize ideasTable;
+@synthesize currentLongitude;
+@synthesize currentLatitude;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +61,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
+    //NSLog(@"JJA debug list count = %i",[ideasList count]);
 	return [ideasList count];
 }
 
@@ -74,9 +77,11 @@
     
     // Set up the cell...
     Idea* thisIdea = [ideasList objectAtIndex:indexPath.row];
+    NSLog(@"JJA debug this idea = %@",thisIdea);
     NSDictionary* ideaDict = thisIdea.idea;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
     cell.textLabel.text = [ideaDict objectForKey:@"what"];
+    //NSLog(@"JJA debug cell = %@",cell.textLabel.text);
     
     return cell;
 }
@@ -104,8 +109,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    ideasList = [[AllIdeas sharedIdeas]getListOfIdeas:currentLongitude withLat:currentLatitude andRadius:kRadius];
-    NSLog(@"JJA debug ideasList = %@",ideasList);
+    currentLongitude = @"-119.813803";
+	currentLatitude = @"39.529633";
+    NSLog(@"JJA debug in list view longitude = %@",currentLongitude);
+    ideasList = [[[AllIdeas sharedIdeas]getListOfIdeas:currentLongitude withLat:currentLatitude andRadius:kRadius]retain];
+    NSLog(@"JJA debug ideasList in list view = %@",ideasList);
+    [ideasTable reloadData];
+
 
 }
 
