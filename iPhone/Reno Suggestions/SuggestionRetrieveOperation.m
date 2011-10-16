@@ -71,18 +71,7 @@ NSAutoreleasePool* suggestionListRetrieveOperationPool = nil;
 								 withObject:self
 							  waitUntilDone:YES];
 	}
-    
-	
-	//end the operation
-	[self willChangeValueForKey:@"isFinished"];
-    [self willChangeValueForKey:@"isExecuting"];	
-	
-    executing	= NO;
-    finished	= YES;
-	
-    [self didChangeValueForKey:@"isExecuting"];
-    [self didChangeValueForKey:@"isFinished"];
-	
+    	
 	[suggestionListRetrieveOperationPool release];
 	suggestionListRetrieveOperationPool = nil;
 }

@@ -69,8 +69,19 @@
 		[addAnnotation release];
 		addAnnotation = nil;
 	}
+    
 	addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:cord];
-	[mapView addAnnotation:addAnnotation];
+	addAnnotation.mTitle = @"TEST123";
+    addAnnotation.mSubTitle = @"My Subtitle";
+    [mapView addAnnotation:addAnnotation];
+    
+    
+    cord.longitude = -119.853803;
+	cord.latitude = 39.529633;
+    AddressAnnotation *addAnnotation1 = [[AddressAnnotation alloc] initWithCoordinate:cord];
+	addAnnotation1.mTitle = @"test";
+    addAnnotation.mSubTitle = @"My Subtitle2";
+    [mapView addAnnotation:addAnnotation1];
 	[mapView setRegion:region animated:TRUE];
 	[mapView regionThatFits:region];
 	

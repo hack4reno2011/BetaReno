@@ -137,9 +137,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
      
      */
     
-    /* - get all data from cyberhobo.net - move this to a singelton?
+<<<<<<< HEAD
+    // - get all data from cyberhobo.net - move this to a singelton?
     
-    NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"%@", kSuggestionsURL]];
+    NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-get-ideas&lat=39.524435&lng=-119.811745&r=5"]];
     //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
 	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
 	NSError*				err			= nil;
@@ -150,7 +151,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 	{
 		NSString*		respString          = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
         NSArray*        suggestionsArray	= [respString JSONValue];
-        
+        NSLog(@"JJA response from cyberhobo = %@",respString);
+
 		for (int i = 0; i < [suggestionsArray count]; i++)
 		{
 			//pull data into view controller array.  
@@ -163,8 +165,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
     }
      
-     */
+     
 
+=======
+    
+>>>>>>> eb5db551dce862c42d55b2b83e15caa3408d4276
 }
 
 - (void)didReceiveMemoryWarning
