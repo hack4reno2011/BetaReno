@@ -31,6 +31,80 @@ add_action( 'init', array( 'BetaReno', 'action_init' ) );
 class BetaReno {
 
 	static public function action_init() {
+
+		// Web service handlers
+		add_action( 'wp_ajax_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
+		add_action( 'wp_ajax_nopriv_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
+	}
+
+	static public function register_types() {
+		register_post_type( 'idea', array(
+			'description' => 'An idea for an activity at a location',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'menu_postition' => null,
+			'menu_icon' => null,
+			'capability_type' => 'post',
+			'taxonomies' => array( 'actor', 'post_category' ),
+			'lables' => array(
+				'name' => 'Ideas',
+				'singular_name' => 'Idea'
+			),
+			'show_in_nav_menus' => true
+		) );
+
+		register_taxonomy( 'actor', 'idea', array(
+			'labels' => array(
+				'name' => 'Actors',
+				'singular_name' => 'Actor',
+				'search_items' => 'Search Actors',
+				'popular_items' => 'Popular Actors',
+				'all_items' => 'All Actors',
+				'edit_item' => 'Edit Actor',
+				'view_item' => 'View Actor',
+				'add_new_item' => 'Add New Actor',
+				'new_item_name' => 'New Actor Name',
+				'separate_items_with_commas' => 'Separate actors with commas',
+				'add_or_remove_items' => 'Add or remove actors',
+				'choose_from_most_used' => 'Chose from the most used actors'
+			)
+		) );
+	}
+
+	static public function action_wp_ajax_betareno_add_idea() {
+
+		$response = array( 'code' => 200, 'message' => 'ok' );
+
+		$required_fields = array( 'api_key', 'what', 'who', 'longitude', 'latitude' );
+		foreach ( $required_fields as $field ) {
+			if ( empty( $_POST[$field] ) ) {
+				$response['code'] = 400;
+				$response['message'] = 'Missing required field "' . $field . '"';
+				echo json_encode( $response );
+				exit();
+			}
+		}
+
+		if ( !self::verify_api_key( $_POST['api_key' ] ) ) {
+			$response['code'] = 403;
+			$response['message'] = 'Invalid API key.' . $field . '"';
+			echo json_encode( $response );
+			exit();
+		}
+
+		$response['idea'] = array(
+			'ID' => 1,
+			'what' => $_POST['what'],
+			'who' => $_POST['who'],
+			'latitude' => $_POST['latitude'],
+			'longitude' => $_POST['longitude'],
+			'votes' => -3,
+			'before_photo_url' => '',
+			'after_photo_url' => ''
+		);
+		echo json_encode( $response );
+		exit();
 	}
 
 }
