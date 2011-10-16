@@ -23,7 +23,7 @@ after_photo=(multipart encoded binary or empty)
 @interface Idea : NSObject
 
 {
-    NSDictionary*           idea;
+    NSMutableDictionary*           idea;
     
     /* key value pairs
     NSMutableString*        what;
@@ -41,6 +41,7 @@ after_photo=(multipart encoded binary or empty)
 @property (nonatomic, retain) NSDictionary* idea;
 
 -(id)initIdea;
+-(void) saveIdeaField:(id)obj withKey:(NSString *)key;
 
 
 

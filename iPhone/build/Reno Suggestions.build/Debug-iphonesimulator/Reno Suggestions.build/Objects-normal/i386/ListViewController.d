@@ -9,5 +9,6 @@ dependencies: \
   /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserAdapter.h \
   /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriter.h \
   /Users/jack/dev/BetaReno/iPhone/NSObject+SBJson.h \
-  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/AllIdeas.h \
-  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/Idea.h
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/Idea.h \
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/ShowIdeaViewController.h \
+  /Users/jack/dev/BetaReno/iPhone/Reno\ Suggestions/AllIdeas.h

@@ -14,7 +14,9 @@
 @synthesize listButton;
 @synthesize suggestionButton;
 @synthesize search;
-@synthesize suggestionsTable;
+@synthesize ideasTable;
+@synthesize currentLongitude;
+@synthesize currentLatitude;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +61,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
+    //NSLog(@"JJA debug list count = %i",[ideasList count]);
 	return [ideasList count];
 }
 
@@ -74,19 +77,25 @@
     
     // Set up the cell...
     Idea* thisIdea = [ideasList objectAtIndex:indexPath.row];
-    NSDictionary* ideaDict = thisIdea.idea;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    cell.textLabel.text = [ideaDict objectForKey:@"what"];
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    cell.textLabel.text = [thisIdea objectForKey:@"what"];
+
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // open a alert with an OK and cancel button
-    NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
+    
+    Idea* thisIdea = [ideasList objectAtIndex:indexPath.row];
+    ShowIdeaViewController *vc = [[[ShowIdeaViewController alloc] initWithNibName:@"ShowIdeaViewController" bundle:nil] autorelease];
+    
+    vc.strURL = [NSString stringWithFormat:@"%@/?p=%@",kSuggestionsBaseURL,[thisIdea objectForKey:@"ID"]];
+    UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    [self presentModalViewController:navController animated:YES];
+    
+    return;
+
+    
 }
 
 
@@ -104,8 +113,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"JJA debug - lat = %@, long = %@",currentLatitude, currentLongitude);
+    //currentLongitude = @"-119.813803";
+	//currentLatitude = @"39.529633";
     ideasList = [[AllIdeas sharedIdeas]getListOfIdeas:currentLongitude withLat:currentLatitude andRadius:kRadius];
-    NSLog(@"JJA debug ideasList = %@",ideasList);
+    NSLog(@"JJA debug ideasList in list view = %@",ideasList);
+    [ideasTable reloadData];
+
 
 }
 

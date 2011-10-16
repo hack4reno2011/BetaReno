@@ -10,9 +10,17 @@
 
 
 @implementation submitViewController
+
 @synthesize cancelButton;
 @synthesize cameraButton;
 @synthesize submitButton;
+@synthesize whatToDo;
+@synthesize whoShouldDoIt;
+@synthesize whenToDoIt;
+@synthesize whereToDoIt;
+@synthesize myNewIdea;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,9 +33,68 @@
 
 -(void)dealloc
 {
-    
+    [cancelButton release];
+    [cameraButton release];
+    [submitButton release];
+    [whenToDoIt release];
+    [whoShouldDoIt release];
+    [whenToDoIt release];
+    [whereToDoIt release];
+    [myNewIdea release];
 }
 
+//capture the text input
+#pragma mark - edit the name field
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    textField.text = @"";
+    return;
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [myNewIdea saveIdeaField:textField.text withKey:@"where"];
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+#pragma mark - edit the notes field
+
+-(void)textViewDidBeginEditing:(UITextView *)textField
+{
+    textField.text = @"";
+    return;
+}
+
+
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range 
+ replacementText:(NSString *)text
+{
+    
+    if ([text isEqualToString:@"\n"]) {
+        
+        [textView resignFirstResponder];
+        // Return FALSE so that the final '\n' character doesn't get added
+        return NO;
+    }
+    if ([textView.text length] > 139) {
+        return NO;
+    }
+    // For any other character return TRUE so that the text gets added to the view
+    return YES;
+}
+
+-(void)textViewDidEndEditing:(UITextField *)textField
+{
+    [myNewIdea saveIdeaField:textField.text withKey:@"what"];
+    return;
+}
+
+
+//capture the photo
 -(IBAction) takeAPictureButtonPressed; {
     
     //sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -99,6 +166,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
      UIGraphicsEndImageContext();
     
      [pool release];
+    NSData* newImageData = UIImagePNGRepresentation(newImage);
+
+    [myNewIdea saveIdeaField:newImageData withKey:@"beforeImage"];
+
     return newImage;
 }
 
@@ -109,11 +180,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
 }
 -(IBAction) submitButtonPressed; {
+    NSLog(@"JJA debug - My new Idea  = %@",myNewIdea.idea);
     
-    /*
-    
-    NSString*				json		= [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\"}", receipt64];
-	NSURL*					url			= [NSURL URLWithString:@"https://buy.itunes.apple.com/verifyReceipt"];
+    NSString*               newIdeaString = @"what:xyz";
+    NSString*				json		= [NSString stringWithFormat:@"{%@}",newIdeaString];
+	NSURL*					url			= [NSURL URLWithString:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-add-idea"];
 	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
 	
 	[request setHTTPMethod:@"POST"];
@@ -128,43 +199,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 	if (response)
 	{
 		NSString*		resStr	= [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-		NSDictionary*	resJSON	= [resStr JSONValue];		
-		int				status	= [[resJSON objectForKey:@"status"] intValue];
-		self.receiptIsValid		= status == 0;
-		self.transaction		= resStr;
-		//NSLog(@"receipt check response : %@", resStr);
+		NSDictionary*	resJSON	= [resStr JSONValue];
+		NSLog(@"JJA POST check response : %@", resStr);
 	}
      
-     */
-    
-    // - get all data from cyberhobo.net - move this to a singelton?
-    
-    NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-get-ideas&lat=39.524435&lng=-119.811745&r=5"]];
-    //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
-	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
-	NSError*				err			= nil;
-	NSData*					response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
-    
-	
-	if (err == nil)
-	{
-		NSString*		respString          = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-        NSArray*        suggestionsArray	= [respString JSONValue];
-        NSLog(@"JJA response from cyberhobo = %@",respString);
 
-		for (int i = 0; i < [suggestionsArray count]; i++)
-		{
-			//pull data into view controller array.  
-            NSLog(@"JJA response from cyberhobo = %@",respString);
-            NSLog(@"JJA jason parsed as = %@",suggestionsArray);
-		}
-	}
-    else
-    {
-        NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
-    }
-     
-     
 }
 
 - (void)didReceiveMemoryWarning
@@ -181,6 +220,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //create a new ideas object
+    myNewIdea = [[Idea alloc]initIdea];
+    
 }
 
 - (void)viewDidUnload
