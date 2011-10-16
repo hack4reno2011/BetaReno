@@ -4,7 +4,7 @@
     <string name="app_name">BetaReno</string>
     
     <string name="home_btn_create">Submit an Idea</string>
-    <string name="home_btn_view">View an Idea</string>
+    <string name="home_btn_view">View Ideas</string>
     
     <string name="submit_txt_title">Submit an Idea!</string>
     <string name="submit_txt_what">What should be done?</string>

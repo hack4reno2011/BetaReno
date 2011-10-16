@@ -6,9 +6,9 @@
         <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
             <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_title" android:id="@+id/submit_txt_title" android:layout_height="wrap_content"></TextView>
             <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_what" android:id="@+id/submit_txt_what" android:layout_height="wrap_content"></TextView>
-            <EditText android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editWhat"></EditText>
+            <EditText android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editWhat" android:hint="What should be done?"></EditText>
             <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_where" android:id="@+id/submit_txt_where" android:layout_height="wrap_content"></TextView>
-            <EditText android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editWhere" android:inputType="textPostalAddress"></EditText>
+            <EditText android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editWhere" android:inputType="textPostalAddress" android:hint="Where is this at?"></EditText>
             <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_who" android:id="@+id/submit_txt_who" android:layout_height="wrap_content"></TextView>
             <Spinner android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/spinWho"></Spinner>
             <TextView android:layout_width="wrap_content" android:text="@string/submit_txt_picture" android:id="@+id/submit_txt_picture" android:layout_height="wrap_content"></TextView>

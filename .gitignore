@@ -1,5 +1,5 @@
 # xcode noise
-build/*
+iphone/build/*
         *.perspective
         *.perspectivev3
         *.pbxuser

@@ -52,25 +52,35 @@
 	longitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.longitude];
 }
 
+-(NSString *)getLatestLatitude;
+{
+    return [NSString stringWithFormat:@"%lf", [latitude doubleValue]];
+}
+
+-(NSString *)getLatestLongitude;
+{
+    return [NSString stringWithFormat:@"%lf", [longitude doubleValue]];
+}
+
 -(void) showAddress {
     
     
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
-	span.latitudeDelta = 0.2;
-	span.longitudeDelta = 0.2;
+	span.latitudeDelta = 0.1;
+	span.longitudeDelta = 0.1;
 	
 	CLLocationCoordinate2D cord;
-	//cord.longitude = -119.813803;
-	//cord.latitude = 39.529633; 
-	AddressAnnotation *addAnnotation = nil;
+		AddressAnnotation *addAnnotation = nil;
     
 	if(addAnnotation != nil) {
 		[mapView removeAnnotation:addAnnotation];
 		[addAnnotation release];
 		addAnnotation = nil;
 	}
-    
+   // cord.longitude = -119.813803;
+	//cord.latitude = 39.529633; 
+
     cord.longitude = [longitude doubleValue];
 	cord.latitude = [latitude doubleValue];
     NSLog(@"Latitude:%f",cord.latitude);
@@ -82,32 +92,32 @@
     
     
     
-    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", cord.longitude] withLat:[NSString stringWithFormat:@"%lf", cord.latitude] andRadius:@"5"];
+    NSArray *arrayIdeas =[[AllIdeas sharedIdeas]getListOfIdeas:[NSString stringWithFormat:@"%lf", cord.longitude] withLat:[NSString stringWithFormat:@"%lf", cord.latitude] andRadius:kRadius];
     
     for(int i = 0; i < [arrayIdeas count]; ++i)
     {
         NSDictionary *dictIdea = [arrayIdeas objectAtIndex:i];
-   //     cord.longitude = [dictIdea objectForKey:@"longitude"];
-     //   cord.latitude = [latitude 
+        cord.longitude = [[dictIdea objectForKey:@"longitude"] doubleValue];
+        cord.latitude = [[dictIdea objectForKey:@"latitude"] doubleValue]; 
+        addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:cord];
+        addAnnotation.mTitle = [dictIdea objectForKey:@"who"];
+        addAnnotation.mSubTitle = [dictIdea objectForKey:@"what"];
+        NSLog(@"submission %@", addAnnotation.mTitle);
+        [mapView addAnnotation:addAnnotation];
 
-        NSLog([dictIdea objectForKey:@"who"]);
-        
     }
     
     
     
-	addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:cord];
-	addAnnotation.mTitle = @"TEST123";
-    addAnnotation.mSubTitle = @"My Subtitle";
-    [mapView addAnnotation:addAnnotation];
+	
     
     
-    cord.longitude = -119.853803;
-	cord.latitude = 39.529633;
-    AddressAnnotation *addAnnotation1 = [[AddressAnnotation alloc] initWithCoordinate:cord];
-	addAnnotation1.mTitle = @"test";
-    addAnnotation.mSubTitle = @"My Subtitle2";
-    [mapView addAnnotation:addAnnotation1];
+    //cord.longitude = -119.853803;
+	//cord.latitude = 39.529633;
+    //AddressAnnotation *addAnnotation1 = [[AddressAnnotation alloc] initWithCoordinate:cord];
+	//addAnnotation1.mTitle = @"test";
+    //addAnnotation.mSubTitle = @"My Subtitle2";
+    //[mapView addAnnotation:addAnnotation1];
 	[mapView setRegion:region animated:TRUE];
 	[mapView regionThatFits:region];
 	
@@ -134,6 +144,8 @@
 -(IBAction)suggestionButtonPressed:(id)sender
 {
     submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
+    vc.lastLatitude = [NSString stringWithFormat:@"%lf", [latitude doubleValue]];
+    vc.lastLongitude = [NSString stringWithFormat:@"%lf", [longitude doubleValue]];
     
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
@@ -142,11 +154,6 @@
     
     return;
 }
-
-//Table View Protocols
-
-
-
 
 
 #pragma mark - View lifecycle

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:id="@+id/RelativeLayout01"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+	<mobi.ineedaride.CustomAutoCompleteTextView
+		android:layout_height="wrap_content"
+		android:id="@+id/boxStartPoint"
+		android:layout_width="fill_parent"
+		android:hint="Where are you right now?"
+		android:inputType="text"></mobi.ineedaride.CustomAutoCompleteTextView>
+	<mobi.ineedaride.CustomAutoCompleteTextView
+		android:layout_below="@+id/boxStartPoint"
+		android:layout_height="wrap_content"
+		android:id="@+id/boxEndPoint"
+		android:layout_width="fill_parent"
+		android:hint="Where do you want to go?"
+		android:inputType="text"></mobi.ineedaride.CustomAutoCompleteTextView>
+	<EditText
+		android:layout_width="wrap_content"
+		android:layout_below="@+id/boxEndPoint"
+		android:layout_height="wrap_content"
+		android:id="@+id/boxSeats"
+		android:hint="Total # of People"
+		android:inputType="number"></EditText>
+	<Button
+		android:layout_toRightOf="@+id/boxSeats"
+		android:layout_below="@+id/boxEndPoint"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="Verify Route"
+		android:id="@+id/btnVerify"></Button>
+</RelativeLayout>

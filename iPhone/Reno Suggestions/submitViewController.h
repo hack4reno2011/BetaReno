@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "SBJson.h"
 #import "Idea.h"
+#import "RSViewController.h"
+#import "ASIFormDataRequest.h"
 
 @interface submitViewController : UIViewController 
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate, 
     UITextFieldDelegate, UITextViewDelegate>
+
+#define SCROLLVIEW_HEIGHT 460
+#define SCROLLVIEW_WIDTH  320
+
+#define SCROLLVIEW_CONTENT_HEIGHT 720
+#define SCROLLVIEW_CONTENT_WIDTH  320
 
 {
     Idea*   myNewIdea;
@@ -21,6 +29,7 @@
     IBOutlet    UITextField*    whenToDoIt;
     IBOutlet    UITextField*    whoShouldDoIt;
     IBOutlet    UITextView*     whereToDoIt;
+    IBOutlet    UIImageView*    beforeImageView;
     
     UIButton*                   cancelButton;
     UIButton*                   cameraButton;
@@ -28,6 +37,13 @@
     
     BOOL                                mediaTypeCamera;
     UIImagePickerController*           imagePicker;
+    
+    BOOL            keyboardVisible;
+    CGPoint         offset;
+    UIScrollView    *scrollview;
+    
+    NSString*       lastlongitude;
+    NSString*       lastLatitude;
 }
 
  
@@ -39,6 +55,9 @@
 @property (nonatomic, retain) UITextField*  whoShouldDoIt;
 @property (nonatomic, retain) UITextView*   whereToDoIt;
 @property (nonatomic, retain) Idea*         myNewIdea;
+@property (nonatomic, retain) UIImageView*  beforeImageView;
+@property (nonatomic, retain) NSString* lastLongitude;
+@property (nonatomic, retain) NSString* lastLatitude;
 
 -(IBAction) takeAPictureButtonPressed;
 -(IBAction) cancelButtonPressed;
