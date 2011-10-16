@@ -56,10 +56,11 @@
 	span.longitudeDelta = 0.2;
 	
 	CLLocationCoordinate2D cord;
-	cord.longitude = -119.813803;
-	cord.latitude = 39.529633; 
-	//cord.longitude = [longitude doubleValue];
-	//cord.latitude = [latitude doubleValue];
+	//cord.longitude = -119.813803;
+	//cord.latitude = 39.529633; 
+	cord.longitude = [longitude doubleValue];
+	cord.latitude = [latitude doubleValue];
+    NSLog(@"Latitude:%f",cord.latitude);
 	region.span = span;
 	region.center = cord;
 	AddressAnnotation *addAnnotation = nil;
@@ -94,6 +95,9 @@
 -(IBAction)locationButtonPressed:(id)sender
 {
     ListViewController *vc = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
+    
+    
+    
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
     
@@ -102,6 +106,8 @@
 -(IBAction)suggestionButtonPressed:(id)sender
 {
     submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
+   // vc.currentLongitude= [NSString stringWithFormat:@"%lf", longitude];
+    //vc.currentLatitude= [NSString stringWithFormat:@"%lf", latitude];
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
     

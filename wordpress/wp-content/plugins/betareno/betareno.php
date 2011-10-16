@@ -204,12 +204,12 @@ class BetaReno {
 
 		// Set the location
 		$location_id = GeoMashupDB::set_object_location( 'post', $post_id, array(
-			'latitude' => $_POST['latitude'],
-			'longitude' => $_POST['longitude']
+			'lat' => $_POST['latitude'],
+			'lng' => $_POST['longitude']
 		) );
 		if ( is_wp_error( $location_id ) ) {
 			$response['code'] = 500;
-			$response['message'] = $post_id->get_error_message();
+			$response['message'] = $location_id->get_error_message();
 			echo json_encode( $response );
 			exit();
 		}
