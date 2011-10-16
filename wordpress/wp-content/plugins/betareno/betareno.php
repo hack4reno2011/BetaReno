@@ -36,6 +36,8 @@ class BetaReno {
 		// Web service handlers
 		add_action( 'wp_ajax_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
 		add_action( 'wp_ajax_nopriv_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
+		add_action( 'wp_ajax_betareno-get-ideas', array( __CLASS__, 'action_wp_ajax_betareno_get_ideas' ) );
+		add_action( 'wp_ajax_nopriv_betareno-get-ideas', array( __CLASS__, 'action_wp_ajax_betareno_get_ideas' ) );
 	}
 
 	static public function register_types() {
@@ -80,6 +82,78 @@ class BetaReno {
 				'choose_from_most_used' => 'Chose from the most used actors'
 			)
 		) );
+	}
+
+	static public function action_wp_ajax_betareno_get_ideas() {
+
+		// default is within 5 miles of downtown Reno
+		$default_args = array(
+			'lat' => '39.524435',
+			'lng' => '-119.811745',
+			'r' => '5'
+		);
+		$args = wp_parse_args( $_GET, $default_args );
+		extract( $args );
+
+		$response = array( 'code' => 200, 'message' => 'ok' );
+
+		$geo_query = array(
+			'object_name' => 'post',
+			'map_post_type' => 'idea',
+			'near_lat' => $lat,
+			'near_lng' => $lng,
+			'radius_mi' => $r
+		);
+		$idea_locations = GeoMashupDB::get_object_locations( $geo_query );
+		$response['ideas'] = array();
+		foreach( $idea_locations as $idea_location ) {
+			$idea = array(
+				'ID' => $idea_location->object_id,
+				'what' => $idea_location->label,
+				'latitude' => $idea_location->lat,
+				'longitude' => $idea_location->lng
+			);
+
+			// Who
+			$actor_terms = wp_get_object_terms( $idea_location->object_id, 'actor' );
+			if ( wp_is_error( $actor_terms ) ) {
+				$idea['who'] = '';
+			} else {
+				$idea['who'] = $actor_terms[0]->name;
+			}
+
+			$when = get_post_meta( $idea_location->object_id, 'when', true );
+
+			// TODO: votes
+
+			// Photos
+			$idea['before_photo_url'] = '';
+			$before_photo_attachments = get_children( array(
+				'post_type' => 'attachment',
+				'post_mime_type' => 'image',
+				'post_parent' => $idea_location->object_id,
+				'post_title' => 'Before'
+			) );
+			if ( $before_photo_attachments ) {
+				list( $idea['before_photo_url'], $width, $height ) = wp_get_attachment_image_src( $before_photo_attachments[0]->ID );
+			}
+
+			$after_photo_url = '';
+			$after_photo_attachments = get_children( array(
+				'post_type' => 'attachment',
+				'post_mime_type' => 'image',
+				'post_parent' => $idea_location->object_id,
+				'post_title' => 'After'
+			) );
+			if ( $after_photo_attachments ) {
+				list( $idea['after_photo_url'], $width, $height ) = wp_get_attachment_image_src( $after_photo_attachments[0]->ID );
+			}
+
+			$response['ideas'][] = $idea;
+		}
+
+		echo json_encode( $response );
+		exit();
 	}
 
 	static public function action_wp_ajax_betareno_add_idea() {
@@ -140,17 +214,27 @@ class BetaReno {
 		}
 		$location = GeoMashupDB::get_location( $location_id );
 
+		// Set the when
+		$when = '';
+		if ( isset( $_POST['when'] ) ) {
+			$time = strtotime( $_POST['when'] );
+			if ( $time ) {
+				$when = date( 'Y-m-d h:i:00 e', $time );
+				update_post_meta( $post_id, 'when', $when );
+			}
+		}
+
 		// Handle photos
 		$before_photo_url = '';
 		if ( isset( $_FILES['before_photo'] ) ) {
-			$before_photo_id = media_handle_upload( 'before_photo',  $post_id );
+			$before_photo_id = media_handle_upload( 'before_photo',  $post_id, array( 'title' => 'Before' ) );
 			if ( !is_wp_error( $before_photo_id ) ) {
 				list( $before_photo_url, $width, $height ) = wp_get_attachment_image_src( $before_photo_id );
 			}
 		}
 		$after_photo_url = '';
 		if ( isset( $_FILES['after_photo'] ) ) {
-			$after_photo_id = media_handle_upload( 'after_photo',  $post_id );
+			$after_photo_id = media_handle_upload( 'after_photo',  $post_id, array( 'title' => 'After' ) );
 			if ( !is_wp_error( $after_photo_id ) ) {
 				list( $after_photo_url, $width, $height ) = wp_get_attachment_image_src( $after_photo_id );
 			}
@@ -161,6 +245,7 @@ class BetaReno {
 			'ID' => $post_id,
 			'what' => $post->post_title,
 			'who' => $actor->name,
+			'when' => $when,
 			'latitude' => $location->lat,
 			'longitude' => $location->lng,
 			'votes' => -3,
