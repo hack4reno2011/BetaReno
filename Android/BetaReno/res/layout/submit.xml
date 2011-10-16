@@ -15,6 +15,7 @@
             <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/submit_btn_picture" android:id="@+id/btnPic"></Button>
             <CheckBox android:layout_width="wrap_content" android:id="@+id/chkPlan" android:text="@string/submit_chk_planned" android:layout_height="wrap_content"></CheckBox>
             <DatePicker android:id="@+id/datePlan" android:layout_width="match_parent" android:layout_height="wrap_content"></DatePicker>
+            <TimePicker android:layout_height="wrap_content" android:id="@+id/timePlan" android:layout_width="match_parent"></TimePicker>
             <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/btnSubmit" android:text="@string/submit_btn_submit"></Button>
         </LinearLayout>
     </ScrollView>
