@@ -1,0 +1,21 @@
+/**
+ * Default map styles.
+ *
+ * Don't modify this file! It will be overwritten by upgrades.
+ * 
+ * Instead, copy this file to map-style.css in your theme directory
+ * or Geo Mashup Custom plugin directory, if you have that 
+ * installed. Those files take precedence over these default styles.
+ */
+
+ /* Maps fill the frame, makes percentage height maps a bit easier */
+ html, body { height: 100%; }
+
+/* Info window */
+/* .locationinfo { font-size:80%; overflow:auto; width:300px; height:150px; } */
+
+/* Title link style */
+.locationinfo h2 a, .info-window-max h2 a { text-decoration:none; margin:0; padding:0; } 
+
+/* Excerpt */
+.storycontent { font-family: Verdana Sans-Serif; }
