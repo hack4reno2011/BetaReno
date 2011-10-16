@@ -40,5 +40,8 @@
 -(IBAction)locationButtonPressed:(id)sender;
 -(IBAction)suggestionButtonPressed:(id)sender;
 
+-(NSString *)getLatestLatitude;
+-(NSString *)getLatestLongitude;
+
 
 @end

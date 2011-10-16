@@ -19,6 +19,7 @@
 @synthesize whenToDoIt;
 @synthesize whereToDoIt;
 @synthesize myNewIdea;
+@synthesize beforeImageView;
 
 
 
@@ -41,6 +42,7 @@
     [whenToDoIt release];
     [whereToDoIt release];
     [myNewIdea release];
+    [beforeImageView release];
 }
 
 //capture the text input
@@ -54,7 +56,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [myNewIdea saveIdeaField:textField.text withKey:@"where"];
+    [myNewIdea saveIdeaField:textField.text withKey:@"who"];
     [textField resignFirstResponder];
     return YES;
 }
@@ -89,7 +91,14 @@
 
 -(void)textViewDidEndEditing:(UITextField *)textField
 {
-    [myNewIdea saveIdeaField:textField.text withKey:@"what"];
+    
+    if (textField.tag == 0) {
+        [myNewIdea saveIdeaField:textField.text withKey:@"what"];
+    }
+    else
+    {
+        [myNewIdea saveIdeaField:textField.text withKey:@"where"];
+    }
     return;
 }
 
@@ -165,11 +174,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
      // End the context
      UIGraphicsEndImageContext();
     
-     [pool release];
+    beforeImageView.image = newImage;
     NSData* newImageData = UIImagePNGRepresentation(newImage);
 
     [myNewIdea saveIdeaField:newImageData withKey:@"beforeImage"];
-
+    [pool release];
     return newImage;
 }
 
@@ -180,29 +189,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
 }
 -(IBAction) submitButtonPressed; {
-    NSLog(@"JJA debug - My new Idea  = %@",myNewIdea.idea);
     
-    NSString*               newIdeaString = @"what:xyz";
-    NSString*				json		= [NSString stringWithFormat:@"{%@}",newIdeaString];
-	NSURL*					url			= [NSURL URLWithString:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-add-idea"];
-	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
-	
-	[request setHTTPMethod:@"POST"];
-	[request setHTTPBody:[NSData dataWithBytes:[json UTF8String] length:[json length]]];
+    RSViewController* rs = [[RSViewController alloc]init];
+    NSString* lng = [rs getLatestLongitude];
+    NSString* lat  = [rs getLatestLatitude];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-add-idea"]];
+    [request setPostValue:@"BetaReno4hack4reno" forKey:@"api_key"];
+    [request setPostValue:[myNewIdea.idea objectForKey:@"what"] forKey:@"what"];
+    [request setPostValue:[myNewIdea.idea objectForKey:@"who"] forKey:@"who"];
+    //[request setPostValue:lat forKey:@"latitude"];
+    //[request setPostValue:lng forKey:@"longiude"];
+    [request setPostValue:@"39.529633" forKey:@"latitude"];
+    [request setPostValue:@"-119.813803" forKey:@"longiude"];
+    [request setPostValue:@"" forKey:@"when"];
+    [request setData:[myNewIdea.idea objectForKey:@"before_photo"] withFileName:@"beforephoto.jpg" andContentType:@"image/jpeg" forKey:@"before_photo"];
+    [request setPostValue:@"" forKey:@"after_photo"];
+	[request setRequestMethod:@"POST"];
+    /*
+	[request setHTTPBody:[NSData dataWithBytes:[newIdeaJSONString UTF8String] length:[newIdeaJSONString length]]];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[NSString stringWithFormat:@"%d", [json length]] forHTTPHeaderField:@"Content-Length"];
-	
-	NSError*				err			= nil;
-	NSData*					response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
-	
-	if (response)
-	{
-		NSString*		resStr	= [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-		NSDictionary*	resJSON	= [resStr JSONValue];
-		NSLog(@"JJA POST check response : %@", resStr);
-	}
-     
+    [request setValue:[NSString stringWithFormat:@"%d", [newIdeaJSONString length]] forHTTPHeaderField:@"Content-Length"];
+     */
+    [request startSynchronous];
+    NSString *statusMessage = [request responseStatusMessage];
+    NSLog(@"JJA POST check response : %@", statusMessage);
 
 }
 
@@ -221,8 +232,62 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //create a new ideas object
+    self.navigationController.navigationBarHidden = YES;
     myNewIdea = [[Idea alloc]initIdea];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector (keyboardDidShow:)
+                                                 name: UIKeyboardDidShowNotification object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector (keyboardDidHide:)
+                                                 name: UIKeyboardDidHideNotification object:nil];
+    
+}
+
+-(void) keyboardDidShow: (NSNotification *)notif 
+{
+    // If keyboard is visible, return
+    if (keyboardVisible) 
+    {
+        NSLog(@"Keyboard is already visible. Ignoring notification.");
+        return;
+    }
+    
+    // Get the size of the keyboard.
+    NSDictionary* info = [notif userInfo];
+    NSValue* aValue = [info objectForKey:UIKeyboardFrameBeginUserInfoKey];
+    CGSize keyboardSize = [aValue CGRectValue].size;
+    
+    // Save the current location so we can restore
+    // when keyboard is dismissed
+    offset = scrollview.contentOffset;
+    
+    // Resize the scroll view to make room for the keyboard
+    CGRect viewFrame = scrollview.frame;
+    viewFrame.size.height -= keyboardSize.height;
+    scrollview.frame = viewFrame;
+    
+    // Keyboard is now visible
+    keyboardVisible = YES;
+}
+
+-(void) keyboardDidHide: (NSNotification *)notif 
+{
+    // Is the keyboard already shown
+    if (!keyboardVisible) 
+    {
+        NSLog(@"Keyboard is already hidden. Ignoring notification.");
+        return;
+    }
+    
+    // Reset the height of the scroll view to its original value
+    scrollview.frame = CGRectMake(0, 0, SCROLLVIEW_WIDTH, SCROLLVIEW_HEIGHT);
+    
+    // Reset the scrollview to previous location
+    scrollview.contentOffset = offset;
+    
+    // Keyboard is no longer visible
+    keyboardVisible = NO;	
 }
 
 - (void)viewDidUnload

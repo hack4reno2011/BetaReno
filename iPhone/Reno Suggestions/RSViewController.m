@@ -52,6 +52,16 @@
 	longitude = [[NSNumber alloc] initWithDouble:(double)newLocation.coordinate.longitude];
 }
 
+-(NSString *)getLatestLatitude;
+{
+    return [NSString stringWithFormat:@"%lf", [latitude doubleValue]];
+}
+
+-(NSString *)getLatestLongitude;
+{
+    return [NSString stringWithFormat:@"%lf", [longitude doubleValue]];
+}
+
 -(void) showAddress {
     
     
@@ -90,7 +100,6 @@
    //     cord.longitude = [dictIdea objectForKey:@"longitude"];
      //   cord.latitude = [latitude 
 
-        NSLog([dictIdea objectForKey:@"who"]);
         
     }
     
@@ -142,11 +151,6 @@
     
     return;
 }
-
-//Table View Protocols
-
-
-
 
 
 #pragma mark - View lifecycle

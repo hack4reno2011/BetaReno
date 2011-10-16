@@ -77,7 +77,7 @@
     
     // Set up the cell...
     Idea* thisIdea = [ideasList objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
     cell.textLabel.text = [thisIdea objectForKey:@"what"];
 
     
@@ -113,11 +113,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"JJA debug - lat = %@, long = %@",currentLatitude, currentLongitude);
-    //currentLongitude = @"-119.813803";
-	//currentLatitude = @"39.529633";
+    self.navigationController.navigationBarHidden = YES;
+    ideasTable.rowHeight = kRowHeight;
     ideasList = [[AllIdeas sharedIdeas]getListOfIdeas:currentLongitude withLat:currentLatitude andRadius:kRadius];
-    NSLog(@"JJA debug ideasList in list view = %@",ideasList);
     [ideasTable reloadData];
 
 
