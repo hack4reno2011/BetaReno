@@ -167,7 +167,6 @@
     
     [super viewDidLoad];
      [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showAddress) userInfo:nil repeats:NO];
-//s[self showAddress];
 }
 
 - (void)viewDidUnload
