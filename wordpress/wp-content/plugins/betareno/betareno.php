@@ -31,6 +31,7 @@ add_action( 'init', array( 'BetaReno', 'action_init' ) );
 class BetaReno {
 
 	static public function action_init() {
+		self::register_types();
 
 		// Web service handlers
 		add_action( 'wp_ajax_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
@@ -38,7 +39,7 @@ class BetaReno {
 	}
 
 	static public function register_types() {
-		register_post_type( 'idea', array(
+		$idea_type = register_post_type( 'idea', array(
 			'description' => 'An idea for an activity at a location',
 			'public' => true,
 			'show_ui' => true,
@@ -47,9 +48,18 @@ class BetaReno {
 			'menu_icon' => null,
 			'capability_type' => 'post',
 			'taxonomies' => array( 'actor', 'post_category' ),
-			'lables' => array(
+			'labels' => array(
 				'name' => 'Ideas',
-				'singular_name' => 'Idea'
+				'singular_name' => 'Idea',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New Idea',
+				'edit_item' => 'Edit Post',
+				'new_item' => 'New Idea',
+				'view_item' => 'View Idea',
+				'search_items' => 'Search Ideas',
+				'not_found' => 'No ideas found.',
+				'not_found_in_trash' => 'No ideas found in Trash.',
+				'all_items' => 'All Ideas'
 			),
 			'show_in_nav_menus' => true
 		) );
@@ -93,18 +103,76 @@ class BetaReno {
 			exit();
 		}
 
-		$response['idea'] = array(
-			'ID' => 1,
-			'what' => $_POST['what'],
-			'who' => $_POST['who'],
+		// Create the post
+		$postdata = array(
+			'post_type' => 'idea',
+			'post_title' => $_POST['what']
+		);
+		$post_id = wp_insert_post( $postdata, true );
+		if ( is_wp_error( $post_id ) ) {
+			$response['code'] = 500;
+			$response['message'] = $post_id->get_error_message();
+			echo json_encode( $response );
+			exit();
+		}
+		$post = get_post( $post_id );
+
+		// Set the actor
+		$term_ids = wp_set_object_terms( $post_id, $_POST['who'], 'actor' );
+		if ( is_wp_error( $term_ids ) ) {
+			$response['code'] = 500;
+			$response['message'] = $term_ids->get_error_message();
+			echo json_encode( $response );
+			exit();
+		}
+		$actor = get_term( $term_ids[0], 'actor' );
+
+		// Set the location
+		$location_id = GeoMashupDB::set_object_location( 'post', $post_id, array(
 			'latitude' => $_POST['latitude'],
-			'longitude' => $_POST['longitude'],
+			'longitude' => $_POST['longitude']
+		) );
+		if ( is_wp_error( $location_id ) ) {
+			$response['code'] = 500;
+			$response['message'] = $post_id->get_error_message();
+			echo json_encode( $response );
+			exit();
+		}
+		$location = GeoMashupDB::get_location( $location_id );
+
+		// Handle photos
+		$before_photo_url = '';
+		if ( isset( $_FILES['before_photo'] ) ) {
+			$before_photo_id = media_handle_upload( 'before_photo',  $post_id );
+			if ( !is_wp_error( $before_photo_id ) ) {
+				list( $before_photo_url, $width, $height ) = wp_get_attachment_image_src( $before_photo_id );
+			}
+		}
+		$after_photo_url = '';
+		if ( isset( $_FILES['after_photo'] ) ) {
+			$after_photo_id = media_handle_upload( 'after_photo',  $post_id );
+			if ( !is_wp_error( $after_photo_id ) ) {
+				list( $after_photo_url, $width, $height ) = wp_get_attachment_image_src( $after_photo_id );
+			}
+		}
+
+		// Respond with the new idea
+		$response['idea'] = array(
+			'ID' => $post_id,
+			'what' => $post->post_title,
+			'who' => $actor->name,
+			'latitude' => $location->lat,
+			'longitude' => $location->lng,
 			'votes' => -3,
-			'before_photo_url' => '',
-			'after_photo_url' => ''
+			'before_photo_url' => $before_photo_url,
+			'after_photo_url' => $after_photo_url
 		);
 		echo json_encode( $response );
 		exit();
+	}
+
+	static public function verify_api_key( $key ) {
+		return ('BetaReno4hack4reno' == $key );
 	}
 
 }
