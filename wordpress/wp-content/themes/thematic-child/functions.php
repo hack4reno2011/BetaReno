@@ -4,23 +4,6 @@
 //  Custom Child Theme Functions
 //
 
-// I've included a "commented out" sample function below that'll add a home link to your menu
-// More ideas can be found on "A Guide To Customizing The Thematic Theme Framework" 
-// http://themeshaper.com/thematic-for-wordpress/guide-customizing-thematic-theme-framework/
-
-// Adds a home link to your menu
-// http://codex.wordpress.org/Template_Tags/wp_page_menu
-//function childtheme_menu_args($args) {
-//    $args = array(
-//        'show_home' => 'Home',
-//        'sort_column' => 'menu_order',
-//        'menu_class' => 'menu',
-//        'echo' => true
-//    );
-//	return $args;
-//}
-//add_filter('wp_page_menu_args','childtheme_menu_args');
-
 // Unleash the power of Thematic's dynamic classes
 // 
 // define('THEMATIC_COMPATIBLE_BODY_CLASS', true);
@@ -34,4 +17,22 @@
 //
 // define('THEMATIC_COMPATIBLE_FEEDLINKS', true);
 
+function childtheme_override_postheader_posttitle() {
+	// No titles
+	return '';
+}
+
+function childtheme_override_blogtitle() {
+	// Logo image
+	echo '<img src="' . path_join( get_stylesheet_directory_uri(), 'images/betareno-logo-180.png' ) . '" alt="BetaReno" />';
+}
+add_action('thematic_header','thematic_blogtitle',3);
+
+function childtheme_override_blogdescription() {
+	// No description
+}
+
+function childtheme_override_access() {
+	// No nav menu
+}
 ?>
