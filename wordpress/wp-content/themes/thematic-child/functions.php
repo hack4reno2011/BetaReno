@@ -24,7 +24,7 @@ function childtheme_override_postheader_posttitle() {
 
 function childtheme_override_blogtitle() {
 	// Logo image
-	echo '<img src="' . path_join( get_stylesheet_directory_uri(), 'images/betareno-logo-180.png' ) . '" alt="BetaReno" />';
+	echo '<div id="blog-title"><img src="' . path_join( get_stylesheet_directory_uri(), 'images/betareno-logo-180.png' ) . '" alt="BetaReno" /></div>';
 }
 add_action('thematic_header','thematic_blogtitle',3);
 
