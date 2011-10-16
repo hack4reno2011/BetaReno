@@ -210,8 +210,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [request startSynchronous];
     NSString *statusMessage = [request responseStatusMessage];
     NSString *response = [request responseString];
-    NSLog ( @"JJA Response: %@", response );
-    NSLog(@"JJA POST check response : %@", statusMessage);
+    UIAlertView *newAlert = 
+	[[UIAlertView alloc] initWithTitle:@"BetaRno"
+							   message:@"Thank you for your submission" 
+							  delegate:nil 
+					 cancelButtonTitle:@"OK"
+					 otherButtonTitles:nil];
+	[newAlert show];
+	[newAlert release];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+
 
 }
 

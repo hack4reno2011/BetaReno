@@ -5,31 +5,31 @@ cCheck dependencies
 cCpResource /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist "build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist"
 cProcessInfoPlistFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Info.plist" "Reno Suggestions/Reno Suggestions-Info.plist"
 cProcessPCH "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-fseiptsmqcolnpefltryqxlukowe/Reno Suggestions-Prefix.pch.pth" "Reno Suggestions/Reno Suggestions-Prefix.pch" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Reachability.o" /Users/jack/dev/BetaReno/iPhone/Reachability.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonParser.o" /Users/jack/dev/BetaReno/iPhone/SBJsonParser.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamParserState.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserState.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamWriterAccumulator.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriterAccumulator.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/main.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/main.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSAppDelegate.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSAppDelegate.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/NSObject+SBJson.o" /Users/jack/dev/BetaReno/iPhone/NSObject+SBJson.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamParserAdapter.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserAdapter.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Reachability.o" /Users/jack/dev/BetaReno/iPhone/Reachability.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/NSObject+SBJson.o" /Users/jack/dev/BetaReno/iPhone/NSObject+SBJson.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamParser.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParser.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonParser.o" /Users/jack/dev/BetaReno/iPhone/SBJsonParser.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamParserAdapter.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserAdapter.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamParserAccumulator.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserAccumulator.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamParserState.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserState.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamWriter.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriter.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonTokeniser.o" /Users/jack/dev/BetaReno/iPhone/SBJsonTokeniser.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamWriterAccumulator.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriterAccumulator.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonStreamWriterState.o" /Users/jack/dev/BetaReno/iPhone/SBJsonStreamWriterState.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonTokeniser.o" /Users/jack/dev/BetaReno/iPhone/SBJsonTokeniser.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonUTF8Stream.o" /Users/jack/dev/BetaReno/iPhone/SBJsonUTF8Stream.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SBJsonWriter.o" /Users/jack/dev/BetaReno/iPhone/SBJsonWriter.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/SuggestionRetrieveOperation.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/SuggestionRetrieveOperation.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/MapView.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/MapView.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ListViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ListViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/AddressAnnotation.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/AddressAnnotation.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Idea.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/Idea.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/AllIdeas.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/AllIdeas.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIAuthenticationDialog.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASIAuthenticationDialog.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ShowIdeaViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ShowIdeaViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIAuthenticationDialog.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASIAuthenticationDialog.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIDataCompressor.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASIDataCompressor.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIDataDecompressor.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASIDataDecompressor.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIDownloadCache.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASIDownloadCache.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -39,15 +39,18 @@ cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Ob
 cCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASINetworkQueue.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASINetworkQueue.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLd "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" normal armv7
 cGenerateDSYMFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM" "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions"
-cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPad.xib"
-cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPhone.xib"
 cCopyStringsFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/en.lproj/InfoPlist.strings" "Reno Suggestions/en.lproj/InfoPlist.strings"
+cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPhone.xib"
+cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPad.xib"
 cCpResource Reno_arch_244x183.jpg "build/Debug-iphoneos/Reno Suggestions.app/Reno_arch_244x183.jpg"
 cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/MapView.xib"
-cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ShowIdeaViewController.xib"
-cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ListViewController.xib"
 cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib"
+cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ListViewController.xib"
+cCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ShowIdeaViewController.xib"
+cCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png" Art/Default.png
 cCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png" Default.png
+cCpResource Art/Default.psd "build/Debug-iphoneos/Reno Suggestions.app/Default.psd"
+cCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/BRicon.png" BRicon.png
 cProcessProductPackaging "/Users/jack/Library/MobileDevice/Provisioning Profiles/3917EBED-5327-4646-975A-D1213B0B078F.mobileprovision" "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/embedded.mobileprovision"
 cProcessProductPackaging "/Users/jack/Library/MobileDevice/Provisioning Profiles/3917EBED-5327-4646-975A-D1213B0B078F.mobileprovision" "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/embedded.mobileprovision"
 cTouch "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"
@@ -541,6 +544,21 @@ N/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-ip
 t2
 s0
 
+N/Users/jack/dev/BetaReno/iPhone/Art/Default.png
+c000000004E9A54B80000000000003893
+t1318737080
+s14483
+
+N/Users/jack/dev/BetaReno/iPhone/Art/Default.psd
+c000000004E9A54B80000000000013FC2
+t1318737080
+s81858
+
+N/Users/jack/dev/BetaReno/iPhone/BRicon.png
+c000000004E9B16BC0000000000000F91
+t1318786748
+s3985
+
 N/Users/jack/dev/BetaReno/iPhone/Default.png
 c000000004E9A54B80000000000003893
 t1318737080
@@ -807,9 +825,9 @@ t1318774512
 s1395
 
 N/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m
-c000000004E9B0C6900000000000016E1
-t1318784105
-s5857
+c000000004E9B1B9E00000000000017A1
+t1318787998
+s6049
 
 N/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/Reno Suggestions-Prefix.pch
 c000000004E989DB60000000000000171
@@ -877,14 +895,14 @@ t1318780129
 s2437
 
 N/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m
-c000000004E9B125200000000000022E0
-t1318785618
-s8928
+c000000004E9B1B4C00000000000023BB
+t1318787916
+s9147
 
 N/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib
-c000000004E9AE19E0000000000006677
-t1318773150
-s26231
+c000000004E9B1549000000000000758E
+t1318786377
+s30094
 
 N/Users/jack/dev/BetaReno/iPhone/Reno_arch_244x183.jpg
 c000000004E98B8D5000000000000452A
@@ -1012,12 +1030,16 @@ t1318429154
 s3519
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app
-t1318785198
-s680
+t1318787918
+s748
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM
-t1318785198
+t1318787917
 s102
+
+N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/BRicon.png
+t1318787106
+s3710
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/CameraViewController-iphone.nib
 t1318722874
@@ -1028,12 +1050,16 @@ t1318722874
 s823
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png
-t1318785095
+t1318787917
 s16063
 
+N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.psd
+t1318787106
+s81858
+
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Info.plist
-t1318785094
-s1314
+t1318787106
+s1319
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/ListViewController.nib
 t1318755596
@@ -1052,11 +1078,11 @@ t1318722874
 s1350
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/PkgInfo
-t1318785094
+t1318787106
 s8
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions
-t1318785198
+t1318787918
 s534928
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno_arch_244x183.jpg
@@ -1092,8 +1118,8 @@ t1318722874
 s1584
 
 N/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/submitViewController.nib
-t1318773151
-s3407
+t1318787106
+s3402
 
 N/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIAuthenticationDialog.o
 t1318777570
@@ -1172,8 +1198,8 @@ t1318780129
 s66596
 
 N/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o
-t1318785094
-s71148
+t2
+s0
 
 N/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Reachability.o
 t1318772765
@@ -1245,11 +1271,11 @@ t1318772765
 s2664
 
 N/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o
-t1318785198
-s91252
+t1318787917
+s96384
 
 N/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent
-t1318785095
+t1318787106
 s426
 
 N/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-ewmarikkqmrbamgxamapjwuyroie/Reno Suggestions-Prefix.pch.pth
@@ -1261,9 +1287,9 @@ t1318772765
 s3849480
 
 NReno Suggestions/Reno Suggestions-Info.plist
-c000000004E9B0D9E00000000000006BA
-t1318784414
-s1722
+c000000004E9B17600000000000000705
+t1318786912
+s1797
 
 CBuild AST from "/Users/jack/dev/BetaReno/Reno Suggestions/NSObject+SBJson.m"
 r0
@@ -1444,18 +1470,18 @@ r0
 
 CCheck dependencies
 r0
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies828e22d2494bb441^404f23d2494bb441^-345"[BWARN]Code Sign warning: code-signing identity 'iPhone Developer' matches multiple identities : 'iPhone Developer: Jack Angelo (B674T4SBLD)', 'iPhone Developer: Jack Angelo (P9VR8Z5XFS)', 'iPhone Developer: Walter Heatlie (52B34BUG24)', 'iPhone Developer: Jack Angelo (NPJ8C2M4PH)' -- 'iPhone Developer: Jack Angelo (B674T4SBLD)' will be used.1(21%IDEActivityLogMessage2@337"Code Sign warning: code-signing identity 'iPhone Developer' matches multiple identities : 'iPhone Developer: Jack Angelo (B674T4SBLD)', 'iPhone Developer: Jack Angelo (P9VR8Z5XFS)', 'iPhone Developer: Walter Heatlie (52B34BUG24)', 'iPhone Developer: Jack Angelo (NPJ8C2M4PH)' -- 'iPhone Developer: Jack Angelo (B674T4SBLD)' will be used.-340478418#18446744073709551615#0#-1#-----0#1#0#--18"Check dependencies36"0F3CBD16-4DA6-4102-A9AC-D0E0758C7BC7-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesf6459a1e534bb441^2bf89d1e534bb441^-345"[BWARN]Code Sign warning: code-signing identity 'iPhone Developer' matches multiple identities : 'iPhone Developer: Jack Angelo (B674T4SBLD)', 'iPhone Developer: Jack Angelo (P9VR8Z5XFS)', 'iPhone Developer: Walter Heatlie (52B34BUG24)', 'iPhone Developer: Jack Angelo (NPJ8C2M4PH)' -- 'iPhone Developer: Jack Angelo (B674T4SBLD)' will be used.1(21%IDEActivityLogMessage2@337"Code Sign warning: code-signing identity 'iPhone Developer' matches multiple identities : 'iPhone Developer: Jack Angelo (B674T4SBLD)', 'iPhone Developer: Jack Angelo (P9VR8Z5XFS)', 'iPhone Developer: Walter Heatlie (52B34BUG24)', 'iPhone Developer: Jack Angelo (NPJ8C2M4PH)' -- 'iPhone Developer: Jack Angelo (B674T4SBLD)' will be used.-340480798#18446744073709551615#0#-1#-----0#1#0#--18"Check dependencies36"E83CAEDF-2619-42EE-B1BE-9524B977C908-
 
 CCodeSign "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app"
 r0
 
 CCodeSign "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"
-s340478418.527419
-e340478418.775412
+s340480799.094803
+e340480799.290102
 r1
 xCodeSign
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"CodeSign "build/Debug-iphoneos/Reno Suggestions.app"a01687d2494bb441^a88dc6d2494bb441^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno%20Suggestions.app/0000000000000000^730"CodeSign "build/Debug-iphoneos/Reno Suggestions.app"    cd /Users/jack/dev/BetaReno/iPhone    setenv CODESIGN_ALLOCATE /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign --force --sign "iPhone Developer: Jack Angelo (B674T4SBLD)" "--resource-rules=/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist" --entitlements "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent" "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"36"94DFDF02-1682-4D8F-A521-5E2945176D5D-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"CodeSign "build/Debug-iphoneos/Reno Suggestions.app"0458181f534bb441^904d4a1f534bb441^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno%20Suggestions.app/0000000000000000^730"CodeSign "build/Debug-iphoneos/Reno Suggestions.app"    cd /Users/jack/dev/BetaReno/iPhone    setenv CODESIGN_ALLOCATE /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign --force --sign "iPhone Developer: Jack Angelo (B674T4SBLD)" "--resource-rules=/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist" --entitlements "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent" "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"36"893CB688-9172-4D68-AD4C-CEBB6C57DCB5-
 
 CCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/ASIAuthenticationDialog.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/ASIAuthenticationDialog.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s340470370.157871
@@ -1829,8 +1855,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/jack/dev/BetaReno/Reno Suggestions/Reno Suggestions/RSViewController.mc3f401140849b441^9dd649140849b441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/jack/dev/BetaReno/Reno%20Suggestions/Reno%20Suggestions/RSViewController.m0000000000000000^2771"CompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o" "Reno Suggestions/RSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/jack/dev/BetaReno/Reno Suggestions"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote "/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-generated-files.hmap" "-I/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-own-target-headers.hmap" "-I/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-all-target-headers.hmap" -iquote "/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-project-headers.hmap" "-I/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/include" "-I/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources/armv7" "-I/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources" "-F/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos" -include "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-ewmarikkqmrbamgxamapjwuyroie/Reno Suggestions-Prefix.pch" -MMD -MT dependencies -MF "/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.d" -c "/Users/jack/dev/BetaReno/Reno Suggestions/Reno Suggestions/RSViewController.m" -o "/Users/jack/dev/BetaReno/Reno Suggestions/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o"36"DCBC08DC-3495-41FB-8698-957D284B4895-
 
 CCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s340477894.739243
-e340477894.921895
+s340480798.635710
+e340480798.784560
 r1
 xCompileC
 xbuild/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o
@@ -1839,14 +1865,11 @@ xnormal
 xarmv7
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m:99:23: warning: unused variable 'dictIdea' [-Wunused-variable,12]
-o         NSDictionary *dictIdea = [arrayIdeas objectAtIndex:i];
-o                       ^
 o/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m:91:15: warning: unused variable 'allIdeas' [-Wunused-variable,12]
 o     AllIdeas *allIdeas = [[[AllIdeas alloc] initIdeas]retain];
 o               ^
-o2 warnings generated.
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m0681bdc6474bb441^c900ecc6474bb441^-460"/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m:99:23: warning: unused variable 'dictIdea' [-Wunused-variable,12]         NSDictionary *dictIdea = [arrayIdeas objectAtIndex:i];                       ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m:91:15: warning: unused variable 'allIdeas' [-Wunused-variable,12]     AllIdeas *allIdeas = [[[AllIdeas alloc] initIdeas]retain];               ^2 warnings generated.2(21%IDEActivityLogMessage2@26"Unused variable 'dictIdea'-340477894#0#134#-1#-23%DVTTextDocumentLocation3@85"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/RSViewController.m0000000000000000^98#22#98#22#18446744073709551615#0#19"Unused Entity Issue--2@26"Unused variable 'allIdeas'-340477894#223#134#-1#-3@85"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/RSViewController.m0000000000000000^90#14#90#14#18446744073709551615#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@85"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/RSViewController.m0000000000000000^2645"CompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o" "Reno Suggestions/RSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jack/dev/BetaReno/iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-generated-files.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-own-target-headers.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-all-target-headers.hmap" -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-project-headers.hmap" -I/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/include "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources/armv7" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources" -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -include "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-fseiptsmqcolnpefltryqxlukowe/Reno Suggestions-Prefix.pch" -MMD -MT dependencies -MF "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.d" -c "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m" -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o"36"11317D5A-3D93-44EA-841E-79E8C1105891-
+o1 warning generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m20eea21e534bb441^adf6d01e534bb441^-236"/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m:91:15: warning: unused variable 'allIdeas' [-Wunused-variable,12]     AllIdeas *allIdeas = [[[AllIdeas alloc] initIdeas]retain];               ^1 warning generated.1(21%IDEActivityLogMessage2@26"Unused variable 'allIdeas'-340480798#0#134#-1#-23%DVTTextDocumentLocation3@85"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/RSViewController.m0000000000000000^90#14#90#14#18446744073709551615#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@85"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/RSViewController.m0000000000000000^2645"CompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o" "Reno Suggestions/RSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jack/dev/BetaReno/iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-generated-files.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-own-target-headers.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-all-target-headers.hmap" -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-project-headers.hmap" -I/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/include "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources/armv7" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources" -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -include "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-fseiptsmqcolnpefltryqxlukowe/Reno Suggestions-Prefix.pch" -MMD -MT dependencies -MF "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.d" -c "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSViewController.m" -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/RSViewController.o"36"ECA7D334-7E3B-4477-8CD5-8AC30BBBDF42-
 
 CCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Reachability.o" "/Users/jack/dev/BetaReno/Reno Suggestions/Reachability.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s340330516.117058
@@ -2277,8 +2300,8 @@ o1 warning generated.
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Compile /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/main.m07ce759d174bb441^79e8a39d174bb441^-487"In file included from /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSAppDelegate.h:10:In file included from /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/main.m:11:/Users/jack/dev/BetaReno/iPhone/Reachability.h:69:58: warning: declaration of 'struct sockaddr_in' will not be visible outside of this function [3] + (Reachability*) reachabilityWithAddress: (const struct sockaddr_in*) hostAddress;                                                          ^1 warning generated.1(21%IDEActivityLogMessage2@80"Declaration of 'struct sockaddr_in' will not be visible outside of this function-340465565#173#148#3(36%IDEActivityLogHeaderInclusionMessage3@90"In file included from /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/RSAppDelegate.h:10:-340465565#0#91#-0#-23%DVTTextDocumentLocation4@82"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/RSAppDelegate.h0000000000000000^9#18446744073709551615#9#18446744073709551615#18446744073709551615#0#---3@81"In file included from /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/main.m:11:-340465565#91#82#-0#-4@73"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/main.m0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#---2@130"Declaration of 'struct sockaddr_in' will not be visible outside of this function in /Users/jack/dev/BetaReno/iPhone/Reachability.h-340465565#18446744073709551615#0#-0#-4@62"file://localhost/Users/jack/dev/BetaReno/iPhone/Reachability.h0000000000000000^68#57#68#57#18446744073709551615#0#---1#-4@62"file://localhost/Users/jack/dev/BetaReno/iPhone/Reachability.h0000000000000000^68#57#68#57#18446744073709551615#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation5@73"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/main.m0000000000000000^2585"CompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/main.o" "Reno Suggestions/main.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jack/dev/BetaReno/iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-generated-files.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-own-target-headers.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-all-target-headers.hmap" -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-project-headers.hmap" -I/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/include "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources/armv7" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources" -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -include "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-fseiptsmqcolnpefltryqxlukowe/Reno Suggestions-Prefix.pch" -MMD -MT dependencies -MF "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/main.d" -c "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/main.m" -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/main.o"36"F2FB4CFC-DD37-4586-8C52-B6B9AB72A088-
 
 CCompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s340478418.170554
-e340478418.314974
+s340480717.156802
+e340480717.423596
 r1
 xCompileC
 xbuild/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o
@@ -2287,6 +2310,12 @@ xnormal
 xarmv7
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:211:15: warning: unused variable 'statusMessage' [-Wunused-variable,12]
+o     NSString *statusMessage = [request responseStatusMessage];
+o               ^
+o/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:212:15: warning: unused variable 'response' [-Wunused-variable,12]
+o     NSString *response = [request responseString];
+o               ^
 o/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:12:1: warning: incomplete implementation [-Wincomplete-implementation,3]
 o @implementation submitViewController
 o ^
@@ -2296,8 +2325,8 @@ o ^
 o/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.h:68:1: note: method definition for 'photoLibraryAction:' not found [3]
 o - (void)photoLibraryAction:(id)sender;
 o ^
-o1 warning generated.
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.mf6d32bd2494bb441^5ea050d2494bb441^-606"/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:12:1: warning: incomplete implementation [-Wincomplete-implementation,3] @implementation submitViewController ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.h:66:1: note: method definition for 'showImagePicker:' not found [3] - (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType; ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.h:68:1: note: method definition for 'photoLibraryAction:' not found [3] - (void)photoLibraryAction:(id)sender; ^1 warning generated.1(21%IDEActivityLogMessage2@25"Incomplete implementation-340478418#0#145#2(2@50"Method definition for 'showImagePicker:' not found-340478418#186#139#-0#-23%DVTTextDocumentLocation3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.h0000000000000000^65#0#65#0#18446744073709551615#0#14"Semantic Issue--2@53"Method definition for 'photoLibraryAction:' not found-340478418#400#142#-0#-3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.h0000000000000000^67#0#67#0#18446744073709551615#0#14"Semantic Issue--1#-3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.m0000000000000000^11#0#11#0#18446744073709551615#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation4@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.m0000000000000000^2665"CompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o" "Reno Suggestions/submitViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jack/dev/BetaReno/iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-generated-files.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-own-target-headers.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-all-target-headers.hmap" -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-project-headers.hmap" -I/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/include "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources/armv7" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources" -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -include "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-fseiptsmqcolnpefltryqxlukowe/Reno Suggestions-Prefix.pch" -MMD -MT dependencies -MF "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.d" -c "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m" -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o"36"79B5220D-FB06-49A0-AF25-0F2D24885782-
+o3 warnings generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.md34f28cd524bb441^aa478acd524bb441^-1040"/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:211:15: warning: unused variable 'statusMessage' [-Wunused-variable,12]     NSString *statusMessage = [request responseStatusMessage];               ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:212:15: warning: unused variable 'response' [-Wunused-variable,12]     NSString *response = [request responseString];               ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m:12:1: warning: incomplete implementation [-Wincomplete-implementation,3] @implementation submitViewController ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.h:66:1: note: method definition for 'showImagePicker:' not found [3] - (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType; ^/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.h:68:1: note: method definition for 'photoLibraryAction:' not found [3] - (void)photoLibraryAction:(id)sender; ^3 warnings generated.3(21%IDEActivityLogMessage2@31"Unused variable 'statusMessage'-340480717#0#144#-1#-23%DVTTextDocumentLocation3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.m0000000000000000^210#14#210#14#18446744073709551615#0#19"Unused Entity Issue--2@26"Unused variable 'response'-340480717#225#139#-1#-3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.m0000000000000000^211#14#211#14#18446744073709551615#0#19"Unused Entity Issue--2@25"Incomplete implementation-340480717#433#145#2(2@50"Method definition for 'showImagePicker:' not found-340480717#619#139#-0#-3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.h0000000000000000^65#0#65#0#18446744073709551615#0#14"Semantic Issue--2@53"Method definition for 'photoLibraryAction:' not found-340480717#833#142#-0#-3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.h0000000000000000^67#0#67#0#18446744073709551615#0#14"Semantic Issue--1#-3@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.m0000000000000000^11#0#11#0#18446744073709551615#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation4@89"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.m0000000000000000^2665"CompileC "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o" "Reno Suggestions/submitViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jack/dev/BetaReno/iPhone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=5.0 -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-generated-files.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-own-target-headers.hmap" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-all-target-headers.hmap" -iquote "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions-project-headers.hmap" -I/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/include "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources/armv7" "-I/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/DerivedSources" -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -include "/var/folders/9c/rxmt02dj6rb4w6zht9sjw4qm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Reno Suggestions-Prefix-fseiptsmqcolnpefltryqxlukowe/Reno Suggestions-Prefix.pch" -MMD -MT dependencies -MF "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.d" -c "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.m" -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/submitViewController.o"36"499BDC41-1850-489B-9586-C94F56F769EC-
 
 CCompileXIB "/Users/jack/dev/BetaReno/Reno Suggestions/Reno Suggestions/CameraViewController-iphone.xib"
 r0
@@ -2390,24 +2419,42 @@ x/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPho
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compiling /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPhone.xib0d1be5b8544ab441^118c6bba544ab441^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/en.lproj/RSViewController_iPhone.xib0000000000000000^720"CompileXIB "Reno Suggestions/en.lproj/RSViewController_iPhone.xib"    cd /Users/jack/dev/BetaReno/iPhone    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/en.lproj/RSViewController_iPhone.nib" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/en.lproj/RSViewController_iPhone.xib" --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"F4CC797B-2824-4F29-89E5-1146EEC55C18-
 
 CCompileXIB "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib"
-s340465950.700163
-e340465951.860853
+s340479906.680349
+e340479906.776124
 r1
 xCompileXIB
 x/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compiling /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib795db31e194bb441^1170dc1f194bb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.xib0000000000000000^684"CompileXIB "Reno Suggestions/submitViewController.xib"    cd /Users/jack/dev/BetaReno/iPhone    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/submitViewController.nib" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib" --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"60E246D9-BE13-4D4A-8B8E-C50EF0CB50F3-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compiling /Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib454baea24f4bb441^a5c0c6a24f4bb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/submitViewController.xib0000000000000000^684"CompileXIB "Reno Suggestions/submitViewController.xib"    cd /Users/jack/dev/BetaReno/iPhone    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/submitViewController.nib" "/Users/jack/dev/BetaReno/iPhone/Reno Suggestions/submitViewController.xib" --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"81645D05-16C5-40A9-8150-34F92AB38E68-
 
 CCopyPNGFile "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app/Reno_arch_57.png" Reno_arch_57.png
 r0
 
+CCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/BRicon.png" BRicon.png
+s340479906.682713
+e340479906.725056
+r1
+xCopyPNGFile
+x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/BRicon.png
+xBRicon.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/BRicon.png" BRicon.pngebe2aea24f4bb441^459db9a24f4bb441^---0#0#0#-19%DVTDocumentLocation2@58"file://localhost/Users/jack/dev/BetaReno/iPhone/BRicon.png0000000000000000^534"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/BRicon.png" BRicon.png    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/jack/dev/BetaReno/iPhone/BRicon.png "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/BRicon.png"36"D92C9962-2E0E-4A3E-98D3-D226AFE8000B-
+
+CCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png" Art/Default.png
+s340480717.633495
+e340480717.770699
+r1
+xCopyPNGFile
+x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png
+xArt/Default.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/Default.png" Art/Default.png1746a2cd524bb441^9a07d0cd524bb441^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/jack/dev/BetaReno/iPhone/Art/Default.png0000000000000000^546"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/Default.png" Art/Default.png    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/jack/dev/BetaReno/iPhone/Art/Default.png "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png"36"CA50DD15-98A1-4D44-A2E5-6861C2B715B2-
+
 CCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png" Default.png
-s340477895.085930
-e340477895.167688
+s340480798.964688
+e340480799.046596
 r1
 xCopyPNGFile
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png
 xDefault.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/Default.png" Default.png7f1316c7474bb441^9ef02ac7474bb441^---0#0#0#-19%DVTDocumentLocation2@59"file://localhost/Users/jack/dev/BetaReno/iPhone/Default.png0000000000000000^538"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/Default.png" Default.png    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/jack/dev/BetaReno/iPhone/Default.png "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png"36"1615CA73-8702-44E9-A366-02A91913C20D-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/Default.png" Default.png3a07f71e534bb441^85ed0b1f534bb441^---0#0#0#-19%DVTDocumentLocation2@59"file://localhost/Users/jack/dev/BetaReno/iPhone/Default.png0000000000000000^538"CopyPNGFile "build/Debug-iphoneos/Reno Suggestions.app/Default.png" Default.png    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/jack/dev/BetaReno/iPhone/Default.png "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Default.png"36"E48647E0-AABC-4CC6-9BC9-A7C04135E92C-
 
 CCopyPNGFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno_arch_57.png" Reno_arch_57.png
 s340415672.901088
@@ -2439,6 +2486,15 @@ x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceR
 xbuild/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plistc68b9d130849b441^e8869e130849b441^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Users/jack/dev/BetaReno/Reno%20Suggestions/build/Debug-iphoneos/Reno%20Suggestions.app/ResourceRules.plist00f41c18dfffdf42^628"CpResource /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist "build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist"    cd "/Users/jack/dev/BetaReno/Reno Suggestions"    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app"36"058F5F7E-52D9-416A-BF08-AFC07D578A79-
 
+CCpResource Art/Default.psd "build/Debug-iphoneos/Reno Suggestions.app/Default.psd"
+s340479906.681438
+e340479906.685567
+r1
+xCpResource
+xArt/Default.psd
+xbuild/Debug-iphoneos/Reno Suggestions.app/Default.psd
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphoneos/Reno Suggestions.app/Default.psdb895aea24f4bb441^a681afa24f4bb441^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno%20Suggestions.app/Default.psd00f46030deffdf42^482"CpResource Art/Default.psd "build/Debug-iphoneos/Reno Suggestions.app/Default.psd"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/jack/dev/BetaReno/iPhone/Art/Default.psd "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"36"4B9B4819-55FB-4FCC-998A-FFDFEBE0E36A-
+
 CCpResource Reno_arch_244x183.jpg "build/Debug-iphoneos/Reno Suggestions.app/Reno_arch_244x183.jpg"
 s340415672.895171
 e340415672.901705
@@ -2452,26 +2508,26 @@ CGenerateDSYMFile "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneo
 r0
 
 CGenerateDSYMFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM" "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions"
-s340478418.409586
-e340478418.467232
+s340480798.875152
+e340480798.930951
 r1
 xGenerateDSYMFile
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Generating /Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM20ec68d2494bb441^bb9b77d2494bb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno%20Suggestions.app.dSYM/0000000000000000^499"GenerateDSYMFile "build/Debug-iphoneos/Reno Suggestions.app.dSYM" "build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" -o "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM"36"C89A1CF0-6D07-4A59-AB22-0DD53B2D4628-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Generating /Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM041ee01e534bb441^d251ee1e534bb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno%20Suggestions.app.dSYM/0000000000000000^499"GenerateDSYMFile "build/Debug-iphoneos/Reno Suggestions.app.dSYM" "build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" -o "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app.dSYM"36"DD0AB801-9DC9-4053-AD36-E0E7D7D385BA-
 
 CLd "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" normal armv7
 r0
 
 CLd "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" normal armv7
-s340478418.321632
-e340478418.402560
+s340480798.791538
+e340480798.868085
 r1
 xLd
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions
 xnormal
 xarmv7
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Link /Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestionsd76b52d2494bb441^231467d2494bb441^---0#0#0#--1063"Ld "build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" normal armv7    cd /Users/jack/dev/BetaReno/iPhone    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -L/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -filelist "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Reno Suggestions.LinkFileList" -dead_strip -miphoneos-version-min=5.0 -lz -framework MobileCoreServices -framework CFNetwork -framework CoreLocation -framework MapKit -framework SystemConfiguration -framework AudioToolbox -framework UIKit -framework Foundation -framework CoreGraphics -o "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions"36"B8C81DC0-4598-41C9-AE9A-02BE4CBA5416-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Link /Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestionsdfc2ca1e534bb441^8239de1e534bb441^---0#0#0#--1063"Ld "build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions" normal armv7    cd /Users/jack/dev/BetaReno/iPhone    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -L/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -F/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos -filelist "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Objects-normal/armv7/Reno Suggestions.LinkFileList" -dead_strip -miphoneos-version-min=5.0 -lz -framework MobileCoreServices -framework CFNetwork -framework CoreLocation -framework MapKit -framework SystemConfiguration -framework AudioToolbox -framework UIKit -framework Foundation -framework CoreGraphics -o "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Reno Suggestions"36"5C73075E-B726-4BA3-B01B-57A81E797F52-
 
 CProcessInfoPlistFile "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app/Info.plist" "Reno Suggestions/Reno Suggestions-Info.plist"
 s340330515.614847
@@ -2483,13 +2539,13 @@ xReno Suggestions/Reno Suggestions-Info.plist
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Process Reno Suggestions/Reno Suggestions-Info.plistf88b9d130849b441^f0be9e130849b441^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/jack/dev/BetaReno/Reno%20Suggestions/Reno%20Suggestions/Reno%20Suggestions-Info.plist0000000000000000^760"ProcessInfoPlistFile "build/Debug-iphoneos/Reno Suggestions.app/Info.plist" "Reno Suggestions/Reno Suggestions-Info.plist"    cd "/Users/jack/dev/BetaReno/Reno Suggestions"    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility "Reno Suggestions/Reno Suggestions-Info.plist" -genpkginfo "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app/PkgInfo" -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist" -o "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app/Info.plist"36"FF73A02B-1D1B-4F98-9203-A659265F3E7C-
 
 CProcessInfoPlistFile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Info.plist" "Reno Suggestions/Reno Suggestions-Info.plist"
-s340477894.716849
-e340477894.722056
+s340479906.361935
+e340479906.366409
 r1
 xProcessInfoPlistFile
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Info.plist
 xReno Suggestions/Reno Suggestions-Info.plist
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Process Reno Suggestions/Reno Suggestions-Info.plistc6a4b7c6474bb441^9dd7b8c6474bb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/Reno%20Suggestions-Info.plist0000000000000000^718"ProcessInfoPlistFile "build/Debug-iphoneos/Reno Suggestions.app/Info.plist" "Reno Suggestions/Reno Suggestions-Info.plist"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility "Reno Suggestions/Reno Suggestions-Info.plist" -genpkginfo "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/PkgInfo" -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist" -o "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Info.plist"36"3EA96EC2-84F3-4E50-A67F-0EB9836B9CC6-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Process Reno Suggestions/Reno Suggestions-Info.plist7bbc5ca24f4bb441^10cc5da24f4bb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/jack/dev/BetaReno/iPhone/Reno%20Suggestions/Reno%20Suggestions-Info.plist0000000000000000^718"ProcessInfoPlistFile "build/Debug-iphoneos/Reno Suggestions.app/Info.plist" "Reno Suggestions/Reno Suggestions-Info.plist"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility "Reno Suggestions/Reno Suggestions-Info.plist" -genpkginfo "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/PkgInfo" -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/ResourceRules.plist" -o "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app/Info.plist"36"FA9A7AB2-FAE2-4396-99FA-0EEAB320DED3-
 
 CProcessPCH "/Users/jack/Library/Developer/Xcode/DerivedData/Reno_Suggestions-dtstbdhdckmuihbgatmcitircqol/Index/PrecompiledHeaders/Reno Suggestions-Prefix-cjsvevvqbhrtexakksfnnngscayu_ast/Reno Suggestions-Prefix.pch.pth" "Reno Suggestions/Reno Suggestions-Prefix.pch" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
 r0
@@ -2539,22 +2595,22 @@ CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/i
 r0
 
 CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"
-s340477895.207531
-e340477895.211533
+s340479906.830714
+e340479906.835001
 r1
 xProcessProductPackaging
 x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist
 x/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection204"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"263835c7474bb441^182736c7474bb441^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Reno%20Suggestions.build/Debug-iphoneos/Reno%20Suggestions.build/Reno%20Suggestions.xcent0000000000000000^646"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist -entitlements -format xml -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"36"4B4D4D68-D0BB-4AD7-820E-CF469E45F782-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection204"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"5dc3d4a24f4bb441^6ec2d5a24f4bb441^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/jack/dev/BetaReno/iPhone/build/Reno%20Suggestions.build/Debug-iphoneos/Reno%20Suggestions.build/Reno%20Suggestions.xcent0000000000000000^646"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist "build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist -entitlements -format xml -o "/Users/jack/dev/BetaReno/iPhone/build/Reno Suggestions.build/Debug-iphoneos/Reno Suggestions.build/Reno Suggestions.xcent"36"8BEC21E5-CDD6-4E03-8E36-61A4A18911A7-
 
 CTouch "/Users/jack/dev/BetaReno/Reno Suggestions/build/Debug-iphoneos/Reno Suggestions.app"
 r0
 
 CTouch "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"
-s340478418.502950
-e340478418.509187
+s340480799.072307
+e340480799.077920
 r1
 xTouch
 x/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Touch /Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.appedd480d2494bb441^f35982d2494bb441^---0#0#0#--311"Touch "build/Debug-iphoneos/Reno Suggestions.app"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"36"7089CB94-5167-4F55-9FFA-2CE7C8E03C4B-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Touch /Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app6092121f534bb441^91f2131f534bb441^---0#0#0#--311"Touch "build/Debug-iphoneos/Reno Suggestions.app"    cd /Users/jack/dev/BetaReno/iPhone    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/jack/dev/BetaReno/iPhone/build/Debug-iphoneos/Reno Suggestions.app"36"1FDCEB5C-C22F-4EA7-B6CD-341BAB0C225E-
 
