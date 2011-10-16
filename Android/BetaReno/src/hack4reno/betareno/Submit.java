@@ -207,10 +207,8 @@ public class Submit extends Activity
 				idea.setLongitude(String.valueOf(Double.parseDouble(String.valueOf(exactLocationPoint.getLongitudeE6())) / 1E6));
 				if (chkPlan.isChecked())
 					idea.setWhen(datePlan, timePlan);
-				
-				
-				new UploadIdea(idea).execute();
-				
+				idea.setBefore_photo(m_userSelectedImagePath);				
+				new UploadIdea(idea).execute();				
 			}
 		});	   	
     }
@@ -524,7 +522,7 @@ public class Submit extends Activity
 		{
 			pd = new ProgressDialog(submit);
 			pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-			pd.setMessage("Uploading Picture...");
+			pd.setMessage("Submitting...");
 			pd.setCancelable(false);
 			pd.show();
 		}
@@ -534,7 +532,7 @@ public class Submit extends Activity
 		{
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpContext httpContext = new BasicHttpContext();
-			HttpPost httpPost = new HttpPost("http://betareno.cyberhobo.net/?action=betareno-add-idea");
+			HttpPost httpPost = new HttpPost("http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-add-idea");
 
 			try
 			{
@@ -558,7 +556,8 @@ public class Submit extends Activity
 				multipartContent.addPart("latitude", new StringBody(idea.getLatitude()));
 				multipartContent.addPart("longitude", new StringBody(idea.getLongitude()));
 				multipartContent.addPart("when", new StringBody(idea.getWhen()));
-				multipartContent.addPart("before_photo", new FileBody(new File(m_userSelectedImagePath)));
+				if (!idea.getBefore_photo().equals(""))
+					multipartContent.addPart("before_photo", new FileBody(new File(idea.getBefore_photo())));
 				totalSize = multipartContent.getContentLength();
 
 				// Send the bitch
@@ -588,7 +587,7 @@ public class Submit extends Activity
 		protected void onPostExecute(final Idea idea)
 		{
 			// If the parsing failed for whatever reason, try and resubmit the request again.
-			if (idea.getID().equals(""))
+			if (idea == null || idea.getID().equals(""))
 			{
 				setProgressBarIndeterminateVisibility(false);
 				new AlertDialog.Builder(submit)
