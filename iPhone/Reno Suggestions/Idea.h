@@ -28,6 +28,8 @@ after_photo=(multipart encoded binary or empty)
     NSMutableString*        when;
     NSMutableString*        longitude;
     NSMutableString*        latitude;
+    NSString*                beforePictureURL;
+    NSString*                afterPictureURL;
 
     NSData*                 beforePicture;
     NSData*                 afterPicture;

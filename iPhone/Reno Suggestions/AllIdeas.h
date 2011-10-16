@@ -17,7 +17,10 @@
 
 @property (nonatomic, retain) NSMutableArray* ideasArray;
 
-+(AllIdeas *) Ideas;
++(AllIdeas *) sharedIdeas;
++(id) allocWithZone:(NSZone *)zone;
+-(id) copyWithZone:(NSZone *)zone;
+-(oneway void) release;
 
 -(id) initIdeas:(NSString *)longitude 
     withLat:(NSString *)lat 
@@ -29,7 +32,7 @@
                            withLat:(NSString *)lat 
                          andRadius:(NSString *)radius;
 
--(void) addIdeaToList;
+-(void) addIdeaToList:(Idea *)newIdea;
 
--(Idea *)removeItemFromList;
+-(void)removeItemFromList:(Idea *)oldIdea;
 @end
