@@ -134,6 +134,7 @@ void PhoneCallInterruptionListener(void *inClientData, UInt32 inInterruptionStat
 	if (![self NetworkCheck]) [self networkAlert];
     
     self.window.rootViewController = self.viewController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

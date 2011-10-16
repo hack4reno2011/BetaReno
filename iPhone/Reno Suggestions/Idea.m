@@ -15,20 +15,7 @@
 {
     [super init];
     if (self) {
-        idea = [[NSDictionary alloc]init];
-        
-        /*
-        [what setString:@""];
-        [who setString:@""];
-        [when setString:@""];
-        [longitude setString:@""];
-        [latitude setString:@""];
-        [beforePictureURL setString:@""];
-        [afterPictureURL setString:@""];
-        beforePicture = nil;
-        afterPicture = nil;
-         
-         */
+        idea = [[NSMutableDictionary alloc]initWithCapacity:10];
         return self;
     }
     return nil;
@@ -37,17 +24,14 @@
 -(void) dealloc;
 {
     [idea release];
-    /*
-    [what release];
-    [who  release];
-    [when release];
-    [longitude release];
-    [latitude release];
-    [beforePicture  release];
-    [afterPicture   release];
-     */
 
 }
+
+-(void) saveIdeaField:(id)obj withKey:(NSString *)key;
+{
+    [idea setObject:obj forKey:key];
+}
+
 
 
 @end

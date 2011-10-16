@@ -19,7 +19,7 @@ static AllIdeas *sharedIdeas;
 +(AllIdeas *) sharedIdeas
 {
     if (!sharedIdeas) {
-        sharedIdeas  = [[AllIdeas alloc]init];
+        sharedIdeas  = [[[AllIdeas alloc]init]retain];
     }
     return sharedIdeas;
 }
@@ -48,7 +48,6 @@ static AllIdeas *sharedIdeas;
 {
 
     [super init];
-    //ideasArray = [self getListOfIdeas:longitude withLat:lat andRadius:radius];
     return self;
 }
 
@@ -59,12 +58,13 @@ static AllIdeas *sharedIdeas;
     
     [ideasArray removeAllObjects];
     // - get all data from betareno.cyberhobo.net 
-    
+    //longitude = @"-119.813803";
+	//lat = @"39.529633";
     
      NSURL*	url	= [NSURL URLWithString:[NSString stringWithFormat:@"%@lat=%@&lng=%@&r=%@", 
-                                        kSuggestionsURL,longitude,lat,radius]];
+                                        kSuggestionsURL,lat, longitude, radius]];
 
-     //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
+     NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
      NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
      NSError*	err	= nil;
      NSData*	response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
@@ -73,22 +73,14 @@ static AllIdeas *sharedIdeas;
      {
          NSString*	respString   = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
          NSDictionary* doc = [respString JSONValue];
-         NSString* code = [doc objectForKey:@"code"];
-         if ([code isEqualToString:@"200"])
-         {
-             ideasArray = [doc objectForKey:@"ideas"];
-         }
-         else
-         {
-             NSLog(@"JJA error returned from cyberhobo: %@",[doc objectForKey:@"message"]);
-         }
-                                                  
+         NSLog(@"JJA debug resp doc: %@",doc);
+         ideasArray = [[doc objectForKey:@"ideas"]retain];
+         NSLog(@"JJA debug ideas array: %@",ideasArray);
+
          //debug code
          for (int i = 0; i < [ideasArray count]; i++)
-         {
-         //pull data into view controller array.  
-         NSLog(@"JJA response from cyberhobo = %@",respString);
-         NSLog(@"JJA jason parsed as = %@",ideasArray);
+         {  
+         NSLog(@"JJA what = %@",[[ideasArray objectAtIndex:i] objectForKey:@"what"]);
          }
          //
      }
