@@ -181,7 +181,8 @@ class BetaReno {
 		// Create the post
 		$postdata = array(
 			'post_type' => 'idea',
-			'post_title' => $_POST['what']
+			'post_title' => $_POST['what'],
+			'post_status' => 'publish'
 		);
 		$post_id = wp_insert_post( $postdata, true );
 		if ( is_wp_error( $post_id ) ) {
