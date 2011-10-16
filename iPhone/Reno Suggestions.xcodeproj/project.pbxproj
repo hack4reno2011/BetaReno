@@ -17,8 +17,8 @@
 		0440D43C144A6392007014E6 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440D43B144A6392007014E6 /* Idea.m */; };
 		046AE405144ADBDB00196F52 /* ShowIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AE403144ADBDB00196F52 /* ShowIdeaViewController.m */; };
 		046AE406144ADBDB00196F52 /* ShowIdeaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046AE404144ADBDB00196F52 /* ShowIdeaViewController.xib */; };
+		04787A68144B450E00F91EB4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04787A67144B450E00F91EB4 /* Default.png */; };
 		0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */; };
-		0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481D9041448F27700EC00BF /* Reno_arch_57.png */; };
 		0481D9381448FAF600EC00BF /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9201448FAF600EC00BF /* NSObject+SBJson.m */; };
 		0481D9391448FAF600EC00BF /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9231448FAF600EC00BF /* SBJsonParser.m */; };
 		0481D93A1448FAF600EC00BF /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481D9251448FAF600EC00BF /* SBJsonStreamParser.m */; };
@@ -76,6 +76,7 @@
 		046AE402144ADBDB00196F52 /* ShowIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowIdeaViewController.h; sourceTree = "<group>"; };
 		046AE403144ADBDB00196F52 /* ShowIdeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowIdeaViewController.m; sourceTree = "<group>"; };
 		046AE404144ADBDB00196F52 /* ShowIdeaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowIdeaViewController.xib; sourceTree = "<group>"; };
+		04787A67144B450E00F91EB4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reno_arch_244x183.jpg; sourceTree = "<group>"; };
 		0481D9041448F27700EC00BF /* Reno_arch_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reno_arch_57.png; sourceTree = "<group>"; };
 		0481D91F1448FAF600EC00BF /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
@@ -233,6 +234,7 @@
 		04B0EDE01448D3E200FDE76E = {
 			isa = PBXGroup;
 			children = (
+				04787A67144B450E00F91EB4 /* Default.png */,
 				04B0EE171448D4F500FDE76E /* CommonDefinitions.h */,
 				0481D8FC1448F09400EC00BF /* Art */,
 				04B0EDF51448D3E200FDE76E /* Reno Suggestions */,
@@ -404,11 +406,11 @@
 				04B0EE061448D3E300FDE76E /* RSViewController_iPhone.xib in Resources */,
 				04B0EE091448D3E300FDE76E /* RSViewController_iPad.xib in Resources */,
 				0481D8FF1448F0AB00EC00BF /* Reno_arch_244x183.jpg in Resources */,
-				0481D9051448F27700EC00BF /* Reno_arch_57.png in Resources */,
 				040F7C67144A0F7A005172D5 /* MapView.xib in Resources */,
 				040F7C75144A1546005172D5 /* submitViewController.xib in Resources */,
 				041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */,
 				046AE406144ADBDB00196F52 /* ShowIdeaViewController.xib in Resources */,
+				04787A68144B450E00F91EB4 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
