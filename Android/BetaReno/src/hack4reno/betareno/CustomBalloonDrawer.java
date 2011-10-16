@@ -1,85 +1,80 @@
 package hack4reno.betareno;
 
-import java.util.Collection;
-import java.util.ConcurrentModificationException;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.ArrayList;
+import java.util.List;
 
-import android.app.Activity;
-import android.content.res.Resources;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 
-import com.discalis.android.maps.BalloonItemizedOverlay;
-import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
-/**
- * Sample illustrating {@link BalloonItemizedOverlay} use. We are using
- * {@link OverlayItem} to parametrize {@link BalloonItemizedOverlay}, you'll
- * probably want to have some more specific type there, something like
- * MyOwnOverlayItem which extends {@link OverlayItem}.
- * 
- * @author isaac.salgueiro@discalis.com
- * 
- */
-public class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem> {
+class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
+{
+	private List<OverlayItem> locations = new ArrayList<OverlayItem>();
+	private Drawable marker;
+	private OnBalloonTapListener mListener;	
 
-	/**
-	 * Overlay constructor. Usually you'll build this overlay with a reference
-	 * to a {@link MapView} or an {@link Activity} containing a {@link MapView}.
-	 * 
-	 * @param resources
-	 *            {@link Resources} used to get the drawable. Tipically a
-	 *            reference to {@link Activity#getResources()}
-	 * @param mapView
-	 */
-	public CustomBalloonDrawer(Drawable drawable, MapView mapView) 
+	public interface OnBalloonTapListener
 	{
-		// Initializes the Overlay. Each OverlayItem will be drawn with this
-		// drawable.
-		// super(boundCenterBottom(mapView.getContext().getResources().getDrawable(R.drawable.icon_24)), mapView);
-		super(boundCenterBottom(drawable), mapView);
+		public void onBalloonTap(int index);
 	}
 
-	/**
-	 * Returning just one static item.
-	 */
-	@Override
-	protected OverlayItem createItem(int i) {
-		final GeoPoint somePosition = new GeoPoint(42431320, -8642187);
-		final OverlayItem ovelayItem = new OverlayItem(somePosition, "Discalis Soluciones S.L.",
-				"Actually, we're not using this for anything...");
-		return ovelayItem;
+	public CustomBalloonDrawer(Drawable defaultMarker, MapView mapView)
+	{
+		super(boundCenter(defaultMarker), mapView);
+		this.marker = defaultMarker;
+
+	}
+	
+	public void setOnBaloonListener(OnBalloonTapListener listener)
+	{
+		mListener = listener;
+	}
+	
+	public void addOverlay(OverlayItem overlay)
+	{
+		locations.add(overlay);
+		populate();
 	}
 
-	/**
-	 * Just one single static item...
-	 * <p>
-	 * You're probably backing your {@link OverlayItem}s in some
-	 * {@link Collection}, so this method will return the size of that
-	 * {@link Collection}.
-	 * </p>
-	 * <p>
-	 * Please, take <i>thread safeiness</i> in consideration on your
-	 * implementation. Something like {@link CopyOnWriteArrayList} may be very
-	 * usefull avoiding {@link ConcurrentModificationException}s...
-	 * </p>
-	 * 
-	 * @see #createItem(int);
-	 */
 	@Override
-	public int size() {
-		return 1;
+	protected OverlayItem createItem(int i)
+	{
+		// TODO Auto-generated method stub
+		return locations.get(i);
 	}
 
-	/**
-	 * Drop a log entry when user taps a balloon
-	 * 
-	 */
 	@Override
-	protected boolean onBalloonTap(int index) {
-		Log.i("Discalis Soluciones","TAP!");
+	public int size()
+	{
+		// TODO Auto-generated method stub
+		return locations.size();
+	}
+
+	@Override
+	public void draw(Canvas canvas, MapView mapView, boolean shadow)
+	{
+		// TODO Auto-generated method stub
+		super.draw(canvas, mapView, shadow);
+		boundCenterBottom(marker);
+	}
+	
+	//TODO - I dont know about this
+	/*
+	@Override
+	protected boolean onBalloonTap(int index, OverlayItem item) 
+	{
+		mListener.onBalloonTap(index, item);
+		return true;
+	}
+	*/
+	
+	//TODO - I dont know about this
+	@Override
+	protected boolean onBalloonTap(int index) 
+	{
+		mListener.onBalloonTap(index);
 		return true;
 	}
 }
