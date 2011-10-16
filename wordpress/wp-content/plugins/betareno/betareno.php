@@ -135,7 +135,7 @@ class BetaReno {
 				'post_parent' => $idea_location->object_id,
 				'post_title' => 'Before'
 			) );
-			if ( $before_photo_attachments ) {
+			if ( !empty( $before_photo_attachments ) ) {
 				list( $idea['before_photo_url'], $width, $height ) = wp_get_attachment_image_src( $before_photo_attachments[0]->ID );
 			}
 
@@ -146,7 +146,7 @@ class BetaReno {
 				'post_parent' => $idea_location->object_id,
 				'post_title' => 'After'
 			) );
-			if ( $after_photo_attachments ) {
+			if ( !empty( $after_photo_attachments ) )  {
 				list( $idea['after_photo_url'], $width, $height ) = wp_get_attachment_image_src( $after_photo_attachments[0]->ID );
 			}
 
