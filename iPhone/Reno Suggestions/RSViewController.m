@@ -67,8 +67,8 @@
     
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
-	span.latitudeDelta = 0.1;
-	span.longitudeDelta = 0.1;
+	span.latitudeDelta = 0.01;
+	span.longitudeDelta = 0.01;
 	
 	CLLocationCoordinate2D cord;
 		AddressAnnotation *addAnnotation = nil;
@@ -167,7 +167,6 @@
     
     [super viewDidLoad];
      [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showAddress) userInfo:nil repeats:NO];
-//s[self showAddress];
 }
 
 - (void)viewDidUnload
