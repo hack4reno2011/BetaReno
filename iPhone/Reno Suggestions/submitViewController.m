@@ -8,7 +8,11 @@
 
 #import "submitViewController.h"
 
+
 @implementation submitViewController
+@synthesize cancelButton;
+@synthesize cameraButton;
+@synthesize submitButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -17,6 +21,119 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)dealloc
+{
+    
+}
+
+-(IBAction) takeAPictureButtonPressed; {
+    
+    //sourceType = UIImagePickerControllerSourceTypeCamera;
+    if  ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) 
+    {
+        [self setupImagePicker:UIImagePickerControllerSourceTypeCamera]; 
+        //[self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+       
+    } else
+    {
+        [self setupImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+        //[self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+   
+}
+
+- (void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType
+{
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.sourceType = sourceType;
+    
+    if (sourceType == UIImagePickerControllerSourceTypeCamera)
+    {
+        // user wants to use the camera interface
+        imagePicker.allowsEditing = YES;
+        mediaTypeCamera = YES;
+        imagePicker.showsCameraControls = YES;
+        [self presentModalViewController:imagePicker animated:YES];
+        [imagePicker release];
+    } else
+    {
+        //use the image library
+        imagePicker.allowsEditing = YES;
+        mediaTypeCamera = NO;
+        [self presentModalViewController:imagePicker animated:YES];
+        [imagePicker release];
+    }
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	[self dismissModalViewControllerAnimated:YES];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    [NSThread detachNewThreadSelector:@selector(useImage:) toTarget:self withObject:image];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+-(UIImage*)useImage:(UIImage *)image;{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+     
+     // Create a graphics image context
+     CGSize newSize = CGSizeMake(500, 500);
+     UIGraphicsBeginImageContext(newSize);
+    
+     // Tell the old image to draw in this new context, with the desired
+     // new size
+     [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+     
+     // Get the new image from the context
+     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+     // End the context
+     UIGraphicsEndImageContext();
+    
+     [pool release];
+    return newImage;
+}
+
+
+-(IBAction) cancelButtonPressed; {
+    
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+    
+}
+-(IBAction) submitButtonPressed; {
+    
+    NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"%@", kSuggestionsURL]];
+    //NSLog(@"JJA get suggestions url = %@",[url absoluteString] );
+	NSMutableURLRequest*	request		= [NSMutableURLRequest requestWithURL:url];
+	NSError*				err			= nil;
+	NSData*					response	= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&err];
+    
+	
+	if (err == nil)
+	{
+		NSString*		respString          = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+        NSArray*        suggestionsArray	= [respString JSONValue];
+        
+		for (int i = 0; i < [suggestionsArray count]; i++)
+		{
+			//pull data into view controller array.  
+            NSLog(@"JJA response from cyberhobo = %@",respString);
+            NSLog(@"JJA jason parsed as = %@",suggestionsArray);
+		}
+	}
+    else
+    {
+        NSLog(@"JJA error from cyberhobo = %@",[err localizedDescription]);
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

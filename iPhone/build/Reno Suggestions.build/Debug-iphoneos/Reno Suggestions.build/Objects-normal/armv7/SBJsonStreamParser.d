@@ -1,5 +1,4 @@
-dependencies: \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonStreamParser.m \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonStreamParser.h \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonTokeniser.h \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonStreamParserState.h
+dependencies: /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParser.m \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParser.h \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonTokeniser.h \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonStreamParserState.h

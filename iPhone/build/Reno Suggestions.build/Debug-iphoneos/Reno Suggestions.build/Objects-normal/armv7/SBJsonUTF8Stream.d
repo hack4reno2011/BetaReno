@@ -1,3 +1,2 @@
-dependencies: \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonUTF8Stream.m \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonUTF8Stream.h
+dependencies: /Users/jack/dev/BetaReno/iPhone/SBJsonUTF8Stream.m \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonUTF8Stream.h

@@ -35,7 +35,6 @@
 -(IBAction)mapButtonPressed:(id)sender;
 {
     [self.navigationController dismissModalViewControllerAnimated:YES];
-    return;
 }
 -(IBAction)listButtonPressed:(id)sender;
 {
@@ -46,9 +45,6 @@
     submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
-    
-    [navController release];
-    [vc release];
     
     return;
 }

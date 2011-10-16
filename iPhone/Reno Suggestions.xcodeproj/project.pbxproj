@@ -50,6 +50,7 @@
 		04B0EE101448D40200FDE76E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EE0F1448D40200FDE76E /* AudioToolbox.framework */; };
 		04B0EE121448D40B00FDE76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B0EE111448D40B00FDE76E /* SystemConfiguration.framework */; };
 		04B0EE161448D4C800FDE76E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0EE151448D4C800FDE76E /* Reachability.m */; };
+		62997E4C144A427F006E65BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62997E4B144A427F006E65BF /* CoreLocation.framework */; };
 		62B9628D144A3BCE00CFE95A /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		04B0EE141448D4C800FDE76E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		04B0EE151448D4C800FDE76E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		04B0EE171448D4F500FDE76E /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDefinitions.h; path = "Reno Suggestions/CommonDefinitions.h"; sourceTree = "<group>"; };
+		62997E4B144A427F006E65BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62B9628B144A3BCE00CFE95A /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
 		62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62997E4C144A427F006E65BF /* CoreLocation.framework in Frameworks */,
 				041A7DB7144A3420008AC130 /* MapKit.framework in Frameworks */,
 				04B0EE121448D40B00FDE76E /* SystemConfiguration.framework in Frameworks */,
 				04B0EE101448D40200FDE76E /* AudioToolbox.framework in Frameworks */,
@@ -208,6 +211,7 @@
 		04B0EDE01448D3E200FDE76E = {
 			isa = PBXGroup;
 			children = (
+				62997E4B144A427F006E65BF /* CoreLocation.framework */,
 				04B0EE171448D4F500FDE76E /* CommonDefinitions.h */,
 				0481D8FC1448F09400EC00BF /* Art */,
 				04B0EDF51448D3E200FDE76E /* Reno Suggestions */,
