@@ -23,11 +23,11 @@
         
         <activity android:name=".SubmitRide"
         android:configChanges="keyboardHidden|orientation"></activity>
-        <activity android:name=".ViewRide"
+        <activity android:name=".ViewIdea"
         android:configChanges="keyboardHidden|orientation"></activity>
-        <activity android:name=".ViewRideList"
+        <activity android:name=".ViewIdeaList"
         android:configChanges="keyboardHidden|orientation"></activity>
-        <activity android:name=".ViewRideMap"
+        <activity android:name=".ViewIdeaMap"
         android:configChanges="keyboardHidden|orientation"></activity>
 
     </application>

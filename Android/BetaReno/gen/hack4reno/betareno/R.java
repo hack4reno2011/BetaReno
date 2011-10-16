@@ -99,8 +99,8 @@ public final class R {
         public static final int editWhere=0x7f090012;
         public static final int home_btn_create=0x7f09000a;
         public static final int home_btn_view=0x7f09000b;
+        public static final int ideaList=0x7f09001d;
         public static final int linearLayout1=0x7f09000d;
-        public static final int listView=0x7f09001d;
         public static final int lstSuggestion=0x7f090009;
         public static final int mapView=0x7f09001e;
         public static final int scrollView1=0x7f09000c;
@@ -120,9 +120,9 @@ public final class R {
         public static final int dialogsuggestion=0x7f030002;
         public static final int main=0x7f030003;
         public static final int submit=0x7f030004;
-        public static final int viewride=0x7f030005;
-        public static final int viewridelist=0x7f030006;
-        public static final int viewridemap=0x7f030007;
+        public static final int viewidea=0x7f030005;
+        public static final int viewidealist=0x7f030006;
+        public static final int viewideamap=0x7f030007;
     }
     public static final class string {
         public static final int DebugMapKey=0x7f06000e;

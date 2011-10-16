@@ -36,7 +36,7 @@ public class Main extends Activity
         {
         	public void onClick(View v)
         	{
-        		Intent view = new Intent(context, ViewRide.class);
+        		Intent view = new Intent(context, ViewIdea.class);
         		context.startActivity(view);
         	}
         });

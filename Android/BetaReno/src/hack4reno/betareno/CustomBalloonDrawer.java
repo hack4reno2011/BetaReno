@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
-class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
+public class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
 {
 	private List<OverlayItem> locations = new ArrayList<OverlayItem>();
 	private Drawable marker;
