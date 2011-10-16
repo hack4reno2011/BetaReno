@@ -22,6 +22,7 @@
 @synthesize latitude;
 @synthesize locationManager;
 @synthesize startingPoint;
+@synthesize aSpinner;
 
 - (void)didReceiveMemoryWarning
 {
@@ -114,12 +115,11 @@
     
     //cord.longitude = -119.853803;
 	//cord.latitude = 39.529633;
-    //AddressAnnotation *addAnnotation1 = [[AddressAnnotation alloc] initWithCoordinate:cord];
-	//addAnnotation1.mTitle = @"test";
-    //addAnnotation.mSubTitle = @"My Subtitle2";
-    //[mapView addAnnotation:addAnnotation1];
+    
 	[mapView setRegion:region animated:TRUE];
 	[mapView regionThatFits:region];
+    [self.aSpinner stopAnimating]; 
+
 	
 }
 
@@ -165,7 +165,13 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation]; 
     
+    UIActivityIndicatorView *tempSpinner = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.aSpinner = tempSpinner;
+    [tempSpinner release];
+    [self.view addSubview:self.aSpinner]; 
+    [self.aSpinner startAnimating]; 
     [super viewDidLoad];
+
      [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showAddress) userInfo:nil repeats:NO];
 }
 

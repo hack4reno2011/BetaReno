@@ -23,6 +23,8 @@
 	NSNumber*               latitude;
     CLLocationManager*      locationManager;
 	CLLocation*             startingPoint;
+    UIActivityIndicatorView  *aSpinner; 
+
     
     
 }
@@ -35,6 +37,8 @@
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) CLLocation *startingPoint;
+@property (nonatomic, retain) UIActivityIndicatorView *aSpinner;
+
 
 -(IBAction)cameraButtonPressed:(id)sender;
 -(IBAction)locationButtonPressed:(id)sender;
