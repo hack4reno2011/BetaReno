@@ -10,9 +10,10 @@ import android.widget.Button;
 
 public class Main extends Activity 
 {
-	protected Button btnCreate;
-	protected Button btnUpdate;
+	protected Button btnCreate, btnView;
 	protected Context context;
+	
+	
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -25,10 +26,19 @@ public class Main extends Activity
         {
 			public void onClick(View v) 
 			{
-				Intent submit;
-				submit = new Intent(context, Submit.class);
+				Intent submit = new Intent(context, SubmitRide.class);
 				context.startActivity(submit);			
 			}        	
+        });
+        
+        btnView = (Button) findViewById(R.id.home_btn_view);
+        btnView.setOnClickListener(new OnClickListener()
+        {
+        	public void onClick(View v)
+        	{
+        		Intent view = new Intent(context, ViewRide.class);
+        		context.startActivity(view);
+        	}
         });
         
     }
