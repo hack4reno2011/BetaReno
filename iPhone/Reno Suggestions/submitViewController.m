@@ -137,7 +137,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
      
      */
     
-
     // - get all data from cyberhobo.net - move this to a singelton?
     
     NSURL*					url			= [NSURL URLWithString:[NSString stringWithFormat:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-get-ideas&lat=39.524435&lng=-119.811745&r=5"]];
@@ -166,6 +165,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
      
      
+<<<<<<< HEAD
+=======
+
+>>>>>>> 87c99d26277238cf591e02b4ee4650bdc037f49d
 }
 
 - (void)didReceiveMemoryWarning

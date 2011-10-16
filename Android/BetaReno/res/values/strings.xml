@@ -3,8 +3,8 @@
     <string name="hello">Hello World, BetaRenoActivity!</string>
     <string name="app_name">BetaReno</string>
     
-    <string name="home_btn_create">Create</string>
-    <string name="home_btn_update">Update</string>
+    <string name="home_btn_create">Submit an Idea</string>
+    <string name="home_btn_view">View an Idea</string>
     
     <string name="submit_txt_title">Submit an Idea!</string>
     <string name="submit_txt_what">What should be done?</string>
@@ -16,6 +16,8 @@
     <string name="submit_btn_submit">Submit Idea!</string>
     <string name="submit_error_what">What should be done cant be blank</string>
     <string name="submit_error_where">The location cant be blank</string>
+    
+    <string name="DebugMapKey">07q4MxTydblKHLPAPvGoIHjnKNhgKaXAHdYhbJA</string>
     
     
     <!--  Proposal Categories for the Spinner -->

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "submitViewController.h"
+#import "AllIdeas.h"
+#import "Idea.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
@@ -16,6 +18,9 @@
     UIButton*               mapButton;
     UIButton*               listButton;
     UIButton*               suggestionButton;
+    NSString*               currentLongitude;
+    NSString*               currentLatitude;
+    NSArray*                ideasList;
     
 }
 
