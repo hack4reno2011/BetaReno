@@ -43,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
     m_objWebView.delegate = self;
     NSLog(@"beta url = %@",strURL);
 	NSURL *url = [NSURL URLWithString:strURL];	
