@@ -47,7 +47,7 @@ static AllIdeas *sharedIdeas;
 {
 
     [super init];
-    [self getListOfIdeas:longitude withLat:lat andRadius:radius];
+    ideasArray = [self getListOfIdeas:longitude withLat:lat andRadius:radius];
     return self;
 }
 
@@ -87,7 +87,7 @@ static AllIdeas *sharedIdeas;
 
 -(void) addIdeaToList:(Idea *)newIdea;
 {
-    [ideasArray addObjectAtIndex:0];  
+    [ideasArray insertObject:newIdea atIndex:0];  
 }
 
 -(void)removeItemFromList:(Idea *)oldIdea;
