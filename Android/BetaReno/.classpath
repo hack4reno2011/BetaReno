@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/balloon_itemized_overlay"/>
 	<classpathentry kind="lib" path="/home/john/Desktop/apache-mime4j-core-0.7.jar"/>
 	<classpathentry kind="lib" path="/home/john/Desktop/httpmime-4.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>

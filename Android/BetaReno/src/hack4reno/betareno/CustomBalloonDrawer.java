@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
-public class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
+class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
 {
 	private List<OverlayItem> locations = new ArrayList<OverlayItem>();
 	private Drawable marker;
@@ -17,7 +17,7 @@ public class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
 
 	public interface OnBalloonTapListener
 	{
-		public void onBalloonTap(int index);
+		public void onBalloonTap(int index, OverlayItem item);
 	}
 
 	public CustomBalloonDrawer(Drawable defaultMarker, MapView mapView)
@@ -60,21 +60,10 @@ public class CustomBalloonDrawer extends BalloonItemizedOverlay<OverlayItem>
 		boundCenterBottom(marker);
 	}
 	
-	//TODO - I dont know about this
-	/*
 	@Override
 	protected boolean onBalloonTap(int index, OverlayItem item) 
 	{
 		mListener.onBalloonTap(index, item);
-		return true;
-	}
-	*/
-	
-	//TODO - I dont know about this
-	@Override
-	protected boolean onBalloonTap(int index) 
-	{
-		mListener.onBalloonTap(index);
 		return true;
 	}
 }
