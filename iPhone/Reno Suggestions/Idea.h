@@ -23,16 +23,20 @@ after_photo=(multipart encoded binary or empty)
 @interface Idea : NSObject
 
 {
+    NSDictionary*           idea;
+    
+    /* key value pairs
     NSMutableString*        what;
     NSMutableString*        who;
     NSMutableString*        when;
     NSMutableString*        longitude;
     NSMutableString*        latitude;
-    NSString*                beforePictureURL;
-    NSString*                afterPictureURL;
+    NSString*               beforePictureURL;
+    NSString*               afterPictureURL;
 
     NSData*                 beforePicture;
     NSData*                 afterPicture;
+    */
 }
 
 -(id)initIdea;

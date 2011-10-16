@@ -75,7 +75,7 @@
     // Set up the cell...
     Idea *thisIdea = [ideasList objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    cell.textLabel.text = [thisIdea what];
+    cell.textLabel.text = [thisIdea->idea objectForKey:@"what"];
     
     return cell;
 }
