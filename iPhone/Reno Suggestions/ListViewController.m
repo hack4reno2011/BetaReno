@@ -45,6 +45,8 @@
 -(IBAction)suggestionButtonPressed:(id)sender;
 {
     submitViewController *vc = [[[submitViewController alloc] initWithNibName:@"submitViewController" bundle:nil] autorelease];
+    vc.lastLongitude = currentLongitude;
+    vc.lastLatitude = currentLatitude;
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:navController animated:YES];
     

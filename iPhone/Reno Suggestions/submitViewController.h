@@ -41,6 +41,9 @@
     BOOL            keyboardVisible;
     CGPoint         offset;
     UIScrollView    *scrollview;
+    
+    NSString*       lastlongitude;
+    NSString*       lastLatitude;
 }
 
  
@@ -53,6 +56,8 @@
 @property (nonatomic, retain) UITextView*   whereToDoIt;
 @property (nonatomic, retain) Idea*         myNewIdea;
 @property (nonatomic, retain) UIImageView*  beforeImageView;
+@property (nonatomic, retain) NSString* lastLongitude;
+@property (nonatomic, retain) NSString* lastLatitude;
 
 -(IBAction) takeAPictureButtonPressed;
 -(IBAction) cancelButtonPressed;

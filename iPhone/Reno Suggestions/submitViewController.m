@@ -20,6 +20,8 @@
 @synthesize whereToDoIt;
 @synthesize myNewIdea;
 @synthesize beforeImageView;
+@synthesize lastLongitude;
+@synthesize lastLatitude;
 
 
 
@@ -43,6 +45,8 @@
     [whereToDoIt release];
     [myNewIdea release];
     [beforeImageView release];
+    [lastLongitude release];
+    [lastLatitude release];
 }
 
 //capture the text input
@@ -190,17 +194,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 -(IBAction) submitButtonPressed; {
     
-    RSViewController* rs = [[RSViewController alloc]init];
-    NSString* lng = [rs getLatestLongitude];
-    NSString* lat  = [rs getLatestLatitude];
+
+    NSLog(@"JJA debug L & L %@, %@",lastLongitude,lastLatitude);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://betareno.cyberhobo.net/wp-admin/admin-ajax.php?action=betareno-add-idea"]];
     [request setPostValue:@"BetaReno4hack4reno" forKey:@"api_key"];
     [request setPostValue:[myNewIdea.idea objectForKey:@"what"] forKey:@"what"];
     [request setPostValue:[myNewIdea.idea objectForKey:@"who"] forKey:@"who"];
-    //[request setPostValue:lat forKey:@"latitude"];
-    //[request setPostValue:lng forKey:@"longiude"];
-    [request setPostValue:@"39.529633" forKey:@"latitude"];
-    [request setPostValue:@"-119.813803" forKey:@"longiude"];
+    [request setPostValue:lastLatitude forKey:@"latitude"];
+    [request setPostValue:lastLongitude forKey:@"longiude"];
+    //[request setPostValue:@"39.529633" forKey:@"latitude"];
+    //[request setPostValue:@"-119.813803" forKey:@"longiude"];
     [request setPostValue:@"" forKey:@"when"];
     [request setData:[myNewIdea.idea objectForKey:@"before_photo"] withFileName:@"beforephoto.jpg" andContentType:@"image/jpeg" forKey:@"before_photo"];
     [request setPostValue:@"" forKey:@"after_photo"];
