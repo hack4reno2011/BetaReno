@@ -21,14 +21,14 @@
             </intent-filter>
         </activity>        
         
-        <activity android:name=".SubmitRide">
-        android:configChanges="keyboardHidden|orientation"</activity>
-        <activity android:name=".ViewRide">
-        android:configChanges="keyboardHidden|orientation"</activity>
-        <activity android:name=".ViewRideList">
-        android:configChanges="keyboardHidden|orientation"</activity>
-        <activity android:name=".ViewRideMap">
-        android:configChanges="keyboardHidden|orientation"</activity>
+        <activity android:name=".SubmitRide"
+        android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ViewRide"
+        android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ViewRideList"
+        android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ViewRideMap"
+        android:configChanges="keyboardHidden|orientation"></activity>
 
     </application>
     
