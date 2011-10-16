@@ -56,6 +56,8 @@
 		04BE75C7144B2BEC00E192AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BE75C6144B2BEB00E192AE /* MobileCoreServices.framework */; };
 		04BE75C9144B2C0E00E192AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BE75C8144B2C0E00E192AE /* libz.dylib */; };
 		04E1A554144A6FDE008F9344 /* AllIdeas.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1A553144A6FDE008F9344 /* AllIdeas.m */; };
+		624ED065144B4617004B5471 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 624ED063144B4617004B5471 /* Default.png */; };
+		624ED066144B4617004B5471 /* Default.psd in Resources */ = {isa = PBXBuildFile; fileRef = 624ED064144B4617004B5471 /* Default.psd */; };
 		62997E4C144A427F006E65BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62997E4B144A427F006E65BF /* CoreLocation.framework */; };
 		62B9628D144A3BCE00CFE95A /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */; };
 /* End PBXBuildFile section */
@@ -150,6 +152,8 @@
 		04BE75C8144B2C0E00E192AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		04E1A552144A6FDE008F9344 /* AllIdeas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIdeas.h; sourceTree = "<group>"; };
 		04E1A553144A6FDE008F9344 /* AllIdeas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIdeas.m; sourceTree = "<group>"; };
+		624ED063144B4617004B5471 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Art/Default.png; sourceTree = "<group>"; };
+		624ED064144B4617004B5471 /* Default.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Default.psd; path = Art/Default.psd; sourceTree = "<group>"; };
 		62997E4B144A427F006E65BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62B9628B144A3BCE00CFE95A /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
 		62B9628C144A3BCE00CFE95A /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 		0481D8FC1448F09400EC00BF /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				624ED063144B4617004B5471 /* Default.png */,
+				624ED064144B4617004B5471 /* Default.psd */,
 				0481D8FE1448F0AB00EC00BF /* Reno_arch_244x183.jpg */,
 				0481D9041448F27700EC00BF /* Reno_arch_57.png */,
 			);
@@ -411,6 +417,8 @@
 				041A7DBD144A3553008AC130 /* ListViewController.xib in Resources */,
 				046AE406144ADBDB00196F52 /* ShowIdeaViewController.xib in Resources */,
 				04787A68144B450E00F91EB4 /* Default.png in Resources */,
+				624ED065144B4617004B5471 /* Default.png in Resources */,
+				624ED066144B4617004B5471 /* Default.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
