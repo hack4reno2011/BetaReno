@@ -34,9 +34,6 @@ class BetaReno {
 
 		self::register_types();
 
-		// Use Reno's time zone
-		date_default_timezone_set( 'America/Los_Angeles' );
-
 		// Web service handlers
 		add_action( 'wp_ajax_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
 		add_action( 'wp_ajax_nopriv_betareno-add-idea', array( __CLASS__, 'action_wp_ajax_betareno_add_idea' ) );
@@ -227,7 +224,12 @@ class BetaReno {
 		if ( isset( $_POST['when'] ) ) {
 			$time = strtotime( $_POST['when'] );
 			if ( $time ) {
-				$when = date( 'Y-m-d h:i:00 e', $time );
+				// Use Reno's timezone
+				$dtzone = new DateTimeZone( 'America/Los Angeles' );
+				$date = date( 'r', $time );
+				$dtime = new DateTime( $date );
+				$dtime->setTimezone( $dtzone );
+				$when = $dtime->format( 'Y-m-d h:i:00 e' );
 				update_post_meta( $post_id, 'when', $when );
 			}
 		}
