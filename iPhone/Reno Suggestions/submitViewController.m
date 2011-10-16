@@ -165,10 +165,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
      
      
-<<<<<<< HEAD
-=======
-
->>>>>>> 87c99d26277238cf591e02b4ee4650bdc037f49d
 }
 
 - (void)didReceiveMemoryWarning
