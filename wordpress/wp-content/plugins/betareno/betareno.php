@@ -93,8 +93,21 @@ class BetaReno {
 			exit();
 		}
 
+		$postdata = array(
+			'post_type' => 'idea',
+			'post_title' => $_POST['what']
+		);
+
+		$post_id = wp_insert_post( $postdata, true );
+		if ( is_wp_error( $post_id ) ) {
+			$response['code'] = 500;
+			$response['message'] = $post_id->get_error_message();
+			echo json_encode( $response );
+			exit();
+		}
+
 		$response['idea'] = array(
-			'ID' => 1,
+			'ID' => $post_id,
 			'what' => $_POST['what'],
 			'who' => $_POST['who'],
 			'latitude' => $_POST['latitude'],
@@ -105,6 +118,10 @@ class BetaReno {
 		);
 		echo json_encode( $response );
 		exit();
+	}
+
+	static public function verify_api_key( $key ) {
+		return ('BetaReno4hack4reno' == $key );
 	}
 
 }
