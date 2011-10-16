@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TakeAPictureViewController.h"
+#import "SBJson.h"
 
 @interface submitViewController : UIViewController 
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -19,11 +19,11 @@
     UIButton*                   cameraButton;
     UIButton*                   submitButton;
     
-    BOOL                        mediaTypeCamera;
-    UIImagePickerController*    imagePicker;
+    BOOL                                mediaTypeCamera;
+    UIImagePickerController*           imagePicker;
 }
 
-
+ 
 @property (nonatomic, retain) IBOutlet UIButton* cancelButton;
 @property (nonatomic, retain) IBOutlet UIButton* cameraButton;
 @property (nonatomic, retain) IBOutlet UIButton* submitButton;
@@ -38,5 +38,6 @@
 -(void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
+-(UIImage*)useImage:(UIImage *)image;
 
 @end

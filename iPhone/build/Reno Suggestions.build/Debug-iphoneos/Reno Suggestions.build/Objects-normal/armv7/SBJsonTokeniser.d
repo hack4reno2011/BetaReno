@@ -1,3 +1,3 @@
-dependencies: /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonTokeniser.m \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonTokeniser.h \
-  /Users/jack/dev/BetaReno/Reno\ Suggestions/SBJsonUTF8Stream.h
+dependencies: /Users/jack/dev/BetaReno/iPhone/SBJsonTokeniser.m \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonTokeniser.h \
+  /Users/jack/dev/BetaReno/iPhone/SBJsonUTF8Stream.h
