@@ -129,7 +129,7 @@ class BetaReno {
 
 			// Photos
 			$idea['before_photo_url'] = '';
-			$before_photo_attachments = get_children( array(
+			$before_photo_attachments = get_posts( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
 				'post_parent' => $idea_location->object_id,
@@ -140,7 +140,7 @@ class BetaReno {
 			}
 
 			$idea['after_photo_url'] = '';
-			$after_photo_attachments = get_children( array(
+			$after_photo_attachments = get_posts( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
 				'post_parent' => $idea_location->object_id,
